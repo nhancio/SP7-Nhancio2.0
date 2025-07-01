@@ -117,6 +117,14 @@ Nhancio is a modern full-stack web application offering premium AI workflows, cu
 ```
 Changelog:
 - July 01, 2025. Initial setup
+- July 01, 2025. Migrated from Bolt to Replit environment
+  * Converted routing from React Router to Wouter for compatibility
+  * Updated contact information (hello@nhancio.com, +91 7095288950, Hyderabad, India)
+  * Restructured services to 4 main categories: AI & Data Science, Automation & Agents, Design & Marketing, SaaS & Development
+  * Enhanced website with advanced CSS animations and dynamic visual effects
+  * Added floating elements, gradient text animations, interactive cards, and hover effects
+  * Implemented glass morphism, shimmer effects, and parallax elements
+  * Fixed CSS import order to resolve Vite warnings
 ```
 
 ## User Preferences

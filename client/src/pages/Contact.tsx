@@ -83,10 +83,10 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Email Us</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-2">Quick response guaranteed</p>
               <a 
-                href="mailto:contact@nhancio.com" 
+                href="mailto:hello@nhancio.com" 
                 className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
               >
-                contact@nhancio.com
+                hello@nhancio.com
               </a>
             </div>
 
@@ -95,12 +95,12 @@ export default function Contact() {
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Call Us</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-2">Mon-Fri 9AM-6PM EST</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">Mon-Fri 9AM-6PM IST</p>
               <a 
-                href="tel:+1234567890" 
+                href="tel:+917095288950" 
                 className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
               >
-                +1 (234) 567-890
+                +91 7095288950
               </a>
             </div>
 
@@ -108,10 +108,10 @@ export default function Contact() {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow duration-300">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Global Office</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-2">Remote team worldwide</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Our Location</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">Based in India</p>
               <span className="text-blue-600 dark:text-blue-400 font-medium">
-                Available globally
+                Hyderabad, India
               </span>
             </div>
           </div>

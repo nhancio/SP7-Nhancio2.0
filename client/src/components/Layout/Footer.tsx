@@ -67,11 +67,10 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-2">
               {[
-                'AI Workflows & Automation',
-                'n8n Template Custom-Making',
-                'SaaS Development',
-                'Mobile App Development',
-                'Ecommerce Solutions',
+                'AI & Data Science',
+                'Automation & Agents',
+                'Design & Marketing',
+                'SaaS & Development',
               ].map((service) => (
                 <li key={service}>
                   <Link 
@@ -90,22 +89,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Contact</h3>
             <div className="space-y-3">
               <a 
-                href="mailto:contact@nhancio.com" 
+                href="mailto:hello@nhancio.com" 
                 className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-200"
               >
                 <Mail className="w-4 h-4" />
-                <span>contact@nhancio.com</span>
+                <span>hello@nhancio.com</span>
               </a>
               <a 
-                href="tel:+1234567890" 
+                href="tel:+917095288950" 
                 className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors duration-200"
               >
                 <Phone className="w-4 h-4" />
-                <span>+1 (234) 567-890</span>
+                <span>+91 7095288950</span>
               </a>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="w-4 h-4" />
-                <span>Global Remote Services</span>
+                <span>Hyderabad, India</span>
               </div>
             </div>
           </div>
