@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { Mail, Phone, MapPin, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 

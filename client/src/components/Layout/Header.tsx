@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'wouter';
 import { Menu, X, Moon, Sun, Globe } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -10,7 +10,7 @@ export default function Header() {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
-  const location = useLocation();
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,13 +62,13 @@ export default function Header() {
                 key={item.path}
                 to={item.path}
                 className={`relative text-sm font-medium transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400 ${
-                  location.pathname === item.path 
+                  location === item.path 
                     ? 'text-blue-600 dark:text-blue-400' 
                     : 'text-gray-700 dark:text-gray-300'
                 }`}
               >
                 {item.label}
-                {location.pathname === item.path && (
+                {location === item.path && (
                   <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></span>
                 )}
               </Link>
@@ -146,7 +146,7 @@ export default function Header() {
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block px-3 py-2 rounded-lg transition-colors duration-200 ${
-                    location.pathname === item.path 
+                    location === item.path 
                       ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' 
                       : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
                   }`}

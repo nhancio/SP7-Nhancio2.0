@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, Switch } from 'wouter';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import Layout from './components/Layout/Layout';
@@ -16,20 +15,18 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <Router>
-          <SEOHead />
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/automation-setup" element={<AutomationSetup />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/achievements" element={<Achievements />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </Layout>
-        </Router>
+        <SEOHead />
+        <Layout>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/services" component={Services} />
+            <Route path="/automation-setup" component={AutomationSetup} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/achievements" component={Achievements} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </Layout>
       </LanguageProvider>
     </ThemeProvider>
   );

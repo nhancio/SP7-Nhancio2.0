@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 import { ArrowRight, Zap, Target, Users, Award } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import TavusVideo from '../components/Widgets/TavusVideo';

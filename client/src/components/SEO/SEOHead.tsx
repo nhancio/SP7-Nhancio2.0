@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'wouter';
 
 const seoData = {
   '/': {
@@ -25,10 +25,10 @@ const seoData = {
 };
 
 export default function SEOHead() {
-  const location = useLocation();
+  const [location] = useLocation();
 
   useEffect(() => {
-    const currentSEO = seoData[location.pathname as keyof typeof seoData] || seoData['/'];
+    const currentSEO = seoData[location as keyof typeof seoData] || seoData['/'];
     
     document.title = currentSEO.title;
     
@@ -72,7 +72,7 @@ export default function SEOHead() {
     return () => {
       document.head.removeChild(script);
     };
-  }, [location.pathname]);
+  }, [location]);
 
   return null;
 }
