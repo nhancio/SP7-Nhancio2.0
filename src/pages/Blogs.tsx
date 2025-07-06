@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, User, ArrowRight, BookOpen, TrendingUp, Lightbulb } from 'lucide-react';
+import { Calendar, User, ArrowRight, BookOpen, TrendingUp, Lightbulb, ArrowLeft } from 'lucide-react';
 
 const Blogs = () => {
   const blogPosts = [
@@ -79,10 +79,44 @@ const Blogs = () => {
 
   const categories = ["All", "AI & Technology", "Web Development", "Data Science", "Design", "Automation"];
   const [selectedCategory, setSelectedCategory] = React.useState("All");
+  const [openBlog, setOpenBlog] = React.useState<null | typeof blogPosts[0]>(null);
 
   const filteredPosts = selectedCategory === "All" 
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
+
+  if (openBlog) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <button
+            className="flex items-center gap-2 text-purple-600 font-medium hover:text-purple-700 mb-8"
+            onClick={() => setOpenBlog(null)}
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back to Blogs
+          </button>
+          <img src={openBlog.image} alt={openBlog.title} className="w-full h-56 object-cover rounded-2xl mb-6" />
+          <h2 className="text-3xl font-bold mb-2">{openBlog.title}</h2>
+          <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+            <span><User className="inline w-4 h-4 mr-1" />{openBlog.author}</span>
+            <span><Calendar className="inline w-4 h-4 mr-1" />{openBlog.date}</span>
+            <span>{openBlog.readTime}</span>
+          </div>
+          <div className="mb-4">
+            <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-2xl text-xs font-medium">{openBlog.category}</span>
+          </div>
+          <p className="text-gray-700 mb-4">{openBlog.excerpt}</p>
+          <div className="flex flex-wrap gap-2 mb-2">
+            {openBlog.tags.map((tag, idx) => (
+              <span key={idx} className="bg-purple-100 text-purple-600 px-3 py-1 rounded-2xl text-xs font-medium">{tag}</span>
+            ))}
+          </div>
+          <div className="text-gray-400 text-xs">* Full blog content goes here *</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
@@ -178,7 +212,10 @@ const Blogs = () => {
 
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">{post.readTime}</span>
-                  <button className="flex items-center gap-2 text-purple-600 font-medium hover:text-purple-700 transition-colors group">
+                  <button
+                    className="flex items-center gap-2 text-purple-600 font-medium hover:text-purple-700 transition-colors group"
+                    onClick={() => setOpenBlog(post)}
+                  >
                     Read More
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
@@ -186,31 +223,6 @@ const Blogs = () => {
               </div>
             </article>
           ))}
-        </div>
-
-        {/* Newsletter Signup */}
-        <div className="mt-20">
-          <div className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-8 text-center shadow-lg border border-white/30"
-               style={{
-                 boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
-               }}>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              Stay Updated with Our Latest Insights
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Subscribe to our newsletter and never miss our latest blog posts and tech insights
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-              />
-              <button className="bg-purple-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-purple-700 transition-colors">
-                Subscribe
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

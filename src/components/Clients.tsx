@@ -3,24 +3,28 @@ import React from 'react';
 const Clients = () => {
   const clients = [
     {
-      name: "TechStartup Inc",
-      logo: "https://images.pexels.com/photos/7887800/pexels-photo-7887800.jpeg?auto=compress&cs=tinysrgb&w=300",
-      testimonial: "Nhancio transformed our business with their AI solutions. The automation they built saved us 40 hours per week."
+      name: "Kuvaira",
+      logo: "https://kuvaira.in/logo.png",
+      testimonial: "Nhancio's AI solutions helped us automate our business and scale faster.",
+      url: "https://kuvaira.in"
     },
     {
-      name: "Global Solutions Ltd",
-      logo: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=300",
-      testimonial: "Working with the Nhancio team was incredible. Their expertise in AI and dedication to quality is unmatched."
+      name: "Avira Events",
+      logo: "https://aviraevents.com/logo.png",
+      testimonial: "Their team delivered a robust event management platform for us.",
+      url: "https://aviraevents.com"
     },
     {
-      name: "Innovation Corp",
-      logo: "https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=300",
-      testimonial: "The custom web application they developed exceeded our expectations. Highly recommend their services."
+      name: "Ion Semiconductor",
+      logo: "https://ionsemiconductor.com/logo.png",
+      testimonial: "Nhancio's data analytics gave us deep insights into our manufacturing process.",
+      url: "https://ionsemiconductor.com"
     },
     {
-      name: "Future Tech",
-      logo: "https://images.pexels.com/photos/5599425/pexels-photo-5599425.jpeg?auto=compress&cs=tinysrgb&w=300",
-      testimonial: "Their data analytics dashboard gave us insights we never had before. Game-changing work!"
+      name: "Tejas Academy",
+      logo: "https://tejas-academy.com/logo.png",
+      testimonial: "The custom learning platform built by Nhancio is loved by our students.",
+      url: "https://tejas-academy.com"
     }
   ];
 
@@ -38,9 +42,12 @@ const Clients = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {clients.map((client, index) => (
-            <div
+            <a
               key={index}
-              className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-white/30"
+              href={client.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border border-white/30 block"
               style={{
                 boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
               }}
@@ -49,6 +56,7 @@ const Clients = () => {
                 src={client.logo}
                 alt={client.name}
                 className="w-16 h-16 rounded-2xl mx-auto mb-4 object-cover"
+                onError={e => { (e.target as HTMLImageElement).src = 'https://placehold.co/64x64?text=Logo'; }}
               />
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
                 {client.name}
@@ -56,7 +64,7 @@ const Clients = () => {
               <p className="text-gray-600 text-sm leading-relaxed">
                 "{client.testimonial}"
               </p>
-            </div>
+            </a>
           ))}
         </div>
       </div>

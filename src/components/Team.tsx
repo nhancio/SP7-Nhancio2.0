@@ -1,35 +1,35 @@
 import React from 'react';
-import { Linkedin, Github, Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 const Team = () => {
   const teamMembers = [
     {
-      name: "Rahul Sharma",
-      role: "Co-Founder & CEO",
-      bio: "IIT Delhi graduate with 8+ years in AI/ML. Former tech lead at Google.",
+      name: "Didigam Nithin",
+      role: "Co-founder and CEO",
+      bio: "",
       image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
-      social: { linkedin: "#", github: "#", email: "#" }
+      social: { linkedin: "#", email: "#" }
     },
     {
-      name: "Priya Gupta",
-      role: "Co-Founder & CTO",
-      bio: "IIT Bombay alumna specializing in full-stack development and system architecture.",
+      name: "Abhinay Gupta",
+      role: "Co-founder and CBO",
+      bio: "",
       image: "https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=400",
-      social: { linkedin: "#", github: "#", email: "#" }
+      social: { linkedin: "#", email: "#" }
     },
     {
-      name: "Arjun Patel",
-      role: "Head of AI/ML",
-      bio: "PhD in Machine Learning from IIT Madras. Expert in NLP and computer vision.",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
-      social: { linkedin: "#", github: "#", email: "#" }
-    },
-    {
-      name: "Sneha Reddy",
-      role: "Head of Design",
-      bio: "Award-winning designer with expertise in UI/UX and brand strategy.",
+      name: "Nikhitha Reddy",
+      role: "Co-founder and CAIO",
+      bio: "",
       image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400",
-      social: { linkedin: "#", github: "#", email: "#" }
+      social: { linkedin: "#", email: "#" }
+    },
+    {
+      name: "Murali Krishna",
+      role: "CPO",
+      bio: "",
+      image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400",
+      social: { linkedin: "#", email: "#" }
     }
   ];
 
@@ -77,12 +77,6 @@ const Team = () => {
                   className="w-10 h-10 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center hover:bg-blue-200 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href={member.social.github}
-                  className="w-10 h-10 bg-gray-100 text-gray-600 rounded-2xl flex items-center justify-center hover:bg-gray-200 transition-colors"
-                >
-                  <Github className="w-5 h-5" />
                 </a>
                 <a
                   href={member.social.email}

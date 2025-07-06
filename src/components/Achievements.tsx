@@ -1,30 +1,24 @@
 import React from 'react';
-import { Trophy, Award, Star, Users } from 'lucide-react';
+import { Trophy, Award, TrendingUp } from 'lucide-react';
 
 const Achievements = () => {
   const achievements = [
     {
       icon: <Trophy className="w-8 h-8" />,
-      title: "15+ Hackathons Won",
-      description: "Including Smart India Hackathon and IBM Watson Challenge",
+      title: "Won Mathhack 2.0",
+      description: "Winners of Mathhack 2.0 by Govt of Telangana",
       color: "bg-yellow-100 text-yellow-600"
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: "AI Innovation Award 2023",
-      description: "Recognized for breakthrough work in automated workflows",
+      title: "Incubated by T-Hub",
+      description: "Recognized and incubated by T-Hub Hyderabad",
       color: "bg-purple-100 text-purple-600"
     },
     {
-      icon: <Star className="w-8 h-8" />,
-      title: "50+ Successful Projects",
-      description: "Delivered across 15+ countries with 98% client satisfaction",
-      color: "bg-blue-100 text-blue-600"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Global Startup Partner",
-      description: "Official technology partner for 3 Y Combinator startups",
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "2x Growth in Hyderabad",
+      description: "Growing 2x in Hyderabad markets",
       color: "bg-green-100 text-green-600"
     }
   ];
@@ -48,7 +42,7 @@ const Achievements = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {achievements.map((achievement, index) => (
             <div
               key={index}

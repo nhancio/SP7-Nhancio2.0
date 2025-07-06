@@ -9,15 +9,17 @@ const Products = () => {
       description: "Smart home automation platform that learns your preferences and optimizes energy consumption",
       features: ["Voice Control", "Energy Optimization", "Predictive Maintenance", "Mobile App"],
       color: "bg-blue-100 text-blue-600",
-      gradient: "from-blue-400 to-blue-600"
+      gradient: "from-blue-400 to-blue-600",
+      link: "https://homematesapp.in"
     },
     {
       icon: <Bot className="w-10 h-10" />,
-      name: "Agent Automation Suite",
+      name: "Agentlybot",
       description: "Complete workflow automation platform for businesses to streamline operations",
       features: ["No-Code Builder", "API Integrations", "Real-time Analytics", "Team Collaboration"],
       color: "bg-purple-100 text-purple-600",
-      gradient: "from-purple-400 to-purple-600"
+      gradient: "from-purple-400 to-purple-600",
+      link: "https://agentlybot.com"
     },
     {
       icon: <Cpu className="w-10 h-10" />,
@@ -25,7 +27,8 @@ const Products = () => {
       description: "Custom AI models and tools for businesses to integrate intelligent features",
       features: ["Custom Training", "API Access", "Multi-language Support", "Fine-tuning"],
       color: "bg-green-100 text-green-600",
-      gradient: "from-green-400 to-green-600"
+      gradient: "from-green-400 to-green-600",
+      link: "#"
     }
   ];
 
@@ -72,12 +75,22 @@ const Products = () => {
               </div>
 
               <div className="flex gap-3">
-                <button className={`flex-1 bg-gradient-to-r ${product.gradient} text-white py-3 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105`}>
+                <a
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex-1 bg-gradient-to-r ${product.gradient} text-white py-3 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-center`}
+                >
                   Try Demo
-                </button>
-                <button className="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-2xl hover:bg-gray-200 transition-all duration-300 group-hover:bg-gray-200">
+                </a>
+                <a
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 bg-gray-100 text-gray-600 rounded-2xl hover:bg-gray-200 transition-all duration-300 group-hover:bg-gray-200"
+                >
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </div>
           ))}

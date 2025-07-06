@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -53,10 +54,11 @@ const Navigation = () => {
   }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
-    // Handle page navigation
-    if (sectionId === 'blogs' || sectionId === 'careers') {
+    // If not on home, navigate to home and scroll after navigation
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
       setIsMenuOpen(false);
-      return; // Let the Link component handle navigation
+      return;
     }
     
     // Handle section scrolling on home page
