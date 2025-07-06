@@ -76,9 +76,9 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50">
       {/* Full-width Carousel */}
-      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] max-w-none px-0 py-0">
+      <div className="relative w-full md:w-screen md:left-1/2 md:right-1/2 md:-ml-[50vw] md:-mr-[50vw] max-w-none px-0 py-0 overflow-x-hidden">
         <div className="relative rounded-none overflow-hidden shadow-xl mb-12 h-screen min-h-[32rem] flex items-center justify-center">
           {/* Background Images with Smooth Transitions */}
           {carouselSlides.map((slideData, idx) => (
@@ -99,25 +99,27 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent z-10"></div>
           
           {/* Dynamic Flowing Text */}
-          <div className="absolute inset-0 flex items-center justify-center z-20 w-full px-4">
+          <div className="absolute inset-0 flex items-center justify-center z-20 m-0 p-0">
             {carouselSlides.map((slideData, idx) => (
               <div
                 key={idx}
-                className={`w-full transition-all duration-1000 ease-in-out flex flex-col items-center justify-center ${
+                className={`transition-all duration-1000 ease-in-out flex flex-col items-center justify-center m-0 p-0 ${
                   slide === idx 
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
                 }`}
               >
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg text-center">
-                  <span className="inline-block animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-                    {slideData.headline}
-                  </span>
-                  <br />
-                  <span className="text-amber-400 inline-block animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-                    {slideData.subheadline}
-                  </span>
-                </h1>
+                <div className="max-w-2xl w-full mx-auto">
+                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg text-center">
+                    <span className="inline-block animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+                      {slideData.headline}
+                    </span>
+                    <br />
+                    <span className="text-amber-400 inline-block animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+                      {slideData.subheadline}
+                    </span>
+                  </h1>
+                </div>
               </div>
             ))}
           </div>
