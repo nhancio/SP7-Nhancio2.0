@@ -39,63 +39,128 @@ const offerings = [
 
 const Hero = () => {
   const [slide, setSlide] = React.useState(0);
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setSlide((prev) => (prev + 1) % carouselSlides.length);
+      if (!isTransitioning) {
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setSlide((prev) => (prev + 1) % carouselSlides.length);
+          setIsTransitioning(false);
+        }, 300);
+      }
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isTransitioning]);
+
+  const handleSlideChange = (newSlide: number) => {
+    if (!isTransitioning && newSlide !== slide) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setSlide(newSlide);
+        setIsTransitioning(false);
+      }, 300);
+    }
+  };
+
+  const handleHeroButtonClick = (sectionId: string) => {
+    if (window.location.pathname !== '/') {
+      window.location.href = '/#' + sectionId;
+      return;
+    }
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
       {/* Full-width Carousel */}
       <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] max-w-none px-0 py-0">
-        <div className="relative rounded-none overflow-hidden shadow-xl mb-12 h-[28rem] md:h-[38rem] flex items-center justify-center">
-          <img
-            src={carouselSlides[slide].image}
-            alt={carouselSlides[slide].headline}
-            className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
-            style={{ zIndex: 1 }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-transparent z-10"></div>
-          <div className="relative z-20 text-center w-full">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              {carouselSlides[slide].headline}
-              <br />
-              <span className="text-amber-400">{carouselSlides[slide].subheadline}</span>
-            </h1>
+        <div className="relative rounded-none overflow-hidden shadow-xl mb-12 h-screen min-h-[32rem] flex items-center justify-center">
+          {/* Background Images with Smooth Transitions */}
+          {carouselSlides.map((slideData, idx) => (
+            <img
+              key={idx}
+              src={slideData.image}
+              alt={slideData.headline}
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+                slide === idx 
+                  ? 'opacity-100 scale-100' 
+                  : 'opacity-0 scale-105'
+              }`}
+              style={{ zIndex: 1 }}
+            />
+          ))}
+          
+          {/* Enhanced Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent z-10"></div>
+          
+          {/* Dynamic Flowing Text */}
+          <div className="absolute inset-0 flex items-center justify-center z-20 w-full px-4">
+            {carouselSlides.map((slideData, idx) => (
+              <div
+                key={idx}
+                className={`w-full transition-all duration-1000 ease-in-out flex flex-col items-center justify-center ${
+                  slide === idx 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+              >
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg text-center">
+                  <span className="inline-block animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+                    {slideData.headline}
+                  </span>
+                  <br />
+                  <span className="text-amber-400 inline-block animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+                    {slideData.subheadline}
+                  </span>
+                </h1>
+              </div>
+            ))}
           </div>
-          {/* Carousel Controls */}
+          
+          {/* Enhanced Carousel Controls */}
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-purple-600 rounded-full p-2 shadow transition"
-            onClick={() => setSlide((slide - 1 + carouselSlides.length) % carouselSlides.length)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-purple-600 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 backdrop-blur-sm"
+            onClick={() => handleSlideChange((slide - 1 + carouselSlides.length) % carouselSlides.length)}
             aria-label="Previous"
             style={{ zIndex: 30 }}
+            disabled={isTransitioning}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-purple-600 rounded-full p-2 shadow transition"
-            onClick={() => setSlide((slide + 1) % carouselSlides.length)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-purple-600 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 backdrop-blur-sm"
+            onClick={() => handleSlideChange((slide + 1) % carouselSlides.length)}
             aria-label="Next"
             style={{ zIndex: 30 }}
+            disabled={isTransitioning}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
-          {/* Dots */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+          
+          {/* Enhanced Dots with Smooth Transitions */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
             {carouselSlides.map((_, idx) => (
               <button
                 key={idx}
-                className={`w-3 h-3 rounded-full ${slide === idx ? 'bg-amber-400' : 'bg-white/60'} border border-white`}
-                onClick={() => setSlide(idx)}
+                className={`w-4 h-4 rounded-full transition-all duration-500 transform hover:scale-125 ${
+                  slide === idx 
+                    ? 'bg-amber-400 scale-125 shadow-lg' 
+                    : 'bg-white/60 hover:bg-white/80'
+                } border-2 border-white/80 backdrop-blur-sm`}
+                onClick={() => handleSlideChange(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
+                disabled={isTransitioning}
               />
             ))}
           </div>
         </div>
       </div>
+      
       {/* Main content container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
@@ -105,10 +170,16 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <button className="bg-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+            <button
+              className="bg-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              onClick={() => handleHeroButtonClick('contact')}
+            >
               Start Your Project
             </button>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+            <button
+              className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              onClick={() => handleHeroButtonClick('clients')}
+            >
               Explore Our Work
             </button>
           </div>
@@ -140,6 +211,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+
     </section>
   );
 };

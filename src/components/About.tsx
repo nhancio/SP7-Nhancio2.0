@@ -69,7 +69,7 @@ const About = () => {
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Story</h3>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Founded in 2021 by a group of passionate IITians, Nhancio emerged from a shared vision 
+                Founded in 2024 by a group of passionate IITians, Nhancio emerged from a shared vision 
                 to bridge the gap between cutting-edge AI research and practical business applications.
               </p>
               <p>

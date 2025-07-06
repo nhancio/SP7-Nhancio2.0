@@ -89,10 +89,10 @@ const Navigation = () => {
                   <Link
                     key={item.id}
                     to={`/${item.id}`}
-                    className={`px-3 py-2 rounded-2xl text-sm font-medium transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 border shadow-md bg-white/90 hover:bg-purple-50 active:shadow-inner focus:outline-none focus:ring-2 focus:ring-purple-300 ${
                       activeSection === item.id
-                        ? 'bg-purple-100 text-purple-700 shadow-inner'
-                        : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'
+                        ? 'border-purple-400 text-purple-700 shadow-lg' 
+                        : 'border-gray-200 text-gray-700 hover:border-purple-300'
                     }`}
                   >
                     {item.label}
@@ -101,10 +101,10 @@ const Navigation = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-3 py-2 rounded-2xl text-sm font-medium transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 border shadow-md bg-white/90 hover:bg-purple-50 active:shadow-inner focus:outline-none focus:ring-2 focus:ring-purple-300 ${
                       activeSection === item.id
-                        ? 'bg-purple-100 text-purple-700 shadow-inner'
-                        : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'
+                        ? 'border-purple-400 text-purple-700 shadow-lg' 
+                        : 'border-gray-200 text-gray-700 hover:border-purple-300'
                     }`}
                   >
                     {item.label}
@@ -136,10 +136,10 @@ const Navigation = () => {
                   key={item.id}
                   to={`/${item.id}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-3 py-2 rounded-2xl text-sm font-medium transition-all duration-300 ${
+                  className={`block w-full text-left px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 border shadow-md bg-white/90 hover:bg-purple-50 active:shadow-inner focus:outline-none focus:ring-2 focus:ring-purple-300 ${
                     activeSection === item.id
-                      ? 'bg-purple-100 text-purple-700 shadow-inner'
-                      : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'
+                      ? 'border-purple-400 text-purple-700 shadow-lg' 
+                      : 'border-gray-200 text-gray-700 hover:border-purple-300'
                   }`}
                 >
                   {item.label}
@@ -148,10 +148,10 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-2xl text-base font-medium transition-all duration-300 ${
+                  className={`block w-full text-left px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 border shadow-md bg-white/90 hover:bg-purple-50 active:shadow-inner focus:outline-none focus:ring-2 focus:ring-purple-300 ${
                     activeSection === item.id
-                      ? 'bg-purple-100 text-purple-700 shadow-inner'
-                      : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'
+                      ? 'border-purple-400 text-purple-700 shadow-lg' 
+                      : 'border-gray-200 text-gray-700 hover:border-purple-300'
                   }`}
                 >
                   {item.label}
