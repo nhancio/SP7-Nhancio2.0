@@ -17,17 +17,10 @@ const Achievements = () => {
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "2x Growth in Hyderabad",
-      description: "Growing 2x in Hyderabad markets",
+      title: "Fastest growing startup in Hyderabad",
+      description: "Recognized as the fastest growing startup in Hyderabad markets",
       color: "bg-green-100 text-green-600"
     }
-  ];
-
-  const stats = [
-    { number: "500+", label: "AI Models Deployed" },
-    { number: "1M+", label: "Data Points Processed" },
-    { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "24/7", label: "Support Available" }
   ];
 
   return (
@@ -62,24 +55,6 @@ const Achievements = () => {
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30"
-             style={{
-               boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
-             }}>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <div key={index}>
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

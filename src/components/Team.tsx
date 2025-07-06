@@ -26,7 +26,7 @@ const Team = () => {
     },
     {
       name: "Murali Krishna",
-      role: "CPO",
+      role: "COO",
       bio: "",
       image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400",
       social: { linkedin: "#", email: "#" }

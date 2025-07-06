@@ -49,9 +49,9 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Carousel */}
-        <div className="relative rounded-3xl overflow-hidden shadow-xl mb-12 h-80 md:h-[28rem] flex items-center justify-center">
+      {/* Full-width Carousel */}
+      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] max-w-none px-0 py-0">
+        <div className="relative rounded-none overflow-hidden shadow-xl mb-12 h-[28rem] md:h-[38rem] flex items-center justify-center">
           <img
             src={carouselSlides[slide].image}
             alt={carouselSlides[slide].headline}
@@ -95,7 +95,9 @@ const Hero = () => {
             ))}
           </div>
         </div>
-
+      </div>
+      {/* Main content container */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
             A dream by IITians to build the future with AI. We transform ideas into 
