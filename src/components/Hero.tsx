@@ -99,30 +99,29 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent z-10"></div>
           
           {/* Dynamic Flowing Text */}
-          <div className="absolute inset-0 flex items-center justify-center z-20 m-0 p-0">
-            {carouselSlides.map((slideData, idx) => (
-              <div
-                key={idx}
-                className={`transition-all duration-1000 ease-in-out flex flex-col items-center justify-center m-0 p-0 ${
-                  slide === idx 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-8'
-                }`}
-              >
-                <div className="max-w-2xl w-full mx-auto">
-                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg text-center">
-                    <span className="inline-block animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-                      {slideData.headline}
-                    </span>
-                    <br />
-                    <span className="text-amber-400 inline-block animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-                      {slideData.subheadline}
-                    </span>
-                  </h1>
-                </div>
-              </div>
-            ))}
+      <div className="absolute inset-0 flex items-center justify-center z-20 text-center">
+        {carouselSlides.map((slideData, idx) => (
+          <div
+            key={idx}
+            className={`transition-all duration-1000 ease-in-out absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
+              slide === idx 
+                ? 'opacity-100 scale-100' 
+                : 'opacity-0 scale-105 pointer-events-none'
+            } w-full max-w-4xl px-4`}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+              <span className="inline-block animate-fadeInUp w-full" style={{ animationDelay: '0.2s' }}>
+                {slideData.headline}
+              </span>
+              <br />
+              <span className="text-amber-400 inline-block animate-fadeInUp w-full" style={{ animationDelay: '0.4s' }}>
+                {slideData.subheadline}
+              </span>
+            </h1>
           </div>
+        ))}
+      </div>
+
           
           {/* Enhanced Carousel Controls */}
           <button

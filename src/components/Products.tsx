@@ -4,7 +4,7 @@ import { Home, Bot, Cpu, ArrowRight } from 'lucide-react';
 const Products = () => {
   const products = [
     {
-      icon: <Home className="w-10 h-10" />,
+      icon: <img src="/logos/homemates-logo.jpg" alt="Homemates AI" className="w-10 h-10 object-contain" />,
       name: "Homemates AI",
       description: "Smart home automation platform that learns your preferences and optimizes energy consumption",
       features: ["Voice Control", "Energy Optimization", "Predictive Maintenance", "Mobile App"],

@@ -4,13 +4,13 @@ import { Trophy, Award, TrendingUp } from 'lucide-react';
 const Achievements = () => {
   const achievements = [
     {
-      icon: <Trophy className="w-8 h-8" />,
+      icon: <img src="/logos/Telangana-LOGO.png" alt="Telangana" className="w-10 h-10 object-contain" />,
       title: "Won Mathhack 2.0",
       description: "Winners of Mathhack 2.0 by Govt of Telangana",
       color: "bg-yellow-100 text-yellow-600"
     },
     {
-      icon: <Award className="w-8 h-8" />,
+      icon: <img src="/logos/thub-logo.png" alt="T-Hub" className="w-10 h-10 object-contain" />,
       title: "Incubated by T-Hub",
       description: "Recognized and incubated by T-Hub Hyderabad",
       color: "bg-purple-100 text-purple-600"

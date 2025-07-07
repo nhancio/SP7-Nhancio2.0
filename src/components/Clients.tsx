@@ -4,25 +4,25 @@ const Clients = () => {
   const clients = [
     {
       name: "Kuvaira",
-      logo: "https://kuvaira.in/logo.png",
+      logo: "/logos/kuvaira-logo.png",
       testimonial: "Nhancio's AI solutions helped us automate our business and scale faster.",
       url: "https://kuvaira.in"
     },
     {
       name: "Avira Events",
-      logo: "https://aviraevents.com/logo.png",
+      logo: "/logos/avira-logo.png",
       testimonial: "Their team delivered a robust event management platform for us.",
       url: "https://aviraevents.com"
     },
     {
       name: "Ion Semiconductor",
-      logo: "https://ionsemiconductor.com/logo.png",
+      logo: "/logos/ion-logo.png",
       testimonial: "Nhancio's data analytics gave us deep insights into our manufacturing process.",
       url: "https://ionsemiconductor.com"
     },
     {
       name: "Tejas Academy",
-      logo: "https://tejas-academy.com/logo.png",
+      logo: "/logos/tejas-logo.png",
       testimonial: "The custom learning platform built by Nhancio is loved by our students.",
       url: "https://tejas-academy.com"
     }
