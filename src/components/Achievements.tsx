@@ -18,7 +18,7 @@ const Achievements = () => {
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Fastest growing startup in Hyderabad",
-      description: "Recognized as the fastest growing startup in Hyderabad markets",
+      description: "Working on innovative solutions for the future",
       color: "bg-green-100 text-green-600"
     }
   ];

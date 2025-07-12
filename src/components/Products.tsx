@@ -6,8 +6,8 @@ const Products = () => {
     {
       icon: <img src="/logos/homemates-logo.jpg" alt="Homemates AI" className="w-10 h-10 object-contain" />,
       name: "Homemates AI",
-      description: "Smart home automation platform that learns your preferences and optimizes energy consumption",
-      features: ["Voice Control", "Energy Optimization", "Predictive Maintenance", "Mobile App"],
+      description: "AI native platform to match you with preferred flats and flatmates",
+      features: ["Friends search", "Plug & Play rooms", "Quality leads", "Interactive mobile app"],
       color: "bg-blue-100 text-blue-600",
       gradient: "from-blue-400 to-blue-600",
       link: "https://homematesapp.in"
@@ -15,8 +15,8 @@ const Products = () => {
     {
       icon: <Bot className="w-10 h-10" />,
       name: "Agentlybot",
-      description: "Complete workflow automation platform for businesses to streamline operations",
-      features: ["No-Code Builder", "API Integrations", "Real-time Analytics", "Team Collaboration"],
+      description: "Marketplace for AI agents and workflows to build your own AI agents",
+      features: ["Voice Agents", "Workflows", "Agents Marketplace", "AI Agents"],
       color: "bg-purple-100 text-purple-600",
       gradient: "from-purple-400 to-purple-600",
       link: "https://agentlybot.com"

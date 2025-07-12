@@ -8,21 +8,21 @@ const Team = () => {
       role: "Co-founder and CEO",
       bio: "",
       image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
-      social: { linkedin: "#", email: "#" }
+      social: { linkedin: "https://www.linkedin.com/in/didigamnithin/", email: "mailto:nithindidigam@gmail.com" }
     },
     {
-      name: "Abhinay Gupta",
-      role: "Co-founder and CBO",
+      name: "Jay Usadadiya",
+      role: "Co-founder and CTO",
       bio: "",
       image: "https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=400",
-      social: { linkedin: "#", email: "#" }
+      social: { linkedin: "https://www.linkedin.com/in/jay-usadadiya-338032254/", email: "mailto:jayusadadiya49@gmail.com" }
     },
     {
       name: "Nikhitha Reddy",
       role: "Co-founder and CAIO",
       bio: "",
       image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400",
-      social: { linkedin: "#", email: "#" }
+      social: { linkedin: "https://www.linkedin.com/in/nikhithareddy19/", email: "mailto:nikhithadubbaka2003@gmail.com" }
     },
     {
       name: "Murali Krishna",
@@ -74,6 +74,8 @@ const Team = () => {
               <div className="flex justify-center space-x-3">
                 <a
                   href={member.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center hover:bg-blue-200 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />

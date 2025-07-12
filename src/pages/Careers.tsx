@@ -289,12 +289,12 @@ const Careers = () => {
               We're always looking for talented individuals to join our team. Send us your resume and let's talk!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-purple-600 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-purple-700 transition-colors">
+              <a href="mailto:hello@nhancio.com" className="bg-purple-600 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center">
                 Send Resume
-              </button>
-              <button className="bg-white text-purple-600 px-8 py-3 rounded-2xl font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-colors">
+              </a>
+              <a href="mailto:hello@nhancio.com" className="bg-white text-purple-600 px-8 py-3 rounded-2xl font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-colors flex items-center justify-center">
                 Contact HR
-              </button>
+              </a>
             </div>
           </div>
         </div>
