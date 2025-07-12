@@ -7,7 +7,7 @@ const Team = () => {
       name: "Didigam Nithin",
       role: "Co-founder and CEO",
       bio: "",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/people/Nithin.jpg",
       social: { linkedin: "https://www.linkedin.com/in/didigamnithin/", email: "mailto:nithindidigam@gmail.com" }
     },
     {
@@ -21,7 +21,7 @@ const Team = () => {
       name: "Nikhitha Reddy",
       role: "Co-founder and CAIO",
       bio: "",
-      image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/people/nikki.jpg",
       social: { linkedin: "https://www.linkedin.com/in/nikhithareddy19/", email: "mailto:nikhithadubbaka2003@gmail.com" }
     },
     {

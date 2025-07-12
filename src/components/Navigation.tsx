@@ -10,10 +10,9 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services' },
-    { id: 'about', label: 'About Us' },
+    { id: 'products', label: 'Products' },
     { id: 'achievements', label: 'Achievements' },
-    { id: 'products', label: 'Flagship Products' },
+    { id: 'services', label: 'Services' },
     { id: 'careers', label: 'Careers', isPage: true },
     { id: 'blogs', label: 'Blogs', isPage: true },
     { id: 'contact', label: 'Contact Us' }
