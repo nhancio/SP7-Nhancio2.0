@@ -59,14 +59,28 @@ const Navigation = () => {
       setIsMenuOpen(false);
       return;
     }
-    
     // Handle section scrolling on home page
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // slight delay to ensure DOM is ready
     setIsMenuOpen(false);
   };
+
+  // Scroll to section on homepage if state.scrollTo is present
+  useEffect(() => {
+    if (location.pathname === '/' && location.state && (location.state as any).scrollTo) {
+      const sectionId = (location.state as any).scrollTo;
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-lg">

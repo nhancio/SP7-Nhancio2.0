@@ -14,7 +14,7 @@ const Team = () => {
       name: "Jay Usadadiya",
       role: "Co-founder and CTO",
       bio: "",
-      image: "https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/people/jay.jpeg",
       social: { linkedin: "https://www.linkedin.com/in/jay-usadadiya-338032254/", email: "mailto:jayusadadiya49@gmail.com" }
     },
     {
@@ -28,7 +28,7 @@ const Team = () => {
       name: "Murali Krishna",
       role: "COO",
       bio: "",
-      image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/people/murali.jpeg",
       social: { linkedin: "#", email: "#" }
     }
   ];
