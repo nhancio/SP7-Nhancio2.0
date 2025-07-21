@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Clients = () => {
   const clients = [
@@ -28,6 +29,11 @@ const Clients = () => {
     }
   ];
 
+  const cardVariants = {
+    offscreen: { opacity: 0, y: 40 },
+    onscreen: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.3, duration: 0.7 } }
+  };
+
   return (
     <section id="clients" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +48,7 @@ const Clients = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {clients.map((client, index) => (
-            <a
+            <motion.a
               key={index}
               href={client.url}
               target="_blank"
@@ -51,6 +57,11 @@ const Clients = () => {
               style={{
                 boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
               }}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+              whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #6366f1' }}
             >
               <img
                 src={client.logo}
@@ -64,7 +75,7 @@ const Clients = () => {
               <p className="text-gray-600 text-sm leading-relaxed">
                 "{client.testimonial}"
               </p>
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

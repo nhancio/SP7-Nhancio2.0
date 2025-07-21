@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trophy, Award, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Achievements = () => {
   const achievements = [
@@ -25,6 +26,11 @@ const Achievements = () => {
     }
   ];
 
+  const cardVariants = {
+    offscreen: { opacity: 0, y: 40 },
+    onscreen: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.3, duration: 0.7 } }
+  };
+
   return (
     <section id="achievements" className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +46,7 @@ const Achievements = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
             achievement.link ? (
-              <a
+              <motion.a
                 key={index}
                 href={achievement.link}
                 target="_blank"
@@ -49,6 +55,11 @@ const Achievements = () => {
                 style={{
                   boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
                 }}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
+                whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #facc15' }}
               >
                 <div className="flex items-center justify-center mb-6">
                   {achievement.icon}
@@ -59,14 +70,19 @@ const Achievements = () => {
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   {achievement.description}
                 </p>
-              </a>
+              </motion.a>
             ) : (
-              <div
+              <motion.div
                 key={index}
                 className={`bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 group border border-white/30 ${achievement.color}`}
                 style={{
                   boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
                 }}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
+                whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #4ade80' }}
               >
                 <div className="flex items-center justify-center mb-6">
                   {achievement.icon}
@@ -77,7 +93,7 @@ const Achievements = () => {
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   {achievement.description}
                 </p>
-              </div>
+              </motion.div>
             )
           ))}
         </div>

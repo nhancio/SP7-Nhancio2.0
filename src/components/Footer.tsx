@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const quickLinks = [
@@ -7,8 +8,8 @@ const Footer = () => {
     { name: 'About', href: '#about' },
     { name: 'Careers', href: '/careers' },
     { name: 'Blog', href: '/blogs' },
-    { name: 'Privacy Policy', href: '#privacy' },
-    { name: 'Terms of Service', href: '#terms' }
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms and Conditions', href: '/terms-and-conditions' }
   ];
 
   const socialLinks = [
@@ -45,13 +46,23 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
               {quickLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors block"
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="text-gray-400 hover:text-white transition-colors block"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors block"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
             </div>
           </div>

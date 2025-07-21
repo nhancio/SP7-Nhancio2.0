@@ -1,5 +1,17 @@
 import React from 'react';
-import { Code, Brain, Rocket, ArrowRight } from 'lucide-react';
+import { Code, Brain, Rocket, ArrowRight, Cloud, BarChart, Settings, Wifi, Instagram, Linkedin, Github } from 'lucide-react';
+
+const pastelIcons = [
+  { icon: <Brain size={96} />, style: { top: '8%', left: '6%', color: '#E3D7FF' } },
+  { icon: <Cloud size={80} />, style: { top: '18%', right: '8%', color: '#CFFFE5' } },
+  { icon: <BarChart size={72} />, style: { bottom: '12%', left: '10%', color: '#D9ECFF' } },
+  { icon: <Settings size={80} />, style: { bottom: '18%', right: '12%', color: '#FFE5B4' } },
+  { icon: <Code size={72} />, style: { top: '50%', left: '2%', color: '#FADADD' } },
+  { icon: <Wifi size={64} />, style: { bottom: '8%', left: '40%', color: '#E3D7FF' } },
+  { icon: <Instagram size={64} />, style: { top: '10%', right: '30%', color: '#FADADD' } },
+  { icon: <Linkedin size={64} />, style: { bottom: '10%', right: '30%', color: '#CFFFE5' } },
+  { icon: <Github size={64} />, style: { top: '60%', right: '8%', color: '#D9ECFF' } },
+];
 
 const carouselSlides = [
   {
@@ -91,11 +103,21 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50">
+    <section id="home" className="min-h-screen relative bg-gradient-to-br from-babyblue via-blush to-mint">
+      {/* Floating pastel tech icons */}
+      {pastelIcons.map((item, idx) => (
+        <div
+          key={idx}
+          className="bg-icon-pastel"
+          style={{ ...item.style, position: 'absolute' }}
+        >
+          {React.cloneElement(item.icon, { style: { width: 96, height: 96, color: item.style.color } })}
+        </div>
+      ))}
       {/* Full-width Carousel */}
       <div className="relative w-full md:w-screen md:left-1/2 md:right-1/2 md:-ml-[50vw] md:-mr-[50vw] max-w-none px-0 py-0 overflow-x-hidden">
         <div
-          className="relative rounded-none overflow-hidden shadow-xl mb-12 h-screen min-h-[32rem] flex items-center justify-center"
+          className="relative rounded-xxl overflow-hidden soft-shadow mb-12 h-screen min-h-[32rem] flex items-center justify-center"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -115,7 +137,7 @@ const Hero = () => {
             />
           ))}
           {/* Enhanced Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-babyblue/80 via-blush/60 to-mint/80 z-10" style={{mixBlendMode:'lighten'}}></div>
           {/* Dynamic Flowing Text */}
           <div className="absolute inset-0 flex items-center justify-center z-20 text-center">
             {carouselSlides.map((slideData, idx) => (
@@ -127,7 +149,7 @@ const Hero = () => {
                     : 'opacity-0 scale-105 pointer-events-none'
                 } w-full max-w-4xl px-4`}
               >
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4 drop-shadow-lg">
                   <span className="inline-block animate-fadeInUp w-full" style={{ animationDelay: '0.2s' }}>
                     {slideData.headline}
                   </span>
@@ -156,31 +178,28 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
       {/* Main content container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
-          
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <button
-              className="bg-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="bg-mint text-gray-800 px-8 py-4 rounded-xxl font-semibold hover:bg-peach transition-all duration-300 soft-shadow hover:shadow-xl transform hover:scale-105"
               onClick={() => handleHeroButtonClick('contact')}
             >
               Start Your Project
             </button>
             <button
-              className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold border-2 border-purple-600 hover:bg-purple-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="bg-blush text-purple-700 px-8 py-4 rounded-xxl font-semibold border-2 border-purple-200 hover:bg-lavender transition-all duration-300 soft-shadow hover:shadow-xl transform hover:scale-105"
               onClick={() => handleHeroButtonClick('clients')}
             >
               Explore Our Work
             </button>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8 mt-20">
             {offerings.map((offering, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl border border-white/20"
+                className="bg-gradient-to-br from-white/80 to-babyblue/40 backdrop-blur-sm rounded-xxl p-8 soft-shadow hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl border border-white/20"
                 style={{
                   boxShadow: 'inset 0 4px 8px rgba(255, 255, 255, 0.8), inset 0 -4px 8px rgba(0, 0, 0, 0.05), 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08)',
                 }}
@@ -199,8 +218,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
-
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, Brain, Zap, BarChart, TrendingUp, Palette } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Services = () => {
   const services = [
@@ -47,6 +48,11 @@ const Services = () => {
     }
   ];
 
+  const cardVariants = {
+    offscreen: { opacity: 0, y: 40 },
+    onscreen: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.3, duration: 0.7 } }
+  };
+
   return (
     <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,12 +67,17 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-white/30 flex flex-col h-full min-h-[320px]"
               style={{
                 boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
               }}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+              whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #a78bfa' }}
             >
               <div className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center mb-6`}>
                 {service.icon}
@@ -87,7 +98,7 @@ const Services = () => {
               <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

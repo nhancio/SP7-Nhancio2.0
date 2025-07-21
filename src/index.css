@@ -1,9 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/700.css';
 
 html, body {
   overflow-x: hidden;
+  font-family: 'Inter', 'Poppins', ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Custom animations for carousel */
@@ -20,4 +25,19 @@ html, body {
 
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.bg-icon-pastel {
+  opacity: 0.12;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.soft-shadow {
+  box-shadow: 0 4px 24px 0 rgba(80, 80, 120, 0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+}
+
+.rounded-xxl {
+  border-radius: 32px;
 }

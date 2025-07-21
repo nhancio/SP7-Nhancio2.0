@@ -47,12 +47,12 @@ const Contact = () => {
                   <Mail className="w-8 h-8" />
                 </div>
                 <div className="text-xl font-semibold text-gray-800 text-center">Email</div>
-                <a href="mailto:nithindidigam@gmail.com" className="text-2xl text-purple-700 font-bold hover:underline text-center">
-                  nithindidigam@gmail.com
+                <a href="mailto:nithindidigam@nhancio.com" className="text-2xl text-purple-700 font-bold hover:underline text-center">
+                  nithindidigam@nhancio.com
                 </a>
                 <div className="flex flex-col gap-3 mt-4 w-full items-center">
                   <a
-                    href="mailto:nithindidigam@gmail.com"
+                    href="mailto:nithindidigam@nhancio.com"
                     className="flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-2xl font-medium hover:bg-purple-700 transition-colors shadow justify-center"
                   >
                     <Mail className="w-5 h-5" />
