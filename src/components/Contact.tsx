@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, MessageCircle, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Sparkles, Calendar } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -14,7 +14,7 @@ const Contact = () => {
               Ready to transform your business with AI? Let&apos;s discuss your project and explore possibilities.
             </p>
           </div>
-          <div className="relative bg-gradient-to-br from-purple-400/30 via-pink-200/30 to-orange-100/60 rounded-3xl p-12 shadow-2xl border-4 border-white/60 flex flex-col items-center gap-8 w-full max-w-5xl mx-auto animate-pulse-slow hover:animate-none transition-all duration-300"
+          <div className="relative bg-gradient-to-br from-purple-400/30 via-pink-200/30 to-orange-100/60 rounded-3xl p-12 shadow-2xl border-4 border-white/60 flex flex-col items-center gap-8 w-full max-w-6xl mx-auto animate-pulse-slow hover:animate-none transition-all duration-300"
                style={{
                  boxShadow: '0 8px 40px 0 rgba(80, 0, 120, 0.10), 0 2px 8px rgba(0,0,0,0.08)',
                }}>
@@ -82,6 +82,26 @@ const Contact = () => {
                   >
                     <MapPin className="w-5 h-5" />
                     Map
+                  </a>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-2 flex-1">
+                <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-2 shadow-lg">
+                  <Calendar className="w-8 h-8" />
+                </div>
+                <div className="text-xl font-semibold text-gray-800 text-center">Book a Call</div>
+                <div className="text-2xl text-purple-700 font-bold text-center">
+                  Schedule Now
+                </div>
+                <div className="flex flex-col gap-3 mt-4 w-full items-center">
+                  <a
+                    href="https://calendly.com/nithindidigam/nhancio-introductory-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-2xl font-medium hover:bg-orange-600 transition-colors shadow justify-center"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    Book Now
                   </a>
                 </div>
               </div>
