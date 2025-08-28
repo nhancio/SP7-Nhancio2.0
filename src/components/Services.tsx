@@ -1,50 +1,26 @@
 import React from 'react';
-import { Globe, Brain, Zap, BarChart, TrendingUp, Palette } from 'lucide-react';
+import { Code, Brain, Megaphone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Services = () => {
   const services = [
     {
-      icon: <Globe className="w-10 h-10" />,
-      title: "Custom Web and Mobile App Development",
-      description: "Full-stack development with modern frameworks and technologies",
-      color: "bg-blue-100 text-blue-600",
-      tags: ["Automation", "Workflow Optimization", "Process Automation"]
+      icon: <Code className="h-8 w-8" />,
+      title: "Web, App & Software Development",
+      description: "We design and build scalable web, mobile, and custom software solutions using cutting-edge technology, ensuring performance, security, and seamless user experiences tailored to your business needs.",
+      color: "bg-blue-100 text-blue-600"
     },
     {
-      icon: <Brain className="w-10 h-10" />,
-      title: "End-to-End AI & ML Solutions",
-      description: "From concept to deployment, we build intelligent systems",
-      color: "bg-purple-100 text-purple-600",
-      tags: ["AI Agents", "Productivity"]
+      icon: <Brain className="h-8 w-8" />,
+      title: "AI, n8n Automation & Data Science",
+      description: "We implement AI-powered workflows, intelligent n8n automations, and advanced data science models that turn raw data into actionable insights and help you save time, reduce costs, and grow faster.",
+      color: "bg-purple-100 text-purple-600"
     },
     {
-      icon: <Zap className="w-10 h-10" />,
-      title: "Workflow Automation (n8n, Zapier)",
-      description: "Streamline your business processes with smart automation",
-      color: "bg-green-100 text-green-600",
-      tags: ["Task Management", "Automation"]
-    },
-    {
-      icon: <BarChart className="w-10 h-10" />,
-      title: "Data Analytics & Dashboards",
-      description: "Transform data into actionable insights with beautiful visualizations",
-      color: "bg-orange-100 text-orange-600",
-      tags: ["Productivity", "Workflow Optimization"]
-    },
-    {
-      icon: <TrendingUp className="w-10 h-10" />,
-      title: "Marketing & Growth Consulting",
-      description: "Strategic guidance to accelerate your business growth",
-      color: "bg-pink-100 text-pink-600",
-      tags: ["Growth", "Strategy"]
-    },
-    {
-      icon: <Palette className="w-10 h-10" />,
-      title: "UI/UX Design & Branding",
-      description: "Create memorable user experiences with stunning design",
-      color: "bg-cyan-100 text-cyan-600",
-      tags: ["Design", "Branding"]
+      icon: <Megaphone className="h-8 w-8" />,
+      title: "Marketing, Design & Product Development",
+      description: "From branding to product launches, we provide complete end-to-end marketing, design, and product development services, ensuring your ideas are transformed into successful, customer-ready solutions.",
+      color: "bg-green-100 text-green-600"
     }
   ];
 
@@ -81,16 +57,6 @@ const Services = () => {
             >
               <div className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center mb-6`}>
                 {service.icon}
-              </div>
-              <div className="flex flex-wrap gap-2 mb-3">
-                {service.tags && service.tags.map((tag, tagIdx) => (
-                  <span
-                    key={tagIdx}
-                    className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium border border-gray-200 shadow-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {service.title}

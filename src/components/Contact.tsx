@@ -71,7 +71,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="text-2xl text-purple-700 font-bold hover:underline text-center"
                 >
-                  Manikonda, Hyderabad
+                  Hyderabad
                 </a>
                 <div className="flex flex-col gap-3 mt-4 w-full items-center">
                   <a

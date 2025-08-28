@@ -12,7 +12,7 @@ const WhyUs = () => {
     },
     {
       icon: <Users className="w-12 h-12" />,
-      title: "Deep AI/Tech Expertise",
+      title: "Deep AI Expertise",
       description: "Specialized knowledge in artificial intelligence and cutting-edge technologies",
       color: "bg-blue-100 text-blue-600"
     },
