@@ -65,7 +65,7 @@ const Clients = () => {
             >
               <img
                 src={client.logo}
-                alt={client.name}
+                alt={`${client.name} - AI Client Logo`}
                 className="w-16 h-16 rounded-2xl mx-auto mb-4 object-cover"
                 onError={e => { (e.target as HTMLImageElement).src = 'https://placehold.co/64x64?text=Logo'; }}
               />

@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 const Products = () => {
   const products = [
     {
-      icon: <img src="/logos/homemates-logo.jpg" alt="Homemates AI" className="w-10 h-10 object-contain" />,
+      icon: <img src="/logos/homemates-logo.jpg" alt="Homemates AI - Roommate Matching Platform Logo" className="w-10 h-10 object-contain" />,
       name: "Homemates AI",
-      description: "AI native platform to match you with preferred flats and flatmates. Our intelligent matching algorithm connects you with compatible roommates and properties that fit your lifestyle and preferences.",
+      description: "AI-native platform that intelligently matches you with your ideal flats and flatmates. Our advanced matching algorithm connects you with compatible roommates and properties that perfectly align with your lifestyle and preferences.",
       features: ["Friends search", "Plug & Play rooms", "Quality leads", "Interactive mobile app"],
       color: "bg-blue-100 text-blue-600",
       link: "https://homematesapp.in"
@@ -15,7 +15,7 @@ const Products = () => {
     {
       icon: <Bot className="w-10 h-10" />,
       name: "Agentlybot",
-      description: "Marketplace for AI agents and workflows to build your own AI agents. Create, customize, and deploy intelligent automation solutions for your business needs.",
+      description: "Comprehensive marketplace for AI agents and workflows that empowers you to build custom AI agents. Create, customize, and deploy intelligent automation solutions tailored to your specific business requirements.",
       features: ["Voice Agents", "Workflows", "Agents Marketplace", "AI Agents"],
       color: "bg-purple-100 text-purple-600",
       link: "https://agentlybot.com"
@@ -23,7 +23,7 @@ const Products = () => {
     {
       icon: <Scale className="w-10 h-10" />,
       name: "Evidence AI",
-      description: "Advanced sentiment analysis app designed specifically for lawyers. Analyze legal documents, contracts, and communications with AI-powered insights to strengthen your cases.",
+      description: "Advanced sentiment analysis application designed specifically for legal professionals. Analyze legal documents, contracts, and communications with AI-powered insights to strengthen your cases and improve legal outcomes.",
       features: ["Sentiment Analysis", "Legal Document Review", "Case Insights", "AI-Powered Reports"],
       color: "bg-green-100 text-green-600",
       link: "#"
@@ -40,10 +40,10 @@ const Products = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Flagship Products
+            Our AI Products
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Innovative solutions that showcase our AI capabilities and help businesses transform
+            Innovative AI solutions that showcase our capabilities and help businesses transform
           </p>
         </div>
 

@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 const Achievements = () => {
   const achievements = [
     {
-      icon: <img src="/logos/Telangana-LOGO.png" alt="Telangana" className="w-10 h-10 object-contain" />,
+      icon: <img src="/logos/Telangana-LOGO.png" alt="Telangana Government - Official Partner Logo" className="w-10 h-10 object-contain" />,
       title: "Won Mathhack 2.0",
       description: "Winners of Mathhack 2.0 by Govt of Telangana",
       color: "bg-yellow-100 text-yellow-600",
       link: "https://timesofindia.indiatimes.com/city/hyderabad/ai-hackathon-flatmate-finder-to-hair-care-help/articleshow/113139008.cms"
     },
     {
-      icon: <img src="/logos/thub-logo.png" alt="T-Hub" className="w-10 h-10 object-contain" />,
+      icon: <img src="/logos/thub-logo.png" alt="T-Hub Hyderabad - Startup Incubator Logo" className="w-10 h-10 object-contain" />,
       title: "Incubated by T-Hub",
       description: "Recognized and incubated by T-Hub Hyderabad",
       color: "bg-purple-100 text-purple-600",

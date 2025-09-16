@@ -86,8 +86,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen relative bg-gradient-to-br from-babyblue via-blush to-mint">
       {/* SEO-optimized heading structure */}
       <header className="sr-only">
-        <h1>Nhancio - Leading AI Agency | Data Science, AI Agents & Marketing Solutions</h1>
-        <h2>Top AI agency in India specializing in artificial intelligence, machine learning, data science, and AI marketing</h2>
+        <h1>Nhancio - Leading AI Agency in India | Data Science, AI Agents & Marketing Solutions</h1>
       </header>
       
       {/* Floating pastel tech icons */}
@@ -117,7 +116,7 @@ const Hero = () => {
             <img
               key={idx}
               src={slideData.image}
-              alt={`${slideData.headline} - ${slideData.subheadline}`}
+              alt={`AI and Data Science Solutions - ${slideData.headline}`}
               className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
                 slide === idx 
                   ? 'opacity-100 scale-100' 
@@ -142,14 +141,6 @@ const Hero = () => {
                   <span className="inline-block animate-fadeInUp w-full" style={{ animationDelay: '0.2s' }}>
                     {slideData.headline}
                   </span>
-                  {slideData.subheadline && (
-                    <>
-                      <br />
-                      <span className="text-amber-400 inline-block animate-fadeInUp w-full" style={{ animationDelay: '0.4s' }}>
-                        {slideData.subheadline}
-                      </span>
-                    </>
-                  )}
                 </h2>
               </div>
             ))}
@@ -177,16 +168,15 @@ const Hero = () => {
         <div className="text-center">
           {/* SEO-optimized content section */}
           <div className="mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
               Leading AI Agency in India - Data Science & AI Marketing Experts
-            </h3>
+            </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Nhancio is a premier <strong>AI agency</strong> and <strong>data science consulting</strong> company founded by IITians. 
-              We specialize in <strong>artificial intelligence</strong>, <strong>machine learning</strong>, <strong>AI agents</strong>, 
-              <strong>LLMs</strong>, and <strong>AI marketing</strong> solutions. Our expertise in <strong>automation</strong>, 
-              <strong>n8n workflows</strong>, and <strong>digital transformation</strong> makes us the 
-              <strong>best AI consulting agency</strong> for businesses seeking <strong>AI solutions</strong> and 
-              <strong>marketing automation</strong>.
+              Nhancio is a premier AI agency and data science consulting company founded by IITians. 
+              We specialize in artificial intelligence, machine learning, AI agents, 
+              LLMs, and AI marketing solutions. Our expertise in automation, 
+              n8n workflows, and digital transformation helps businesses achieve 
+              intelligent growth through innovative AI solutions and marketing automation.
             </p>
           </div>
           

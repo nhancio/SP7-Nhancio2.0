@@ -7,32 +7,32 @@ const WhyUs = () => {
     {
       icon: <GraduationCap className="w-12 h-12" />,
       title: "Built by IITians",
-      description: "Founded and led by graduates from India's premier technical institutes",
+      description: "Founded and led by graduates from India's premier technical institutes, bringing world-class expertise",
       color: "bg-purple-100 text-purple-600"
     },
     {
       icon: <Users className="w-12 h-12" />,
       title: "Deep AI Expertise",
-      description: "Specialized knowledge in artificial intelligence and cutting-edge technologies",
+      description: "Specialized knowledge in artificial intelligence and cutting-edge technologies with proven industry experience",
       color: "bg-blue-100 text-blue-600"
     },
     {
       icon: <Target className="w-12 h-12" />,
       title: "Agile, Outcome-Driven Team",
-      description: "Fast, flexible, and focused on delivering measurable results",
+      description: "Fast, flexible, and focused on delivering measurable results that drive real business impact",
       color: "bg-green-100 text-green-600"
     },
     {
       icon: <Globe className="w-12 h-12" />,
       title: "Trusted Globally",
-      description: "Serving early-stage startups and global clients with excellence",
+      description: "Serving early-stage startups and global enterprises with excellence and proven success",
       color: "bg-orange-100 text-orange-600"
     }
   ];
 
   const cardVariants = {
     offscreen: { opacity: 0, y: 40 },
-    onscreen: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.3, duration: 0.7 } }
+    onscreen: { opacity: 1, y: 0, transition: { type: 'spring' as const, bounce: 0.3, duration: 0.7 } }
   };
 
   return (

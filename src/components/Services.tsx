@@ -7,19 +7,19 @@ const Services = () => {
     {
       icon: <Code className="h-8 w-8" />,
       title: "Web, App & Software Development",
-      description: "We design and build scalable web, mobile, and custom software solutions using cutting-edge technology, ensuring performance, security, and seamless user experiences tailored to your business needs.",
+      description: "We design and build scalable web applications, mobile apps, and custom software solutions using cutting-edge technology. Our focus on performance, security, and seamless user experiences ensures solutions perfectly tailored to your business needs.",
       color: "bg-blue-100 text-blue-600"
     },
     {
       icon: <Brain className="h-8 w-8" />,
       title: "AI, n8n Automation & Data Science",
-      description: "We implement AI-powered workflows, intelligent n8n automations, and advanced data science models that turn raw data into actionable insights and help you save time, reduce costs, and grow faster.",
+      description: "We implement AI-powered workflows, intelligent n8n automations, and advanced data science models that transform raw data into actionable insights. Our solutions help you save time, reduce operational costs, and accelerate business growth.",
       color: "bg-purple-100 text-purple-600"
     },
     {
       icon: <Megaphone className="h-8 w-8" />,
       title: "Marketing, Design & Product Development",
-      description: "From branding to product launches, we provide complete end-to-end marketing, design, and product development services, ensuring your ideas are transformed into successful, customer-ready solutions.",
+      description: "From branding to product launches, we provide comprehensive end-to-end marketing, design, and product development services. We transform your innovative ideas into successful, customer-ready solutions that drive market success.",
       color: "bg-green-100 text-green-600"
     }
   ];
@@ -34,10 +34,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Our Services
+            Our AI Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive solutions to transform your business with cutting-edge technology
+            Comprehensive AI solutions to transform your business with cutting-edge technology
           </p>
         </div>
 
