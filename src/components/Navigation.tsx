@@ -89,8 +89,13 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-2xl font-bold text-purple-600">
-                Nhancio
+              <Link to="/" className="flex items-center gap-2">
+                <img
+                  src="/logos/Nhancio-logo.png"
+                  alt="Nhancio"
+                  className="h-10 w-auto object-contain"
+                />
+                <span className="text-2xl font-bold text-purple-600">Nhancio</span>
               </Link>
             </div>
           </div>

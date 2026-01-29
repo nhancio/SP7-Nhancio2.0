@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Bot, Scale, ArrowRight } from 'lucide-react';
+import { Bot, Scale } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Products = () => {
@@ -84,18 +84,6 @@ const Products = () => {
                 ))}
               </div>
 
-              <div className="mt-auto">
-                <motion.a
-                  href={product.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                  whileHover={{ scale: 1.05, boxShadow: '0 0 16px 2px #6366f1' }}
-                >
-                  Try Demo
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </motion.a>
-              </div>
             </motion.div>
           ))}
         </div>
