@@ -5,27 +5,30 @@ import { motion } from 'framer-motion';
 const WhyUs = () => {
   const reasons = [
     {
+      image: "/media/choose/ai-research.png",
       icon: <GraduationCap className="w-12 h-12" />,
-      title: "Built by IITians",
-      description: "Founded and led by graduates from India's premier technical institutes, bringing world-class expertise",
+      title: "AI-Driven Research & Rigor",
+      description: "Founded by IITians—we combine research-grade rigor with agentic systems design. From LLMs to multi-agent orchestration, built on a deep AI foundation.",
       color: "bg-purple-100 text-purple-600"
     },
     {
+      image: "/media/choose/dedicated-team.png",
       icon: <Users className="w-12 h-12" />,
-      title: "Deep AI Expertise",
-      description: "Specialized knowledge in artificial intelligence and cutting-edge technologies with proven industry experience",
+      title: "Dedicated Agentic Teams",
+      description: "Specialized squads for autonomous agents, RAG, tool-use, and workflows. We ship production-ready agentic systems, not just prototypes.",
       color: "bg-blue-100 text-blue-600"
     },
     {
+      image: "/media/choose/ai-optimized.png",
       icon: <Target className="w-12 h-12" />,
-      title: "Agile, Outcome-Driven Team",
-      description: "Fast, flexible, and focused on delivering measurable results that drive real business impact",
+      title: "AI-Optimized Delivery",
+      description: "Agile, outcome-driven delivery focused on autonomy and scale. We measure success by how much your agents think, act, and orchestrate.",
       color: "bg-green-100 text-green-600"
     },
     {
       icon: <Globe className="w-12 h-12" />,
       title: "Trusted Globally",
-      description: "Serving early-stage startups and global enterprises with excellence and proven success",
+      description: "Serving startups and enterprises worldwide with agentic-first solutions and proven success.",
       color: "bg-orange-100 text-orange-600"
     }
   ];
@@ -40,10 +43,10 @@ const WhyUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Why Choose Nhancio?
+            Why Nhancio for AI Agents?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We combine academic excellence with practical expertise to deliver exceptional results
+            Agentic-first teams, research rigor, and production-ready autonomous systems
           </p>
         </div>
 
@@ -61,8 +64,13 @@ const WhyUs = () => {
               variants={cardVariants}
               whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #a78bfa' }}
             >
-              <div className={`w-20 h-20 rounded-2xl ${reason.color} flex items-center justify-center mx-auto mb-6`}>
-                {reason.icon}
+              <div className="flex flex-col items-center mb-6">
+                {'image' in reason && reason.image && (
+                  <img src={reason.image} alt="" className="w-16 h-16 object-contain mb-3" />
+                )}
+                <div className={`w-20 h-20 rounded-2xl ${reason.color} flex items-center justify-center`}>
+                  {reason.icon}
+                </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {reason.title}

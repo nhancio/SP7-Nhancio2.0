@@ -10,22 +10,16 @@ const Clients = () => {
       url: "https://kuvaira.in"
     },
     {
-      name: "Avira Events",
-      logo: "/logos/avira-logo.png",
-      testimonial: "Their team delivered a robust event management platform for us.",
-      url: "https://aviraevents.com"
+      name: "TODC",
+      logo: "/logos/todc.png",
+      testimonial: "AI automation agents for restaurant campaigns management in USA.",
+      url: "#"
     },
     {
-      name: "Ion Semiconductor",
-      logo: "/logos/ion-logo.png",
-      testimonial: "Nhancio's data analytics gave us deep insights into our manufacturing process.",
-      url: "https://ionsemiconductor.com"
-    },
-    {
-      name: "Tejas Academy",
-      logo: "/logos/tejas-logo.png",
-      testimonial: "The custom learning platform built by Nhancio is loved by our students.",
-      url: "https://tejas-academy.com"
+      name: "ResGroAI",
+      logo: "/logos/resgro.png",
+      testimonial: "A complete restaurant manager AI with data analytics and delivery optimisation.",
+      url: "#"
     }
   ];
 
@@ -46,7 +40,7 @@ const Clients = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {clients.map((client, index) => (
             <motion.a
               key={index}
@@ -63,12 +57,18 @@ const Clients = () => {
               variants={cardVariants}
               whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #6366f1' }}
             >
-              <img
-                src={client.logo}
-                alt={`${client.name} - AI Client Logo`}
-                className="w-16 h-16 rounded-2xl mx-auto mb-4 object-cover"
-                onError={e => { (e.target as HTMLImageElement).src = 'https://placehold.co/64x64?text=Logo'; }}
-              />
+              {client.logo ? (
+                <img
+                  src={client.logo}
+                  alt={`${client.name} - AI Client Logo`}
+                  className="w-16 h-16 rounded-2xl mx-auto mb-4 object-cover"
+                  onError={e => { (e.target as HTMLImageElement).src = 'https://placehold.co/64x64?text=' + client.name.slice(0, 2); }}
+                />
+              ) : (
+                <div className="w-16 h-16 rounded-2xl mx-auto mb-4 bg-purple-100 text-purple-600 font-bold text-xl flex items-center justify-center">
+                  {client.name.slice(0, 2)}
+                </div>
+              )}
               <h3 className="text-lg font-semibold text-gray-800 mb-3">
                 {client.name}
               </h3>

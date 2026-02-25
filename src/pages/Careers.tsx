@@ -162,12 +162,26 @@ const overview = [
 const Careers = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
+      {/* Hero banner with SP1 image */}
+      <div className="relative w-full h-64 md:h-80 overflow-hidden">
+        <img src="/media/careers/hero-bg.jpg" alt="Careers at Nhancio" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 flex items-end">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 w-full">
+            <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
+              Build the future with AI — join Nhancio
+            </h1>
+            <p className="text-lg text-white/90 mt-2 max-w-2xl">
+              Remote internships on real AI products. Learn from IIT alumni. Agentic-first teams.
+            </p>
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
-            🌟 Nhancio Internship Program
-          </h1>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+            Nhancio Internship Program
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Work on real AI products, learn from IIT Kanpur alumni, and launch your career in tech/startups. Flexible, remote, and high-impact internships for students and early professionals.
           </p>

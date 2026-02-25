@@ -12,8 +12,11 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            A Dream by IITians to Build the Future with AI
+            AI-Agentic First: A Dream by IITians to Build the Future
           </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            From research to production—autonomous agents and intelligent systems that scale.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -88,10 +91,14 @@ const About = () => {
             </motion.div>
           </div>
 
-          <div className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 h-full min-h-[620px] flex flex-col justify-center"
+          <div className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 h-full min-h-[620px] flex flex-col justify-center overflow-hidden"
                style={{
                  boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
                }}>
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              <img src="/media/about/about-1.jpg" alt="Nhancio team and culture" className="w-full h-36 object-cover rounded-2xl" />
+              <img src="/media/about/about-2.jpg" alt="Nhancio at work" className="w-full h-36 object-cover rounded-2xl" />
+            </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Story</h3>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
@@ -103,12 +110,12 @@ const About = () => {
                 has evolved into a thriving company that serves clients across the globe.
               </p>
               <p>
-                Today, we're proud to be at the forefront of AI innovation, helping businesses 
-                transform their operations and unlock new opportunities through intelligent technology.
+                Today we lead with agentic-first systems: autonomous AI agents, multi-agent orchestration, 
+                and intelligent automation that transform how businesses operate.
               </p>
               <p>
-                Our journey from idea to impact continues as we push the boundaries of what's possible 
-                with AI, always staying true to our roots of academic excellence and practical innovation.
+                We keep pushing what’s possible with AI agents—thinking, acting, and orchestrating at scale— 
+                while staying true to research excellence and production impact.
               </p>
             </div>
           </div>

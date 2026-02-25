@@ -1,26 +1,50 @@
 import React from 'react';
-import { Code, Brain, Megaphone } from 'lucide-react';
+import { Code, Megaphone, UserCircle, Headphones, Bot, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Services = () => {
   const services = [
     {
+      image: "/media/services/s1.png",
       icon: <Code className="h-8 w-8" />,
-      title: "Web, App & Software Development",
-      description: "We design and build scalable web applications, mobile apps, and custom software solutions using cutting-edge technology. Our focus on performance, security, and seamless user experiences ensures solutions perfectly tailored to your business needs.",
+      title: "Web & App Development",
+      description: "We design and build scalable web and mobile applications that integrate with your AI stack. APIs, backends, and UIs that let your agents and workflows operate at full capacity.",
       color: "bg-blue-100 text-blue-600"
     },
     {
-      icon: <Brain className="h-8 w-8" />,
-      title: "AI, n8n Automation & Data Science",
-      description: "We implement AI-powered workflows, intelligent n8n automations, and advanced data science models that transform raw data into actionable insights. Our solutions help you save time, reduce operational costs, and accelerate business growth.",
+      image: "/media/services/s2.png",
+      icon: <Megaphone className="h-8 w-8" />,
+      title: "Marketing Automation",
+      description: "End-to-end marketing automation: campaigns, lead nurturing, and analytics powered by AI. From email and social to attribution—automate and scale your growth.",
       color: "bg-purple-100 text-purple-600"
     },
     {
-      icon: <Megaphone className="h-8 w-8" />,
-      title: "Marketing, Design & Product Development",
-      description: "From branding to product launches, we provide comprehensive end-to-end marketing, design, and product development services. We transform your innovative ideas into successful, customer-ready solutions that drive market success.",
+      image: "/media/services/s3.png",
+      icon: <UserCircle className="h-8 w-8" />,
+      title: "SDR Agent for Sales",
+      description: "AI-powered sales development reps that qualify leads, book meetings, and follow up at scale. Custom SDR agents that work your pipeline 24/7 with human-like outreach.",
       color: "bg-green-100 text-green-600"
+    },
+    {
+      image: "/media/services/s4.png",
+      icon: <Headphones className="h-8 w-8" />,
+      title: "Customer Support AI",
+      description: "Intelligent support agents that resolve tickets, answer FAQs, and escalate when needed. Reduce response time and cost while keeping customer satisfaction high.",
+      color: "bg-amber-100 text-amber-600"
+    },
+    {
+      image: "/media/services/s5.png",
+      icon: <Bot className="h-8 w-8" />,
+      title: "Custom AI Agents for Your Use Case",
+      description: "Tailored AI agents for your workflows: RAG, tool-use, multi-step reasoning, and integrations. From internal ops to customer-facing automation—built for your domain.",
+      color: "bg-indigo-100 text-indigo-600"
+    },
+    {
+      image: "/media/services/s6.png",
+      icon: <GraduationCap className="h-8 w-8" />,
+      title: "AI Workshops",
+      description: "Hands-on AI workshops for students and teams. Learn GenAI, LLMs, RAG, and real-world automation with practical projects and mentorship. Community, education, and AI—not just an agency.",
+      color: "bg-teal-100 text-teal-600"
     }
   ];
 
@@ -34,10 +58,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Our AI Services
+            AI-Agentic Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive AI solutions to transform your business with cutting-edge technology
+            From autonomous agents and orchestration to apps and automation—built agentic-first
           </p>
         </div>
 
@@ -55,8 +79,11 @@ const Services = () => {
               variants={cardVariants}
               whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #a78bfa' }}
             >
-              <div className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center mb-6`}>
-                {service.icon}
+              <div className="flex items-center gap-4 mb-6">
+                <img src={service.image} alt="" className="w-14 h-14 object-contain rounded-xl" />
+                <div className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center`}>
+                  {service.icon}
+                </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {service.title}
