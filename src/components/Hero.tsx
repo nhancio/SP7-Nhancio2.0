@@ -96,7 +96,7 @@ const Hero = () => {
           role="region"
           aria-label="AI Agentic Hero"
         >
-          {/* Video background from SP1 */}
+          {/* Video background – use BASE_URL so it works on Netlify/production */}
           <video
             autoPlay
             muted
@@ -105,7 +105,7 @@ const Hero = () => {
             className="absolute inset-0 w-full h-full object-cover"
             style={{ zIndex: 0 }}
           >
-            <source src="/media/hero-back.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}media/hero-back.mp4`} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/50 z-10" aria-hidden="true" />
           {/* Rotating headlines */}
