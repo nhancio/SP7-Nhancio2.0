@@ -14,12 +14,6 @@ const Clients = () => {
       logo: "/logos/todc.png",
       testimonial: "AI automation agents for restaurant campaigns management in USA.",
       url: "#"
-    },
-    {
-      name: "ResGroAI",
-      logo: "/logos/resgro.png",
-      testimonial: "A complete restaurant manager AI with data analytics and delivery optimisation.",
-      url: "#"
     }
   ];
 
