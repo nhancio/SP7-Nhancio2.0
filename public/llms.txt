@@ -1,0 +1,25 @@
+# Nhancio
+
+Nhancio is an AI agency based in Hyderabad, India, founded by IITians. We build AI agents, data science and machine learning solutions, LLM applications, automation workflows, and AI-powered digital marketing for businesses.
+
+## Services
+
+- [AI Development](https://nhancio.com/#services): Custom AI solutions, LLM applications, and AI agent development.
+- [Data Science](https://nhancio.com/#services): Advanced analytics, machine learning, and predictive modelling.
+- [AI Marketing](https://nhancio.com/#services): AI-powered digital marketing and automation.
+- [AI Consulting](https://nhancio.com/#services): Strategic AI advisory and implementation.
+
+## Pages
+
+- [Home](https://nhancio.com/): Overview of Nhancio's AI agency services, products, and achievements.
+- [Blog](https://nhancio.com/blogs): Articles and insights on AI, data science, and automation.
+- [Careers](https://nhancio.com/careers): Open roles and how to join the Nhancio team.
+- [Privacy Policy](https://nhancio.com/privacy-policy): How Nhancio handles user data.
+- [Terms and Conditions](https://nhancio.com/terms-and-conditions): Terms of use for the Nhancio website.
+
+## Contact
+
+- Email: nithindidigam@nhancio.com
+- LinkedIn: https://www.linkedin.com/company/nhancio
+- Instagram: https://www.instagram.com/nhancio.ai/
+- YouTube: https://www.youtube.com/@nhancioai

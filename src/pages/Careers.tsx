@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Clock, Users, Briefcase, ArrowRight, Code, Brain, Palette, TrendingUp, MonitorSmartphone, Smartphone, PenTool, Search } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const internshipOpenings = [
   {
@@ -162,6 +163,11 @@ const overview = [
 const Careers = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
+      <SEO
+        title="Careers - AI & Tech Jobs in Hyderabad | Nhancio"
+        description="Join Nhancio, an AI agency founded by IITians. Explore open roles in AI development, data science, engineering, design, and marketing in Hyderabad, India."
+        path="/careers"
+      />
       {/* Hero banner with SP1 image */}
       <div className="relative w-full h-64 md:h-80 overflow-hidden">
         <img src="/media/careers/hero-bg.jpg" alt="Careers at Nhancio" className="absolute inset-0 w-full h-full object-cover" />

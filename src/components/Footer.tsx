@@ -13,9 +13,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/company/nhancio', color: 'hover:text-blue-600' },
-    { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/nhancio.ai/', color: 'hover:text-pink-600' },
-    { icon: <Youtube className="w-5 h-5" />, href: 'https://www.youtube.com/@nhancioai', color: 'hover:text-red-600' }
+    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/company/nhancio', color: 'hover:text-blue-600', label: 'Nhancio on LinkedIn' },
+    { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/nhancio.ai/', color: 'hover:text-pink-600', label: 'Nhancio on Instagram' },
+    { icon: <Youtube className="w-5 h-5" />, href: 'https://www.youtube.com/@nhancioai', color: 'hover:text-red-600', label: 'Nhancio on YouTube' }
   ];
 
   return (
@@ -35,6 +35,8 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.label}
+                  title={link.label}
                   className={`w-10 h-10 bg-gray-800 rounded-2xl flex items-center justify-center text-gray-400 ${link.color} transition-all duration-300 hover:bg-gray-700`}
                 >
                   {link.icon}

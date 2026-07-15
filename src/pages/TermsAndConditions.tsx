@@ -1,6 +1,13 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const TermsAndConditions = () => (
+  <>
+    <SEO
+      title="Terms and Conditions | Nhancio"
+      description="Review the terms and conditions governing your use of the Nhancio website and services."
+      path="/terms-and-conditions"
+    />
   <section className="max-w-4xl mx-auto py-20 px-4">
     <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
       <h1 className="text-4xl font-bold mb-6 text-gray-800">Terms and Conditions</h1>
@@ -80,6 +87,7 @@ const TermsAndConditions = () => (
       </div>
     </div>
   </section>
+  </>
 );
 
 export default TermsAndConditions; 

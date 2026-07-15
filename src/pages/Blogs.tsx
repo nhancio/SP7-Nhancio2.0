@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, User, ArrowRight, BookOpen, TrendingUp, Lightbulb, ArrowLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Blogs = () => {
   const blogPosts = [
@@ -120,6 +121,11 @@ const Blogs = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
+      <SEO
+        title="Blog - AI, Data Science & Automation Insights | Nhancio"
+        description="Articles and insights on AI agents, data science, machine learning, LLMs, and business automation from the Nhancio team of IITians."
+        path="/blogs"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <div className="text-center mb-16">

@@ -1,6 +1,13 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const PrivacyPolicy = () => (
+  <>
+    <SEO
+      title="Privacy Policy | Nhancio"
+      description="Read Nhancio's privacy policy to understand how we collect, use, and protect your personal data."
+      path="/privacy-policy"
+    />
   <section className="max-w-4xl mx-auto py-20 px-4">
     <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
       <h1 className="text-4xl font-bold mb-6 text-gray-800">Privacy Policy</h1>
@@ -68,6 +75,7 @@ const PrivacyPolicy = () => (
       </div>
     </div>
   </section>
+  </>
 );
 
 export default PrivacyPolicy; 

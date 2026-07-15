@@ -93,6 +93,8 @@ const Navigation = () => {
                 <img
                   src="/logos/Nhancio-logo.png"
                   alt="Nhancio"
+                  width="40"
+                  height="40"
                   className="h-10 w-auto object-contain"
                 />
                 <span className="text-2xl font-bold text-purple-600">Nhancio</span>
@@ -137,6 +139,8 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
               className="inline-flex items-center justify-center p-2 rounded-2xl text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-all duration-300"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

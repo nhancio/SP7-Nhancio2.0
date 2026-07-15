@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/logos/Nhancio-logo.png" />
+    <link rel="apple-touch-icon" href="/logos/Nhancio-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Primary Meta Tags -->
@@ -42,19 +43,11 @@
     <meta property="twitter:url" content="https://nhancio.com/" />
     <meta property="twitter:title" content="Nhancio - Leading AI Agency | Data Science, AI Agents & Marketing Solutions" />
     <meta property="twitter:description" content="Leading AI agency in India specializing in AI agents, data science, LLMs, and AI marketing. Founded by IITians, we deliver cutting-edge AI solutions for intelligent business growth." />
-    <meta property="twitter:image" content="https://nhancio.com/twitter-image.jpg" />
+    <meta property="twitter:image" content="https://nhancio.com/og-image.jpg" />
     
-    <!-- Additional SEO Meta Tags -->
-    <meta name="google-site-verification" content="your-google-verification-code" />
-    <meta name="msvalidate.01" content="your-bing-verification-code" />
-    <meta name="yandex-verification" content="your-yandex-verification-code" />
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://nhancio.com/" />
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Canonical + per-page meta (title, description, robots, OG, Twitter)
+         are set per route by src/components/SEO.tsx via react-helmet-async. -->
+
     
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
@@ -64,11 +57,13 @@
       "name": "Nhancio",
       "alternateName": ["Nhancio AI Agency", "Nhancio Data Science", "Nhancio AI Consulting", "Nhancio Marketing Agency"],
       "url": "https://nhancio.com",
-      "logo": "https://nhancio.com/logo.png",
+      "logo": "https://nhancio.com/logos/Nhancio-logo.png",
       "description": "Leading AI agency specializing in data science, AI agents, LLMs, and AI marketing solutions. Founded by IITians.",
       "foundingDate": "2024",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
         "addressCountry": "India"
       },
       "contactPoint": {
@@ -201,10 +196,12 @@
       "alternateName": ["Nhancio AI Agency", "Nhancio Data Science", "Nhancio AI Consulting", "Nhancio Marketing Agency"],
       "description": "AI agency specializing in data science, AI agents, and marketing solutions",
       "url": "https://nhancio.com",
-      "telephone": "+91-XXXXXXXXXX",
       "email": "nithindidigam@nhancio.com",
+      "image": "https://nhancio.com/og-image.jpg",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
         "addressCountry": "India"
       },
       "geo": {
@@ -378,18 +375,25 @@
       src="https://datafa.st/js/script.cookieless.js"
     ></script>
     
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (deferred: loads after the page is interactive so it
+         no longer blocks initial render / LCP) -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '773429625700346');
-    fbq('track', 'PageView');
+    window.addEventListener('load', function () {
+      var start = function () {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '773429625700346');
+        fbq('track', 'PageView');
+      };
+      if ('requestIdleCallback' in window) { requestIdleCallback(start); }
+      else { setTimeout(start, 1200); }
+    });
     </script>
     <!-- End Meta Pixel Code -->
   </head>
