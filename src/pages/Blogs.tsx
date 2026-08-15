@@ -41,10 +41,10 @@ const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "AI & Technology",
     image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tags: ["AI Agents", "Multi-Agent Systems", "Enterprise Automation", "TALF", "RALF"],
+    tags: ["AI Agents", "Multi-Agent Systems", "Enterprise Automation", "RalphAI", "NFLA App"],
     icon: <Lightbulb className="w-6 h-6" />,
     content: {
-      introduction: "Business automation is undergoing a generational inflection point. For the past decade, robotic process automation (RPA) relied on rigid, rule-based scripts that shattered whenever a UI element shifted or an unexpected input appeared. Today, modern autonomous agent architectures—such as Nhancio's TALF and RALF—combine large language models (LLMs) with deterministic state machines and verified tool execution to create resilient, closed-loop autonomous workflows.",
+      introduction: "Business automation is undergoing a generational inflection point. For the past decade, robotic process automation (RPA) relied on rigid, rule-based scripts that shattered whenever a UI element shifted or an unexpected input appeared. Today, modern autonomous agent architectures—such as Nhancio's RalphAI and NFLA App—combine large language models (LLMs) with deterministic state machines and verified tool execution to create resilient, closed-loop autonomous workflows.",
       sections: [
         {
           heading: "1. The Paradigm Shift from Single Prompts to Multi-Agent Squads",
@@ -57,7 +57,7 @@ const blogPosts: BlogPost[] = [
         },
         {
           heading: "2. Real-World Case Study: Multi-Unit Restaurant Ad Orchestration",
-          body: "In production systems like RalphAI (RALF), autonomous agents authenticate into delivery platforms, extract performance telemetry, evaluate pre/post promotional metrics, and dynamically reallocate daily budgets. This completely replaces 15+ weekly hours of manual operational overhead per restaurant group while boosting Return on Ad Spend (ROAS).",
+          body: "In production systems like RalphAI, autonomous agents authenticate into delivery platforms, extract performance telemetry, evaluate pre/post promotional metrics, and dynamically reallocate daily budgets. This completely replaces 15+ weekly hours of manual operational overhead per restaurant group while boosting Return on Ad Spend (ROAS).",
           keyPoints: [
             "Headless browser automation powered by Playwright and Chrome DevTools Protocol",
             "Automated revenue attribution and anomaly detection across third-party portals",
@@ -284,7 +284,7 @@ const blogPosts: BlogPost[] = [
     tags: ["No-Code", "Enterprise AI", "Product Velocity", "Digital Transformation"],
     icon: <TrendingUp className="w-6 h-6" />,
     content: {
-      introduction: "Digital transformation is no longer constrained by software engineering bandwidth. By uniting modern visual development platforms, headless APIs, and generative AI creation sandboxes (such as MagicBoxAI), business teams can prototype, validate, and scale production systems with unprecedented agility.",
+      introduction: "Digital transformation is no longer constrained by software engineering bandwidth. By uniting modern visual development platforms, headless APIs, and generative AI creation sandboxes (such as the MagicBox AI UGC Factory), business teams can prototype, validate, and scale production systems with unprecedented agility.",
       sections: [
         {
           heading: "1. Bridging the Gap Between Engineering and Business Stakeholders",
@@ -526,7 +526,7 @@ const Blogs = () => {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
       <SEO
         title="Blog - AI Agents, Multi-Agent Systems & Scalable Engineering | Nhancio"
-        description="Explore in-depth technical articles, tutorials, and research insights on autonomous AI agents, TALF, RALF, Vite/React, data science, and business automation."
+        description="Explore in-depth technical articles, tutorials, and research insights on autonomous AI agents, RalphAI, NFLA App, Vite/React, data science, and business automation."
         path="/blogs"
       />
       <Helmet>

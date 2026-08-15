@@ -11,8 +11,8 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     category: "Architecture & Frameworks",
-    question: "What makes Nhancio's autonomous agent frameworks (RALF & TALF) unique?",
-    answer: "Unlike simple prompt wrapper scripts, Nhancio architectures are built on deterministic state machines, closed-loop feedback loops, and resilient tool-calling pipelines. RALF delivers multi-tenant marketing orchestration with headless browser automation (Playwright), while TALF provides event operations, dynamic QR verification, and serverless blob synchronization with sub-second response times."
+    question: "What makes Nhancio's autonomous agent frameworks (RalphAI & NFLA App) unique?",
+    answer: "Unlike simple prompt wrapper scripts, Nhancio architectures are built on deterministic state machines, closed-loop feedback loops, and resilient tool-calling pipelines. RalphAI delivers multi-tenant restaurant marketing orchestration with headless browser automation (Playwright), while the NFLA App / Event Automation Engine provides event operations, dynamic QR verification, and serverless blob synchronization with sub-second response times."
   },
   {
     category: "Engineering & Team",
@@ -27,7 +27,7 @@ const faqs: FAQItem[] = [
   {
     category: "Services & Engagement",
     question: "What types of AI projects does Nhancio take on?",
-    answer: "We specialize in autonomous multi-agent systems, cross-platform mobile apps (like Aura++ on Expo 56), educational and enterprise platforms (like IntelliAssets.AI), generative marketing suites (like MagicBoxAI), and automated growth engines (like ResGro-AI and BiteBoost). We offer end-to-end development, architecture advisory, and specialized engineering sprints."
+    answer: "We specialize in autonomous multi-agent systems, cross-platform mobile apps (like Aura+ on Expo 56), educational and enterprise platforms (like IntelliAssets.AI), generative marketing suites (like MagicBox AI UGC Factory), and automated growth engines (like ResGro-AI and BiteBoost). We offer end-to-end development, architecture advisory, and specialized engineering sprints."
   },
   {
     category: "Timeline & Delivery",

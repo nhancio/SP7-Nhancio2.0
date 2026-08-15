@@ -8,9 +8,9 @@ const Footer = () => {
     { name: 'AI Services', href: '/#services' },
     { name: 'Showcase Projects', href: '/#products' },
     { name: 'Achievements', href: '/#achievements' },
-    { name: 'Why Us', href: '/#whyus' },
-    { name: 'FAQ', href: '/#faq' },
     { name: 'About Us', href: '/#about' },
+    { name: 'FAQ', href: '/#faq' },
+    { name: 'Contact', href: '/#contact' },
     { name: 'Careers', href: '/careers' },
     { name: 'Blog', href: '/blogs' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
@@ -18,10 +18,10 @@ const Footer = () => {
   ];
 
   const featuredProjects = [
-    { name: 'RalphAI (RALF) — Restaurant Ad Automation', href: '/#products' },
-    { name: 'Aura++ — Cross-Platform Ambient Mobile App', href: '/#products' },
-    { name: 'TALF / NFLA — Event & Verification Engine', href: '/#products' },
-    { name: 'MagicBoxAI — Generative Creation Sandbox', href: '/#products' },
+    { name: 'RalphAI — Restaurant Ad Automation', href: '/#products' },
+    { name: 'Aura+ — Cross-Platform Ambient Mobile App', href: '/#products' },
+    { name: 'NFLA App / Event Automation Engine — Countersignature Platform', href: '/#products' },
+    { name: 'MagicBox — AI UGC Factory & Video Ad Creative Engine', href: '/#products' },
     { name: 'IntelliAssets.AI — ACARA AI Tutoring', href: '/#products' },
     { name: 'ResGro-AI — Autonomous Growth Engine', href: 'https://resgro.ai', external: true }
   ];

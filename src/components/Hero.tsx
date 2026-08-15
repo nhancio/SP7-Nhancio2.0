@@ -1,14 +1,15 @@
 import React from 'react';
 import { ArrowRight, Bot, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const heroHeadlines = [
-  "TALF & RALF: Autonomous Multi-Agent Frameworks Engineered by IITians",
+  "RalphAI & NFLA App: Autonomous Multi-Agent Frameworks Engineered by IITians",
   "From Reasoning to Execution — Enterprise Multi-Agent Systems & Tool-Use",
-  "Aura+, MagicBox & IntelliAsset: Scalable AI Products Built for Real-World Impact",
+  "Aura+, MagicBox AI UGC Factory & IntelliAsset: Scalable AI Products Built for Real-World Impact",
 ];
 
 const keyStats = [
-  { value: "8+", label: "Flagship AI Systems", sub: "TALF, RALF, Aura+, MagicBox..." },
+  { value: "8+", label: "Flagship AI Systems", sub: "RalphAI, NFLA App, Aura+, MagicBox..." },
   { value: "500k+", label: "Automated Actions", sub: "Closed-loop execution" },
   { value: "99.4%", label: "Task Convergence", sub: "Resilient state machines" },
   { value: "Govt & T-Hub", label: "Recognized & Incubated", sub: "Mathhack 2.0 Winners" },
@@ -20,7 +21,7 @@ const Hero = () => {
   const touchEndX = React.useRef<number | null>(null);
   const autoSlideTimeout = React.useRef<number | null>(null);
 
-  // Auto-advance headline every 4 seconds
+  // Auto-advance headline every 4.5 seconds
   React.useEffect(() => {
     if (autoSlideTimeout.current) clearTimeout(autoSlideTimeout.current);
     autoSlideTimeout.current = window.setTimeout(() => {
@@ -68,13 +69,13 @@ const Hero = () => {
     <section id="home" className="relative bg-gradient-to-br from-babyblue via-blush to-mint pt-16 overflow-hidden">
       {/* SEO-optimized heading structure */}
       <header className="sr-only">
-        <h1>Nhancio - Elite AI Agency | Autonomous Agents (TALF, RALF), Multi-Agent Systems & AI Products</h1>
+        <h1>Nhancio - Elite AI Agency | Autonomous Agents (RalphAI, NFLA App), Multi-Agent Systems & AI Products</h1>
       </header>
       
       {/* Hero with video background */}
       <div className="relative w-full md:w-screen md:left-1/2 md:right-1/2 md:-ml-[50vw] md:-mr-[50vw] max-w-none px-0 py-0 overflow-x-hidden">
         <div
-          className="relative rounded-b-3xl md:rounded-b-[40px] overflow-hidden soft-shadow h-[70vh] min-h-[30rem] max-h-[44rem] flex items-center justify-center"
+          className="relative rounded-b-3xl md:rounded-b-[40px] overflow-hidden soft-shadow h-[72vh] min-h-[32rem] max-h-[46rem] flex items-center justify-center"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -105,21 +106,22 @@ const Hero = () => {
               <span>Founded by IITians • Leading AI Agency & Venture Lab</span>
             </div>
 
-            <div className="relative w-full max-w-5xl h-36 sm:h-32 flex items-center justify-center">
-              {heroHeadlines.map((headline, idx) => (
-                <div
-                  key={idx}
-                  className={`transition-all duration-1000 ease-in-out absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-                    slide === idx
-                      ? 'opacity-100 scale-100'
-                      : 'opacity-0 scale-105 pointer-events-none'
-                  } w-full px-4`}
+            {/* Non-overlapping Rotating Headline via AnimatePresence mode="wait" */}
+            <div className="relative w-full max-w-5xl min-h-[7rem] sm:min-h-[6.5rem] md:min-h-[8rem] flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={slide}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="w-full px-4 text-center"
                 >
                   <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-xl tracking-tight leading-tight">
-                    {headline}
+                    {heroHeadlines[slide]}
                   </h2>
-                </div>
-              ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             <p className="text-gray-200 text-sm sm:text-lg max-w-3xl mx-auto mt-4 line-clamp-2 sm:line-clamp-none drop-shadow-md">
@@ -186,7 +188,7 @@ const Hero = () => {
       </div>
 
       {/* Main positioning content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-4">
             <Bot className="w-3.5 h-3.5" />
@@ -196,7 +198,7 @@ const Hero = () => {
             Autonomy-First Architecture for High-Growth Startups & Enterprises
           </h2>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-            Nhancio is an elite AI-agentic engineering firm founded by IITians. We specialize in building resilient multi-agent systems, deterministic state machines, LLM reasoning pipelines, and end-to-end multimodal platforms. From our task orchestration core <strong>TALF</strong> and closed-loop marketing engine <strong>RALF</strong> to consumer ecosystems like <strong>Aura+</strong> and <strong>MagicBox</strong>, we turn research-grade AI into defensible business value.
+            Nhancio is an elite AI-agentic engineering firm founded by IITians. We specialize in building resilient multi-agent systems, deterministic state machines, LLM reasoning pipelines, and end-to-end multimodal platforms. From our event automation engine <strong>NFLA App</strong> and restaurant marketing system <strong>RalphAI</strong> to consumer ecosystems like <strong>Aura+</strong> and our <strong>MagicBox AI UGC Factory</strong>, we turn research-grade AI into defensible business value.
           </p>
         </div>
       </div>

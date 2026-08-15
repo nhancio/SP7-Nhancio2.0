@@ -12,7 +12,6 @@ const navItems = [
   { id: 'services', label: 'Services' },
   { id: 'products', label: 'Showcases' },
   { id: 'achievements', label: 'Achievements' },
-  { id: 'whyus', label: 'Why Us' },
   { id: 'about', label: 'About Us' },
   { id: 'faq', label: 'FAQ' },
   { id: 'careers', label: 'Careers', isPage: true },

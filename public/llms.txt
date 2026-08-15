@@ -10,10 +10,10 @@ Nhancio (also known as EnhanceShow / Nhancio) is a premier AI engineering agency
 - **500k+ Automated Actions**: Deployed closed-loop agentic workflows executing autonomous campaigns, document verification, and data pipelines globally.
 
 ## Flagship Showcases & Architectures
-- [RALF (RalphAI)](https://nhancio.com/#products): Unified Multi-Agent Marketing & Analytics System for multi-unit restaurant operators (DoorDash & UberEats), featuring autonomous reporting, ROI attribution, and Playwright browser automation.
-- [Aura++ (AuraPlus)](https://nhancio.com/#products): Fluid 60fps cross-platform lifestyle and ambient intelligence app built with React Native, Expo 56, native audio, camera computer vision, and offline-first SQLite/IDB storage.
-- [TALF / NFLA Convention Engine](https://nhancio.com/#products): Enterprise event workflow platform with in-browser PDF generation, digital touch countersignatures, dynamic cryptographic QR code verification, and Netlify Blobs distributed storage.
-- [MagicBoxAI](https://nhancio.com/#products): Next-generation multimodal AI creation sandbox and monorepo workspace for high-velocity marketing asset generation and serverless inference.
+- [RalphAI](https://nhancio.com/#products): Unified Multi-Agent Marketing & Analytics System for multi-unit restaurant operators (DoorDash & UberEats), featuring autonomous reporting, ROI attribution, and Playwright browser automation.
+- [Aura+](https://nhancio.com/#products): Fluid 60fps cross-platform lifestyle and ambient intelligence app built with React Native, Expo 56, native audio, camera computer vision, and offline-first SQLite/IDB storage.
+- [NFLA App / Event Automation Engine](https://nhancio.com/#products): Enterprise event workflow platform with in-browser PDF generation, digital touch countersignatures, dynamic cryptographic QR code verification, and Netlify Blobs distributed storage.
+- [MagicBox](https://nhancio.com/#products): AI UGC Factory & Automated User-Generated Content Engine for multimodal AI ad creative generation and video production for brands and creators.
 - [IntelliAssets.AI](https://nhancio.com/#products): Australian Curriculum (ACARA Years 1–12) adaptive diagnostic tutoring platform with multi-tenant student portals and Django REST API backends.
 - [ResGro-AI](https://nhancio.com/#products): AI-driven restaurant growth marketing platform featuring autonomous ad platform configuration and headless browser bots (Live at https://resgro.ai).
 - [Homemates AI](https://nhancio.com/#products): High-dimensional vector embedding roommate compatibility engine, recognized by the Telangana Government.
@@ -21,7 +21,7 @@ Nhancio (also known as EnhanceShow / Nhancio) is a premier AI engineering agency
 - [Thryft](https://nhancio.com/#products): Sustainable resale marketplace with computer-vision item authentication and automated pricing algorithms.
 
 ## Core Engineering Services
-- **Autonomous Multi-Agent Systems**: State machine orchestration (TALF/RALF), tool-calling pipelines, human-in-the-loop safeguards.
+- **Autonomous Multi-Agent Systems**: State machine orchestration (RalphAI/NFLA App), tool-calling pipelines, human-in-the-loop safeguards.
 - **Full-Stack AI Web & Mobile Apps**: Native Expo/React Native, Next.js, Vite, React, high-throughput microservices.
 - **AI Growth & Marketing Automation**: Closed-loop acquisition, multimodal asset generation, multi-channel auto-publishing.
 - **Enterprise Knowledge & RAG**: Vector database indexing, zero-hallucination guardrails, private document intelligence.

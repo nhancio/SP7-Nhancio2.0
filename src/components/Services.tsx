@@ -8,7 +8,7 @@ const Services = () => {
       image: "/media/services/s5.png",
       icon: <Bot className="h-8 w-8" />,
       title: "Autonomous Multi-Agent Systems",
-      tagline: "TALF & RALF Architecture",
+      tagline: "RalphAI & NFLA App Architecture",
       description: "Custom multi-agent workflows with state machines, tool-use execution, and deterministic handoffs. From autonomous data pipelines to multi-step reasoning agents that run 24/7.",
       deliverables: ["State Machine Orchestration", "Tool-Calling APIs", "Human-in-the-Loop Safeguards", "Self-Healing Retries"],
       color: "bg-purple-100 text-purple-600"
@@ -27,7 +27,7 @@ const Services = () => {
       icon: <Megaphone className="h-8 w-8" />,
       title: "AI Growth & Marketing Automation",
       tagline: "Closed-Loop Acquisition",
-      description: "End-to-end autonomous marketing engines. Ingest market signals, generate brand-aligned multimodal creatives via MagicBox, and orchestrate automated outreach campaigns.",
+      description: "End-to-end autonomous marketing engines. Ingest market signals, generate brand-aligned multimodal creatives via our MagicBox AI UGC Factory, and orchestrate automated outreach campaigns.",
       deliverables: ["Brand Vector Content Gen", "Multi-Channel Auto-Publishing", "Campaign A/B Optimization", "Lead Qualification"],
       color: "bg-pink-100 text-pink-600"
     },

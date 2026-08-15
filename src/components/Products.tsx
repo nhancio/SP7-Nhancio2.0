@@ -49,8 +49,8 @@ interface ProjectShowcase {
 const projects: ProjectShowcase[] = [
   {
     id: "ralf",
-    name: "RalphAI (RALF)",
-    tagline: "Unified Multi-Agent Marketing & Analytics System",
+    name: "RalphAI",
+    tagline: "Restaurant Multi-Agent Marketing & Analytics System",
     category: "frameworks",
     categoryLabel: "Autonomous Agents",
     badge: "Enterprise Production",
@@ -69,7 +69,7 @@ const projects: ProjectShowcase[] = [
     techStack: ["Python", "FastAPI", "Playwright", "Chrome DevTools", "Streamlit", "PostgreSQL", "Docker"],
     deepDive: {
       problem: "Enterprise restaurant operators manage dozens of delivery accounts with fragmented portals, manual campaign tweaking, and hours of weekly reporting overhead.",
-      solution: "RALF deploys autonomous browser-automation worker agents that authenticate, extract granular ad performance data, compute ROI metrics, and automatically optimize promotional spend.",
+      solution: "RalphAI deploys autonomous browser-automation worker agents that authenticate, extract granular ad performance data, compute ROI metrics, and automatically optimize promotional spend.",
       architecture: [
         "FastAPI orchestration backend with asynchronous worker queues",
         "Headless Chromium agents via Playwright for authenticated portal ingestion",
@@ -85,7 +85,7 @@ const projects: ProjectShowcase[] = [
   },
   {
     id: "aura-plus",
-    name: "Aura++ (AuraPlus)",
+    name: "Aura+",
     tagline: "Cross-Platform Lifestyle & Ambient Intelligence Ecosystem",
     category: "multimodal",
     categoryLabel: "Mobile & Consumer AI",
@@ -105,7 +105,7 @@ const projects: ProjectShowcase[] = [
     techStack: ["React Native 0.85", "Expo 56", "TypeScript", "Zustand", "Reanimated 4", "Firebase", "PostHog"],
     deepDive: {
       problem: "Mobile lifestyle and productivity tools are typically bloated, cloud-dependent with high latency, and lack deep native device integration.",
-      solution: "Aura++ leverages an offline-first architecture with Zustand state management, hardware acceleration via Reanimated 4, and native Expo hardware modules for zero-latency interactions.",
+      solution: "Aura+ leverages an offline-first architecture with Zustand state management, hardware acceleration via Reanimated 4, and native Expo hardware modules for zero-latency interactions.",
       architecture: [
         "Expo Router file-based mobile navigation architecture",
         "Modular native device services: expo-audio, expo-calendar, expo-camera",
@@ -121,7 +121,7 @@ const projects: ProjectShowcase[] = [
   },
   {
     id: "nfla-talf",
-    name: "TALF / NFLA Convention Engine",
+    name: "NFLA App / Event Automation Engine",
     tagline: "Autonomous Event Operations & Digital Verification",
     category: "frameworks",
     categoryLabel: "Autonomous Frameworks",
@@ -140,7 +140,7 @@ const projects: ProjectShowcase[] = [
     techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "@netlify/blobs", "@netlify/functions", "pdf-lib"],
     deepDive: {
       problem: "Large-scale conventions and events struggle with sluggish physical paperwork, forgeable badges, slow countersignature processes, and disjointed attendee check-ins.",
-      solution: "NFLA / TALF delivers an integrated, serverless web application that instantly signs legal agreements, compiles tamper-proof PDFs in browser memory, and stores signed assets in Netlify Blobs.",
+      solution: "The NFLA App / Event Automation Engine delivers an integrated, serverless web application that instantly signs legal agreements, compiles tamper-proof PDFs in browser memory, and stores signed assets in Netlify Blobs.",
       architecture: [
         "React + Vite responsive client optimized for low-bandwidth mobile networks",
         "In-memory PDF synthesis via pdf-lib and html5 signature canvas",
@@ -156,37 +156,37 @@ const projects: ProjectShowcase[] = [
   },
   {
     id: "magicbox",
-    name: "MagicBoxAI",
-    tagline: "Next-Gen AI Creation Sandbox & Multimodal Ecosystem",
+    name: "MagicBox",
+    tagline: "Automated User-Generated Content Engine & Multimodal AI Ad Creatives",
     category: "multimodal",
-    categoryLabel: "Generative AI",
-    badge: "Multi-App Turborepo",
+    categoryLabel: "AI UGC Factory",
+    badge: "AI UGC Factory",
     badgeColor: "bg-pink-100 text-pink-700 border-pink-200",
     logoSrc: "/logos/magicbox-logo.png",
     fallbackIcon: <Sparkles className="w-6 h-6" />,
     iconBg: "bg-pink-50 text-pink-600",
-    summary: "Comprehensive generative AI creative suite and multi-app ecosystem comprising high-converting landing pages, interactive creative studio web apps, and administrative telemetry portals.",
-    keyMetric: { value: "<800ms", label: "Model Generation Latency" },
+    summary: "AI UGC Factory & Automated User-Generated Content Engine for multimodal AI ad creative generation, producing high-converting video and asset production for brands and creators.",
+    keyMetric: { value: "10x", label: "UGC Creation Velocity" },
     features: [
-      "Interactive Multimodal Generation Sandbox",
-      "Monorepo Multi-App Architecture (Landing, Web, Admin)",
-      "Serverless Compute Functions for AI Inference",
-      "Role-Based Access Control & Usage Metering"
+      "Multimodal AI Ad Creative & Video Generation",
+      "Automated UGC Scripting & Storyboarding",
+      "Brand Voice & Visual Asset Harmonization",
+      "High-Converting Multi-Platform Export Engine"
     ],
     techStack: ["React", "Vite", "TypeScript", "Node.js Functions", "Firebase", "Tailwind CSS", "GCP"],
     deepDive: {
-      problem: "Creatives and marketing agencies need unified generative pipelines for copy, visuals, and marketing assets without toggling between disjointed LLM wrappers.",
-      solution: "MagicBoxAI provides a unified workspace monorepo where users ideate, generate, remix, and publish multimedia content through a single intuitive dashboard.",
+      problem: "Brands and creators struggle with the prohibitive time, cost, and friction of scripting, shooting, editing, and producing high-converting User-Generated Content (UGC) and multimodal ad creatives at scale.",
+      solution: "MagicBox acts as an AI UGC Factory—an automated end-to-end engine for multimodal AI ad creative generation, synthesizing viral scripts, AI video avatars, product hooks, and brand assets in seconds.",
       architecture: [
-        "Turborepo / npm workspaces connecting landing, web app, and admin studio",
-        "Serverless functions proxying and streaming responses from cutting-edge LLMs",
-        "Firestore / Firebase auth and real-time database synchronizing user sessions",
-        "Production-tested CI/CD pipelines with comprehensive smoke tests"
+        "Turborepo monorepo connecting UGC Studio, Creative Asset Engine, and Campaign Telemetry",
+        "Multimodal generative pipelines orchestrating LLMs, voice synthesis, and video generation APIs",
+        "Serverless inference functions streaming high-converting video and image ad assets",
+        "Real-time asset library with cloud storage, brand vector presets, and export workflows"
       ],
       impact: [
-        "Over 10x acceleration in multi-channel creative production cycles",
-        "Unified authentication and token metering across multiple distinct sub-apps",
-        "Seamless cross-team asset sharing and collaboration"
+        "10x reduction in UGC and video ad creative production turnaround times",
+        "Over 60% lower cost per creative asset compared to traditional studio production",
+        "High-converting multi-variant ad testing across TikTok, Instagram Reels, and YouTube Shorts"
       ]
     }
   },
@@ -373,8 +373,8 @@ const projects: ProjectShowcase[] = [
 
 const categories = [
   { id: 'all', label: 'All Showcases' },
-  { id: 'frameworks', label: 'Autonomous Frameworks (RALF & TALF)' },
-  { id: 'multimodal', label: 'Multimodal & Mobile AI (Aura++ & MagicBox)' },
+  { id: 'frameworks', label: 'Autonomous Frameworks (RalphAI & NFLA App)' },
+  { id: 'multimodal', label: 'Multimodal & Mobile AI (Aura+ & MagicBox)' },
   { id: 'enterprise', label: 'Enterprise & EdTech (IntelliAssets)' },
   { id: 'growth', label: 'Growth & Automation (ResGro & BiteBoost)' }
 ];

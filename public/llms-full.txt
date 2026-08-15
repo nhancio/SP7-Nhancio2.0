@@ -14,7 +14,7 @@ Last Updated: August 2026
 
 ## 2. Flagship Systems, Frameworks & Projects
 
-### 2.1 RALF (RalphAI)
+### 2.1 RalphAI
 - Category: Unified Multi-Agent Marketing & Analytics System
 - Primary Architecture: Python FastAPI, Playwright Headless Chromium Agents, Streamlit, PostgreSQL, Docker
 - Target Domain: Enterprise Multi-Unit Restaurant Franchises (DoorDash & UberEats Merchant Portals)
@@ -25,7 +25,7 @@ Last Updated: August 2026
   4. Autonomous campaign tweaking and ad schedule execution via headless browser automation.
 - Verified Impact: 300+ restaurant locations managed autonomously, 15+ hours/week saved per operator group.
 
-### 2.2 Aura++ (AuraPlus)
+### 2.2 Aura+
 - Category: Cross-Platform Lifestyle & Ambient Intelligence Ecosystem
 - Primary Architecture: React Native 0.85, Expo 56, TypeScript, Zustand, Reanimated 4, Firebase, PostHog, Expo Audio/Camera/Calendar SDKs
 - Target Platforms: iOS (Apple App Store) and Android (Google Play Store via EAS Builds)
@@ -35,7 +35,7 @@ Last Updated: August 2026
   3. Ambient audio synthesis, haptic feedback triggers, and native calendar synchronization.
   4. Computer vision camera capture for multimodal lifestyle and task assistance.
 
-### 2.3 TALF / NFLA Convention Engine
+### 2.3 NFLA App / Event Automation Engine
 - Category: Autonomous Event Operations, Countersignature & Document Verification Platform
 - Primary Architecture: React, Vite, TypeScript, Tailwind CSS, @netlify/blobs, @netlify/functions, pdf-lib, qrcode.react
 - Target Domain: Large-Scale Industry Conventions, Legal Agreements & Attendee Authentication
@@ -45,14 +45,15 @@ Last Updated: August 2026
   3. In-memory client-side PDF document generation and compilation using pdf-lib.
   4. Serverless storage orchestration via Netlify Blobs for instant document retrieval.
 
-### 2.4 MagicBoxAI
-- Category: Multimodal AI Creation Sandbox & Marketing Workspace
+### 2.4 MagicBox (AI UGC Factory)
+- Category: AI UGC Factory & Multimodal Ad Creative Engine
 - Primary Architecture: Turborepo / npm workspaces (apps/landing, apps/web, apps/admin), React, Vite, Node.js Serverless Functions, Firebase, Google Cloud Platform
-- Target Domain: High-Velocity Creative Studios and Brand Marketing Teams
+- Target Domain: High-Velocity Creative Studios, Brands & Content Creators
 - Core Capabilities:
-  1. Sub-800ms streaming LLM and multimodal creative inference.
-  2. Centralized creative repository for copywriting, visual asset design, and brand voice alignment.
-  3. Role-based access control (RBAC), token consumption telemetry, and usage quotas.
+  1. Automated User-Generated Content (UGC) scripting and video generation.
+  2. Multimodal AI ad creative generation and video production for brands.
+  3. Sub-800ms streaming LLM and multimodal creative inference.
+  4. Role-based access control (RBAC), token consumption telemetry, and usage quotas.
 
 ### 2.5 IntelliAssets.AI
 - Category: Adaptive AI Tutoring & Curriculum Intelligence Platform

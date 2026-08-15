@@ -24,7 +24,7 @@ const Achievements = () => {
       icon: <TrendingUp className="w-8 h-8 text-emerald-600" />,
       badge: "500k+ Automated Decisions",
       title: "Fastest-Growing AI Agency in Hyderabad",
-      description: "Founded by IITians, Nhancio has shipped 8+ production AI systems, closed-loop reasoning engines (RALF), and autonomous frameworks (TALF) globally.",
+      description: "Founded by IITians, Nhancio has shipped 8+ production AI systems, closed-loop reasoning engines (RalphAI), and autonomous frameworks (NFLA App) globally.",
       color: "bg-emerald-100 text-emerald-700 border-emerald-200"
     }
   ];
