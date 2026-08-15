@@ -96,8 +96,8 @@ const About = () => {
                  boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
                }}>
             <div className="grid grid-cols-2 gap-3 mb-6">
-              <img src="/media/about/about-1.jpg" alt="Nhancio team and culture" className="w-full h-36 object-cover rounded-2xl" />
-              <img src="/media/about/about-2.jpg" alt="Nhancio at work" className="w-full h-36 object-cover rounded-2xl" />
+              <img src="/media/about/about-1.jpg" alt="Nhancio team and culture" width="300" height="144" loading="lazy" decoding="async" className="w-full h-36 object-cover rounded-2xl" />
+              <img src="/media/about/about-2.jpg" alt="Nhancio at work" width="300" height="144" loading="lazy" decoding="async" className="w-full h-36 object-cover rounded-2xl" />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Story</h3>
             <div className="space-y-4 text-gray-600 leading-relaxed">

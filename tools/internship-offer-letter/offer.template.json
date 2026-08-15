@@ -1,0 +1,35 @@
+{
+  "document_status": "",
+  "reference_number": "",
+  "issue_date": "",
+  "candidate": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address_lines": []
+  },
+  "internship": {
+    "role": "",
+    "department": "",
+    "start_date": "",
+    "end_date": "",
+    "work_mode": "Remote",
+    "location": "Remote",
+    "working_days": "",
+    "working_hours": "40 hours per week, with timing agreed with Didigam Nithin (CEO)",
+    "reporting_manager": "Didigam Nithin",
+    "reporting_manager_title": "CEO",
+    "compensation": "",
+    "responsibilities": [],
+    "equipment_and_access": "",
+    "expenses": "",
+    "completion_documents": ""
+  },
+  "terms": {
+    "notice_period": "",
+    "leave_policy": "",
+    "background_verification": "",
+    "governing_law": "Telangana, India"
+  },
+  "acceptance_deadline": ""
+}

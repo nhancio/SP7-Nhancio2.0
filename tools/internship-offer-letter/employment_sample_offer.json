@@ -1,0 +1,39 @@
+{
+  "document_status": "",
+  "reference_number": "NH-EMP-DN-001",
+  "issue_date": "2025-06-25",
+  "candidate": {
+    "name": "Didigam Nithin",
+    "email": "",
+    "phone": "",
+    "address_lines": []
+  },
+  "employment": {
+    "role": "Senior Developer",
+    "department": "Technology",
+    "joining_date": "2025-07-01",
+    "employment_type": "Full-time",
+    "work_mode": "Remote",
+    "location": "Remote",
+    "working_days": "Monday to Friday",
+    "working_hours": "40 hours per week, with timing agreed with Didigam Nithin (CEO)",
+    "reporting_manager": "Didigam Nithin",
+    "reporting_manager_title": "CEO",
+    "compensation": "INR 16,00,000 per annum (16 LPA), equivalent to approximately INR 1,33,333 per month before applicable deductions",
+    "responsibilities": [
+      "Lead the design, development, testing, deployment, and maintenance of reliable software products and services.",
+      "Own technical decisions, code quality, architecture documentation, and delivery of assigned engineering work.",
+      "Collaborate with product, design, data, and business stakeholders to translate requirements into maintainable solutions.",
+      "Review code, mentor team members, improve engineering practices, and communicate risks and progress clearly.",
+      "Protect company, client, and user information and follow all security, privacy, and responsible-AI requirements."
+    ],
+    "equipment_and_access": "Nhancio may provide accounts, repositories, datasets, or equipment needed for approved work. All access remains company property and must be returned or disabled when requested or when employment ends.",
+    "expenses": "Only expenses approved in writing before they are incurred will be eligible for reimbursement against valid receipts."
+  },
+  "terms": {
+    "leave_policy": "You are eligible for leave in accordance with Nhancio's leave policy and applicable law. Planned leave must be requested in advance and approved by your reporting manager; emergencies should be communicated as soon as reasonably possible. Leave balances, holidays, and any carry-forward rules will be administered under the policy in force from time to time.",
+    "notice_period": "the notice period stated in your employment terms and applicable law",
+    "background_verification": "This offer is subject to the accuracy of the information and documents provided by you and any reasonable identity, education, employment, or background checks requested by Nhancio.",
+    "governing_law": "Telangana, India"
+  }
+}

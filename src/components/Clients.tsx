@@ -55,6 +55,10 @@ const Clients = () => {
                 <img
                   src={client.logo}
                   alt={`${client.name} - AI Client Logo`}
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 rounded-2xl mx-auto mb-4 object-cover"
                   onError={e => { (e.target as HTMLImageElement).src = 'https://placehold.co/64x64?text=' + client.name.slice(0, 2); }}
                 />

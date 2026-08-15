@@ -1,0 +1,41 @@
+{
+  "document_status": "SAMPLE - NOT FOR ISSUE",
+  "reference_number": "NH-INT-DN-001",
+  "issue_date": "2026-08-03",
+  "candidate": {
+    "name": "Didigam Nithin",
+    "email": "",
+    "phone": "",
+    "address_lines": []
+  },
+  "internship": {
+    "role": "Data Science Internship",
+    "department": "Data Science and Analytics",
+    "start_date": "2026-09-01",
+    "end_date": "2026-11-30",
+    "work_mode": "Remote",
+    "location": "Remote",
+    "working_days": "Monday to Friday",
+    "working_hours": "40 hours per week, with timing agreed with Didigam Nithin (CEO)",
+    "reporting_manager": "Didigam Nithin",
+    "reporting_manager_title": "CEO",
+    "compensation": "INR 20,000 per month, subject to applicable deductions and satisfactory attendance",
+    "responsibilities": [
+      "Collect, clean, validate, and document datasets used for approved business and product analysis.",
+      "Build exploratory analyses, dashboards, statistical summaries, and machine-learning experiments under supervision.",
+      "Communicate assumptions, findings, limitations, and recommendations clearly to technical and non-technical stakeholders.",
+      "Protect company, client, and user information and follow all security, privacy, and responsible-AI requirements.",
+      "Participate in reviews, mentoring sessions, and final project demonstrations or handovers."
+    ],
+    "equipment_and_access": "Nhancio may provide accounts, repositories, datasets, or equipment needed for approved work. All access remains company property and must be returned or disabled at the end of the internship.",
+    "expenses": "Only expenses approved in writing before they are incurred will be eligible for reimbursement against valid receipts.",
+    "completion_documents": "Subject to satisfactory performance, completion of assigned work, return of company property, and compliance with this letter, Nhancio may issue an internship completion certificate. Any recommendation letter remains discretionary."
+  },
+  "terms": {
+    "notice_period": "7 calendar days",
+    "leave_policy": "Planned leave requires prior written approval from the reporting manager. Emergencies should be communicated as soon as reasonably possible.",
+    "background_verification": "This offer is subject to the accuracy of the information and documents provided by the intern and any reasonable identity, education, or background checks requested by Nhancio.",
+    "governing_law": "Telangana, India"
+  },
+  "acceptance_deadline": "2026-08-10"
+}

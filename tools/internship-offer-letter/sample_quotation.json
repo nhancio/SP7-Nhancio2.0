@@ -1,0 +1,114 @@
+{
+  "document_status": "",
+  "reference_number": "NH-QUO-WX-001",
+  "issue_date": "2026-08-14",
+  "valid_until": "2026-08-28",
+  "client": {
+    "name": "Worker X",
+    "contact_name": "",
+    "email": "",
+    "phone": "",
+    "address_lines": [
+      "Hyderabad, Telangana, India"
+    ]
+  },
+  "project": {
+    "name": "Worker X",
+    "subtitle": "Pronto and SnapIt copy for Hyderabad",
+    "summary": "Design, build, deploy, and operate a Hyderabad-focused worker application modelled on Pronto-style shift booking and SnapIt-style nearby-job discovery. The first release is a worker-facing product for gig and shift workers in Hyderabad, with English and Telugu copy, local zones, and UPI-oriented earnings.",
+    "work_mode": "Remote",
+    "location": "Hyderabad, Telangana",
+    "engagement_type": "Fixed-price application build with monthly managed services",
+    "proposed_start": "2026-09-01",
+    "build_duration": "Approximately 4 to 6 weeks from kickoff, subject to timely content, approvals, and store accounts"
+  },
+  "commercials": {
+    "currency": "INR",
+    "one_time_fee": 60000,
+    "monthly_fee": 10000,
+    "gst_note": "All amounts are in Indian Rupees and exclusive of applicable GST unless stated otherwise.",
+    "one_time_allocation": [
+      {
+        "item": "Application development",
+        "amount": 30000,
+        "notes": "Worker app build covering registration, jobs/shifts, check-in, earnings, and notifications"
+      },
+      {
+        "item": "Server cost and environment setup",
+        "amount": 8000,
+        "notes": "Hosting configuration, environments, domains, backups, and first-period server setup"
+      },
+      {
+        "item": "Deployment and go-live",
+        "amount": 8000,
+        "notes": "Production release, store listing support, and launch checklist"
+      },
+      {
+        "item": "Product, UX, and Hyderabad localization",
+        "amount": 8000,
+        "notes": "Pronto/SnapIt feature mapping, Telugu/English copy structure, and Hyderabad zone setup"
+      },
+      {
+        "item": "QA, UAT, and launch support",
+        "amount": 6000,
+        "notes": "Test cycles, defect closure for in-scope items, and handover notes"
+      }
+    ],
+    "payment_schedule": [
+      {
+        "milestone": "On written acceptance of this quotation",
+        "amount": 30000,
+        "notes": "50% of the one-time fee to commence work"
+      },
+      {
+        "milestone": "On deployment / go-live",
+        "amount": 30000,
+        "notes": "Balance of the one-time fee"
+      },
+      {
+        "milestone": "Monthly from the month of go-live",
+        "amount": 10000,
+        "notes": "Managed services, billed in advance"
+      }
+    ]
+  },
+  "scope": {
+    "modules": [
+      "Worker registration, profile, skills, and basic KYC document upload",
+      "Nearby job and shift discovery modelled on SnapIt-style browse-and-apply",
+      "Shift claim / apply flow modelled on Pronto-style on-demand work",
+      "Geo-aware check-in and check-out for accepted work",
+      "Earnings ledger with UPI-oriented payout status views",
+      "Push notifications for new work, reminders, and status changes",
+      "English and Telugu content fields for core worker screens",
+      "Hyderabad zone/area tagging for discovery (for example HITEC City, Gachibowli, Secunderabad, Old City)",
+      "Admin/content hooks so job categories, banners, FAQs, and city copy can be updated after launch"
+    ],
+    "managed_services": [
+      "Bug management: triage, reproduce, and fix in-scope defects in the live Worker X application",
+      "Content updates: job categories, banners, FAQs, city copy, and approved store-listing text",
+      "Minor patches and staging-to-production publishes of approved fixes",
+      "Monthly health note covering incidents, content changes, and open items"
+    ],
+    "exclusions": [
+      "Employer/client-facing console beyond the minimum needed to publish jobs and content",
+      "New feature development outside the agreed Worker X first-release scope",
+      "Play Store / App Store developer account fees, Apple/Google review charges, SMS/OTP vendor fees, and payment-gateway transaction charges",
+      "Ongoing cloud usage above the server setup included in the one-time fee",
+      "24/7 on-call, field operations, worker onboarding campaigns, or legal/compliance filings",
+      "Native maps SDKs, advanced ML matching, or payroll/ESI/PF statutory processing"
+    ],
+    "assumptions": [
+      "Nhancio will reuse proven product patterns from Pronto and SnapIt rather than inventing a new marketplace category",
+      "The client will supply brand assets, Telugu/English copy, job categories, and Hyderabad zone lists on request",
+      "Store developer accounts, domains, and payment/UPI credentials will be provided by the client or created in the client's name",
+      "One worker application surface is in scope (mobile-first web or a single store build, as agreed at kickoff)",
+      "Managed services cover bugs and content updates, not a second product or a full rewrite"
+    ]
+  },
+  "terms": {
+    "validity": "This quotation remains valid until the stated validity date unless withdrawn earlier in writing.",
+    "notice_period": "30 calendar days",
+    "governing_law": "Telangana, India"
+  }
+}

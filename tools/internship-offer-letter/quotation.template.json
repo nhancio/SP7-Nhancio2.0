@@ -1,0 +1,48 @@
+{
+  "document_status": "",
+  "reference_number": "",
+  "issue_date": "",
+  "valid_until": "",
+  "client": {
+    "name": "",
+    "contact_name": "",
+    "email": "",
+    "phone": "",
+    "address_lines": []
+  },
+  "project": {
+    "name": "",
+    "subtitle": "",
+    "summary": "",
+    "work_mode": "Remote",
+    "location": "Hyderabad, Telangana",
+    "engagement_type": "Fixed-price application build with monthly managed services",
+    "proposed_start": "",
+    "build_duration": ""
+  },
+  "commercials": {
+    "currency": "INR",
+    "one_time_fee": 0,
+    "monthly_fee": 0,
+    "gst_note": "All amounts are in Indian Rupees and exclusive of applicable GST unless stated otherwise.",
+    "one_time_allocation": [
+      {
+        "item": "",
+        "amount": 0,
+        "notes": ""
+      }
+    ],
+    "payment_schedule": []
+  },
+  "scope": {
+    "modules": [],
+    "managed_services": [],
+    "exclusions": [],
+    "assumptions": []
+  },
+  "terms": {
+    "validity": "",
+    "notice_period": "30 calendar days",
+    "governing_law": "Telangana, India"
+  }
+}

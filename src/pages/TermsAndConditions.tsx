@@ -82,7 +82,7 @@ const TermsAndConditions = () => (
         <p className="text-gray-700 mb-4">If you have any questions about these Terms & Conditions, please contact us:</p>
         <div className="bg-gray-50 rounded-2xl p-6 mb-6">
           <p className="text-gray-700 mb-2">📧 <a href="mailto:nithindidigam@nhancio.com" className="text-purple-600 hover:text-purple-700">nithindidigam@nhancio.com</a></p>
-          <p className="text-gray-700">🌐 <a href="https://www.nhancio.com" className="text-purple-600 hover:text-purple-700">www.nhancio.com</a></p>
+          <p className="text-gray-700">🌐 <a href="https://nhancio.com" className="text-purple-600 hover:text-purple-700">nhancio.com</a></p>
         </div>
       </div>
     </div>

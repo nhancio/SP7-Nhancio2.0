@@ -1,67 +1,86 @@
 import React from 'react';
-import { Code, Megaphone, UserCircle, Headphones, Bot, GraduationCap } from 'lucide-react';
+import { Code, Megaphone, UserCircle, Headphones, Bot, GraduationCap, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Services = () => {
   const services = [
     {
+      image: "/media/services/s5.png",
+      icon: <Bot className="h-8 w-8" />,
+      title: "Autonomous Multi-Agent Systems",
+      tagline: "TALF & RALF Architecture",
+      description: "Custom multi-agent workflows with state machines, tool-use execution, and deterministic handoffs. From autonomous data pipelines to multi-step reasoning agents that run 24/7.",
+      deliverables: ["State Machine Orchestration", "Tool-Calling APIs", "Human-in-the-Loop Safeguards", "Self-Healing Retries"],
+      color: "bg-purple-100 text-purple-600"
+    },
+    {
       image: "/media/services/s1.png",
       icon: <Code className="h-8 w-8" />,
-      title: "Web & App Development",
-      description: "We design and build scalable web and mobile applications that integrate with your AI stack. APIs, backends, and UIs that let your agents and workflows operate at full capacity.",
+      title: "Full-Stack AI Web & Mobile Apps",
+      tagline: "Expo, React, Next.js & Node.js",
+      description: "We build enterprise-grade web and mobile applications with native AI integration. High-throughput backends, real-time WebSocket syncing, and responsive glassmorphism interfaces.",
+      deliverables: ["Cross-Platform Mobile Apps", "Modern Web Frontends", "Microservices & APIs", "Offline-First Sync"],
       color: "bg-blue-100 text-blue-600"
     },
     {
       image: "/media/services/s2.png",
       icon: <Megaphone className="h-8 w-8" />,
-      title: "Marketing Automation",
-      description: "End-to-end marketing automation: campaigns, lead nurturing, and analytics powered by AI. From email and social to attribution—automate and scale your growth.",
-      color: "bg-purple-100 text-purple-600"
+      title: "AI Growth & Marketing Automation",
+      tagline: "Closed-Loop Acquisition",
+      description: "End-to-end autonomous marketing engines. Ingest market signals, generate brand-aligned multimodal creatives via MagicBox, and orchestrate automated outreach campaigns.",
+      deliverables: ["Brand Vector Content Gen", "Multi-Channel Auto-Publishing", "Campaign A/B Optimization", "Lead Qualification"],
+      color: "bg-pink-100 text-pink-600"
     },
     {
       image: "/media/services/s3.png",
       icon: <UserCircle className="h-8 w-8" />,
-      title: "SDR Agent for Sales",
-      description: "AI-powered sales development reps that qualify leads, book meetings, and follow up at scale. Custom SDR agents that work your pipeline 24/7 with human-like outreach.",
+      title: "Autonomous SDR & Sales Bots",
+      tagline: "24/7 Pipeline Acceleration",
+      description: "AI-powered sales development representatives that research prospects, qualify incoming leads, answer technical queries, and book meetings directly into your calendar.",
+      deliverables: ["Prospect Intelligence", "Hyper-Personalized Outreach", "CRM Auto-Sync", "Calendar Booking"],
       color: "bg-green-100 text-green-600"
     },
     {
       image: "/media/services/s4.png",
       icon: <Headphones className="h-8 w-8" />,
-      title: "Customer Support AI",
-      description: "Intelligent support agents that resolve tickets, answer FAQs, and escalate when needed. Reduce response time and cost while keeping customer satisfaction high.",
+      title: "Enterprise Knowledge & Support AI",
+      tagline: "RAG & Document Intelligence",
+      description: "Domain-specific support bots and retrieval-augmented generation (RAG) agents that resolve customer queries, query private documents, and escalate edge cases seamlessly.",
+      deliverables: ["Vector RAG Search", "Contract & Doc Intelligence", "Ticket Resolution Automation", "Zero Hallucination Guardrails"],
       color: "bg-amber-100 text-amber-600"
-    },
-    {
-      image: "/media/services/s5.png",
-      icon: <Bot className="h-8 w-8" />,
-      title: "Custom AI Agents for Your Use Case",
-      description: "Tailored AI agents for your workflows: RAG, tool-use, multi-step reasoning, and integrations. From internal ops to customer-facing automation—built for your domain.",
-      color: "bg-indigo-100 text-indigo-600"
     },
     {
       image: "/media/services/s6.png",
       icon: <GraduationCap className="h-8 w-8" />,
-      title: "AI Workshops",
-      description: "Hands-on AI workshops for students and teams. Learn GenAI, LLMs, RAG, and real-world automation with practical projects and mentorship. Community, education, and AI—not just an agency.",
+      title: "Enterprise AI Consulting & Workshops",
+      tagline: "IITian Research & Training",
+      description: "Strategic AI roadmapping, architecture reviews, and hands-on workshops for engineering teams and students. Learn GenAI, LLM fine-tuning, and production agent orchestration.",
+      deliverables: ["Architecture Blueprints", "Team Upskilling Sprints", "Security & Data Governance", "Production Launch Roadmaps"],
       color: "bg-teal-100 text-teal-600"
     }
   ];
 
   const cardVariants = {
-    offscreen: { opacity: 0, y: 40 },
-    onscreen: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.3, duration: 0.7 } }
+    offscreen: { opacity: 0, y: 30 },
+    onscreen: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { type: 'spring' as const, bounce: 0.25, duration: 0.6 } 
+    }
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            AI-Agentic Services
+    <section id="services" className="py-24 bg-gradient-to-br from-gray-50 via-purple-50/50 to-blue-50/50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-3">
+            <span>Specialized Capabilities</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+            AI-Agentic Engineering Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From autonomous agents and orchestration to apps and automation—built agentic-first
+          <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
+            From autonomous agent orchestration and multimodal platforms to custom enterprise LLM pipelines—engineered with research-grade rigor.
           </p>
         </div>
 
@@ -69,28 +88,61 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-white/85 to-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-white/30 flex flex-col h-full min-h-[320px]"
+              className="bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/60 flex flex-col justify-between group h-full"
               style={{
-                boxShadow: 'inset 0 6px 12px rgba(255, 255, 255, 0.9), inset 0 -6px 12px rgba(0, 0, 0, 0.06), 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
+                boxShadow: '0 10px 30px -5px rgba(0,0,0,0.05), inset 0 2px 4px rgba(255,255,255,0.9)',
               }}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
-              whileHover={{ scale: 1.07, boxShadow: '0 0 24px 2px #a78bfa' }}
+              whileHover={{ y: -5 }}
             >
-              <div className="flex items-center gap-4 mb-6">
-                <img src={service.image} alt="" className="w-14 h-14 object-contain rounded-xl" />
-                <div className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center`}>
-                  {service.icon}
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  {service.image ? (
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      width="56"
+                      height="56"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-14 h-14 object-contain rounded-2xl bg-gray-50 p-1 border border-gray-100 shadow-2xs" 
+                    />
+                  ) : null}
+                  <div className={`w-14 h-14 rounded-2xl ${service.color} flex items-center justify-center shadow-xs`}>
+                    {service.icon}
+                  </div>
+                </div>
+                
+                <div className="mb-2">
+                  <span className="text-[11px] font-bold text-purple-700 uppercase tracking-wider block">
+                    {service.tagline}
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-gray-100">
+                <h4 className="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-2.5">
+                  Core Deliverables
+                </h4>
+                <div className="grid grid-cols-2 gap-2">
+                  {service.deliverables.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-1.5 text-xs text-gray-700">
+                      <CheckCircle className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                      <span className="truncate">{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {service.description}
-              </p>
             </motion.div>
           ))}
         </div>

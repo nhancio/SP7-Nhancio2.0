@@ -1,8 +1,3 @@
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/700.css';
-@import '@fontsource/poppins/400.css';
-@import '@fontsource/poppins/700.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +5,9 @@
 html, body {
   overflow-x: hidden;
   font-family: 'Inter', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom animations for carousel */

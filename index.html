@@ -6,11 +6,42 @@
     <link rel="apple-touch-icon" href="/logos/Nhancio-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Preconnect & DNS Prefetch for Critical Third Parties -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://datafa.st" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+    <!-- Non-blocking Google Fonts with font-display: swap -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- Preload Hero LCP Poster -->
+    <link rel="preload" href="/media/hero-poster.webp" as="image" type="image/webp" fetchpriority="high" />
+    
     <!-- Primary Meta Tags -->
-    <title>Nhancio - Leading AI Agency | Data Science, AI Agents & Marketing Solutions</title>
-    <meta name="title" content="Nhancio - Leading AI Agency | Data Science, AI Agents & Marketing Solutions" />
-    <meta name="description" content="Leading AI agency in India specializing in AI agents, data science, LLMs, and AI marketing. Founded by IITians, we deliver cutting-edge AI solutions, automation, and digital marketing services for businesses seeking intelligent growth." />
-    <meta name="keywords" content="AI agency, data science, AI agents, artificial intelligence, machine learning, AI marketing, digital marketing, AI consulting, automation, AI solutions, AI development, data analytics, business intelligence, AI automation, chatbot development, AI integration, predictive analytics, natural language processing, computer vision, AI strategy, digital transformation, AI implementation, custom AI solutions, AI consulting services, AI development company, AI technology, AI innovation, AI research, AI engineering, AI architecture, AI infrastructure, AI platform, AI tools, AI software, AI applications, AI services, AI expertise, AI specialists, AI professionals, AI experts, AI consultants, AI advisors, AI strategists, AI architects, AI developers, AI engineers, AI scientists, AI researchers, AI analysts, AI marketers, AI sales, AI customer service, AI support, AI training, AI education, AI certification, AI courses, AI workshops, AI seminars, AI conferences, AI events, AI community, AI network, AI ecosystem, AI marketplace, AI platform, AI solutions provider, AI technology partner, AI innovation partner, AI digital partner, AI business partner, AI strategic partner" />
+    <title>Nhancio - Autonomous AI Agents, Multi-Agent Systems & Scalable AI Engineering</title>
+    <meta name="title" content="Nhancio - Autonomous AI Agents, Multi-Agent Systems & Scalable AI Engineering" />
+    <meta name="description" content="Founded by IITians and incubated at T-Hub, Nhancio builds production-ready autonomous multi-agent frameworks (TALF, RALF), multimodal mobile apps (Aura++, MagicBox), and enterprise AI platforms (IntelliAssets.AI, ResGro-AI)." />
+    <link rel="canonical" href="https://nhancio.com/" />
+    <meta name="keywords" content="Nhancio, EnhanceShow, AI agency, autonomous agents, multi-agent systems, TALF, RALF, RalphAI, Aura++, MagicBoxAI, IntelliAssets.AI, ResGro-AI, Homemates AI, LLM orchestration, data science, AI consulting, T-Hub startup, IITian founders, Hyderabad AI, React Native Expo, AI marketing automation" />
     <meta name="author" content="Nhancio" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
@@ -20,9 +51,9 @@
     <meta name="theme-color" content="#8B5CF6" />
     
     <!-- Additional SEO Meta Tags for AI and Marketing Keywords -->
-    <meta name="subject" content="AI Agency, Data Science, AI Agents, LLMs, AI Marketing, Digital Marketing Agency" />
-    <meta name="classification" content="AI Agency, Data Science Company, AI Consulting, Marketing Agency" />
-    <meta name="category" content="Technology, AI, Data Science, Marketing" />
+    <meta name="subject" content="Autonomous AI Agents, Multi-Agent Systems, Mobile AI, Enterprise AI Platforms" />
+    <meta name="classification" content="AI Agency, Enterprise AI Engineering, Autonomous Agents, AI Venture Lab" />
+    <meta name="category" content="Technology, Artificial Intelligence, Machine Learning, Multi-Agent Systems" />
     <meta name="coverage" content="Worldwide" />
     <meta name="target" content="all" />
     <meta name="HandheldFriendly" content="true" />
@@ -31,8 +62,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nhancio.com/" />
-    <meta property="og:title" content="Nhancio - Leading AI Agency | Data Science, AI Agents & Marketing Solutions" />
-    <meta property="og:description" content="Leading AI agency in India specializing in AI agents, data science, LLMs, and AI marketing. Founded by IITians, we deliver cutting-edge AI solutions, automation, and digital marketing services for businesses seeking intelligent growth." />
+    <meta property="og:title" content="Nhancio - Autonomous AI Agents, Multi-Agent Systems & Scalable AI Engineering" />
+    <meta property="og:description" content="Founded by IITians and incubated at T-Hub, Nhancio engineers enterprise-grade autonomous agents, multimodal mobile apps, and scalable AI platforms." />
     <meta property="og:image" content="https://nhancio.com/og-image.jpg" />
     <meta property="og:site_name" content="Nhancio" />
     <meta property="og:locale" content="en_US" />
@@ -41,13 +72,9 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://nhancio.com/" />
-    <meta property="twitter:title" content="Nhancio - Leading AI Agency | Data Science, AI Agents & Marketing Solutions" />
-    <meta property="twitter:description" content="Leading AI agency in India specializing in AI agents, data science, LLMs, and AI marketing. Founded by IITians, we deliver cutting-edge AI solutions for intelligent business growth." />
+    <meta property="twitter:title" content="Nhancio - Autonomous AI Agents & Multi-Agent Frameworks" />
+    <meta property="twitter:description" content="Founded by IITians. Deployed at scale: TALF, RALF, Aura++, MagicBox, and IntelliAssets." />
     <meta property="twitter:image" content="https://nhancio.com/og-image.jpg" />
-    
-    <!-- Canonical + per-page meta (title, description, robots, OG, Twitter)
-         are set per route by src/components/SEO.tsx via react-helmet-async. -->
-
     
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
@@ -55,10 +82,10 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Nhancio",
-      "alternateName": ["Nhancio AI Agency", "Nhancio Data Science", "Nhancio AI Consulting", "Nhancio Marketing Agency"],
+      "alternateName": ["EnhanceShow", "Nhancio AI Agency", "Nhancio Venture Lab", "Nhancio AI Systems"],
       "url": "https://nhancio.com",
       "logo": "https://nhancio.com/logos/Nhancio-logo.png",
-      "description": "Leading AI agency specializing in data science, AI agents, LLMs, and AI marketing solutions. Founded by IITians.",
+      "description": "Premier AI engineering agency and venture lab founded by IITians and incubated at T-Hub, specializing in autonomous multi-agent systems, multimodal mobile apps, and enterprise AI platforms.",
       "foundingDate": "2024",
       "address": {
         "@type": "PostalAddress",
@@ -77,91 +104,27 @@
         "https://www.instagram.com/nhancio.ai/",
         "https://www.youtube.com/@nhancioai"
       ],
-      "serviceArea": {
-        "@type": "Country",
-        "name": "India"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Development",
-              "description": "Custom AI solutions and development services"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Data Science",
-              "description": "Advanced data analytics and machine learning solutions"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Marketing",
-              "description": "AI-powered digital marketing and automation services"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Agents",
-              "description": "Custom AI agents and LLM solutions"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Consulting",
-              "description": "Strategic AI consulting and implementation services"
-            }
-          }
-        ]
-      },
+      "awards": [
+        "1st Place Winner - Mathhack 2.0 AI Hackathon (Government of Telangana)",
+        "Incubated at T-Hub Hyderabad"
+      ],
       "knowsAbout": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Data Science",
-        "AI Agents",
+        "Autonomous AI Agents",
+        "Multi-Agent Orchestration",
+        "TALF Framework",
+        "RALF Architecture",
+        "Aura++ Mobile AI",
+        "MagicBox Generative AI",
+        "IntelliAssets.AI",
+        "ResGro-AI",
+        "Homemates AI",
         "Large Language Models",
-        "AI Marketing",
-        "Digital Marketing",
-        "Automation",
-        "n8n Workflows",
-        "AI Development",
-        "AI Consulting",
-        "AI Solutions",
-        "AI Technology",
-        "AI Innovation",
-        "AI Research",
-        "AI Engineering",
-        "AI Architecture",
-        "AI Infrastructure",
-        "AI Platform",
-        "AI Tools",
-        "AI Software",
-        "AI Applications",
-        "AI Services",
-        "AI Expertise",
-        "AI Specialists",
-        "AI Consultants",
-        "AI Developers",
-        "AI Engineers",
-        "AI Researchers",
-        "Business Intelligence",
-        "Predictive Analytics",
-        "Natural Language Processing",
+        "Retrieval-Augmented Generation (RAG)",
+        "React Native & Expo 56",
+        "FastAPI Microservices",
+        "Playwright Browser Automation",
         "Computer Vision",
-        "Digital Transformation"
+        "Enterprise Digital Transformation"
       ]
     }
     </script>
@@ -172,175 +135,222 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Nhancio",
-      "alternateName": ["Nhancio AI Agency", "Nhancio Data Science", "Nhancio AI Consulting", "Nhancio Marketing Agency"],
+      "alternateName": ["Nhancio AI", "EnhanceShow"],
       "url": "https://nhancio.com",
-      "description": "Leading AI agency providing data science, AI agents, LLMs, and marketing solutions",
+      "description": "Leading AI engineering agency for autonomous agents, mobile apps, and enterprise AI systems",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://nhancio.com/search?q={search_term_string}",
+        "target": "https://nhancio.com/?q={search_term_string}",
         "query-input": "required name=search_term_string"
-      },
-      "about": {
-        "@type": "Thing",
-        "name": "AI Agency, Data Science, AI Agents, LLMs, AI Marketing"
       }
     }
     </script>
-    
-    <!-- Structured Data - Local Business -->
+
+    <!-- Structured Data - ItemList of Flagship Software Applications -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Nhancio",
-      "alternateName": ["Nhancio AI Agency", "Nhancio Data Science", "Nhancio AI Consulting", "Nhancio Marketing Agency"],
-      "description": "AI agency specializing in data science, AI agents, and marketing solutions",
-      "url": "https://nhancio.com",
-      "email": "nithindidigam@nhancio.com",
-      "image": "https://nhancio.com/og-image.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hyderabad",
-        "addressRegion": "Telangana",
-        "addressCountry": "India"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "17.3850",
-        "longitude": "78.4867"
-      },
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "priceRange": "$$",
-      "currenciesAccepted": "INR, USD",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-      "areaServed": "India",
-      "serviceType": [
-        "AI Development",
-        "Data Science",
-        "AI Marketing",
-        "Automation",
-        "Digital Marketing",
-        "AI Consulting",
-        "AI Agents",
-        "LLMs",
-        "Machine Learning",
-        "Artificial Intelligence"
-      ],
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Data Science",
-        "AI Agents",
-        "Large Language Models",
-        "AI Marketing",
-        "Digital Marketing",
-        "Automation",
-        "n8n Workflows",
-        "AI Development",
-        "AI Consulting",
-        "AI Solutions",
-        "AI Technology",
-        "AI Innovation",
-        "AI Research",
-        "AI Engineering",
-        "AI Architecture",
-        "AI Infrastructure",
-        "AI Platform",
-        "AI Tools",
-        "AI Software",
-        "AI Applications",
-        "AI Services",
-        "AI Expertise",
-        "AI Specialists",
-        "AI Consultants",
-        "AI Developers",
-        "AI Engineers",
-        "AI Researchers",
-        "Business Intelligence",
-        "Predictive Analytics",
-        "Natural Language Processing",
-        "Computer Vision",
-        "Digital Transformation"
+      "@type": "ItemList",
+      "name": "Nhancio Flagship AI Software Applications",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "RalphAI (RALF)",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, Cloud",
+            "description": "Unified Multi-Agent Marketing & Analytics System for restaurant operators across DoorDash and UberEats with Playwright headless browser automation."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Aura++ (AuraPlus)",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "iOS, Android",
+            "description": "Cross-platform lifestyle and ambient productivity ecosystem engineered with React Native and Expo 56, native audio, and computer vision."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "TALF / NFLA Convention Engine",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, Serverless",
+            "description": "Enterprise event workflow platform with digital touch countersignatures, dynamic cryptographic QR code verification, and Netlify Blobs storage."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "MagicBoxAI",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Web, Cloud",
+            "description": "Next-generation multimodal AI creation sandbox and monorepo workspace for high-velocity marketing asset generation."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "IntelliAssets.AI",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web, Cloud",
+            "description": "Australian Curriculum (ACARA Years 1-12) adaptive diagnostic tutoring platform with multi-tenant student portals and Django REST API backends."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "ResGro-AI",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, Cloud Run",
+            "url": "https://resgro.ai",
+            "description": "AI-driven restaurant growth marketing platform featuring autonomous ad campaign setup and deep-dive analytics."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Homemates AI",
+            "applicationCategory": "SocialNetworkingApplication",
+            "operatingSystem": "Web, Mobile",
+            "description": "AI-native flatmate matching and lifestyle compatibility engine, winner of Mathhack 2.0 by the Government of Telangana."
+          }
+        }
       ]
     }
     </script>
-    
-    <!-- Structured Data - Service -->
+
+    <!-- Structured Data - FAQPage for AEO & Voice Search Engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "AI Agency Services",
-      "description": "Comprehensive AI agency services including data science, AI agents, LLMs, and AI marketing solutions",
-      "provider": {
-        "@type": "Organization",
-        "name": "Nhancio"
-      },
-      "serviceType": [
-        "AI Development",
-        "Data Science",
-        "AI Marketing",
-        "AI Consulting",
-        "AI Agents",
-        "LLMs",
-        "Machine Learning",
-        "Artificial Intelligence",
-        "Automation",
-        "Digital Marketing"
-      ],
-      "areaServed": {
-        "@type": "Country",
-        "name": "India"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI Services Catalog",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Development Services",
-              "description": "Custom AI development and implementation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Data Science Services",
-              "description": "Advanced data analytics and machine learning"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Marketing Services",
-              "description": "AI-powered marketing and automation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Consulting Services",
-              "description": "Strategic AI consulting and advisory"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Agents Development",
-              "description": "Custom AI agents and LLM solutions"
-            }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes Nhancio's autonomous agent frameworks (RALF & TALF) unique?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlike simple prompt wrapper scripts, Nhancio architectures are built on deterministic state machines, closed-loop feedback loops, and resilient tool-calling pipelines. RALF delivers multi-tenant marketing orchestration with headless browser automation (Playwright), while TALF provides event operations, dynamic QR verification, and serverless blob synchronization with sub-second response times."
           }
-        ]
+        },
+        {
+          "@type": "Question",
+          "name": "Who designs and builds Nhancio's AI systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nhancio was founded by IITians with deep backgrounds in computer science, machine learning, and systems engineering. Our squads combine academic research rigor with full-stack production best practices across Python, FastAPI, React Native / Expo, Node.js, and cloud containerization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Nhancio ensure enterprise data security and zero hallucination?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We implement strict schema validation (Pydantic / TypeScript), deterministic guardrails, zero-trust container sandboxes, and private VPC deployments. For RAG and LLM applications, we benchmark against ground-truth evaluation sets and incorporate human-in-the-loop escalation paths for sensitive workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of AI projects does Nhancio take on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in autonomous multi-agent systems, cross-platform mobile apps (like Aura++ on Expo 56), educational and enterprise platforms (like IntelliAssets.AI), generative marketing suites (like MagicBoxAI), and automated growth engines (like ResGro-AI and BiteBoost). We offer end-to-end development, architecture advisory, and specialized engineering sprints."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What industry milestones has Nhancio achieved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nhancio is incubated at T-Hub Hyderabad (the world's largest innovation campus) and won 1st Place at Mathhack 2.0 organized by the Government of Telangana for our autonomous matching algorithms in Homemates AI, with coverage in leading national media like The Times of India."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - VideoObject for Hero Showreel / Video Indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Nhancio - Autonomous AI Agents, Multi-Agent Systems & Scalable AI Engineering",
+      "description": "Overview of Nhancio's autonomous AI agent architectures (TALF, RALF), multimodal mobile apps (Aura++, MagicBox), and scalable enterprise AI platforms.",
+      "thumbnailUrl": [
+        "https://nhancio.com/media/hero-poster.jpg",
+        "https://nhancio.com/og-image.jpg"
+      ],
+      "uploadDate": "2025-01-01T08:00:00+00:00",
+      "contentUrl": "https://nhancio.com/media/hero-back.mp4",
+      "embedUrl": "https://nhancio.com/#home",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nhancio",
+        "url": "https://nhancio.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nhancio.com/logos/Nhancio-logo.png"
+        }
       }
     }
     </script>
-    
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nhancio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://nhancio.com/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Showcases",
+          "item": "https://nhancio.com/#products"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Blogs",
+          "item": "https://nhancio.com/blogs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Careers",
+          "item": "https://nhancio.com/careers"
+        }
+      ]
+    }
+    </script>
     
     <style>
       html {
@@ -375,8 +385,7 @@
       src="https://datafa.st/js/script.cookieless.js"
     ></script>
     
-    <!-- Meta Pixel Code (deferred: loads after the page is interactive so it
-         no longer blocks initial render / LCP) -->
+    <!-- Meta Pixel Code (deferred: loads after the page is interactive) -->
     <script>
     window.addEventListener('load', function () {
       var start = function () {
@@ -395,10 +404,8 @@
       else { setTimeout(start, 1200); }
     });
     </script>
-    <!-- End Meta Pixel Code -->
   </head>
   <body>
-    <!-- Meta Pixel Noscript -->
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=773429625700346&ev=PageView&noscript=1"
     /></noscript>

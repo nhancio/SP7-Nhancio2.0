@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Clock, Users, Briefcase, ArrowRight, Code, Brain, Palette, TrendingUp, MonitorSmartphone, Smartphone, PenTool, Search } from 'lucide-react';
+import { MapPin, Clock, Users, Briefcase, ArrowRight, Code, Brain, Palette, TrendingUp, MonitorSmartphone, Smartphone, PenTool } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import SEO from '../components/SEO';
 
 const internshipOpenings = [
@@ -149,25 +150,49 @@ const internshipOpenings = [
   }
 ];
 
-const overview = [
-  { label: "Location", value: "Remote (Work from anywhere)" },
-  { label: "Duration", value: "Minimum 2 months; Preferred 3–6 months" },
-  { label: "Working Hours", value: "Flexible (Approx. 15–25 hours/week)" },
-  { label: "Perks", value: "Work on real AI projects, Certificate & LOR, Mentorship from IIT Kanpur alumni, Spotlight on Nhancio socials, Access to internal tools & playbooks" },
-  { label: "Eligibility", value: "Open to college students, recent grads, or early professionals with a strong interest in startups, tech, and AI" },
-  { label: "General Tools", value: "Slack, Notion, Google Drive, GitHub, Figma/Canva (role-specific)" },
-  { label: "Requirements", value: "Strong communication, self-motivation, willingness to learn, role-specific skills, portfolio/GitHub (preferred)" },
-  { label: "Growth Path", value: "Top performers: PPO, incentives, featured intern showcase" }
-];
-
 const Careers = () => {
+  const careersJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Nhancio AI Engineering & Internship Opportunities",
+    "description": "Remote internship and engineering opportunities at Nhancio AI Agency founded by IITians and incubated at T-Hub.",
+    "itemListElement": internshipOpenings.map((job, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "item": {
+        "@type": "JobPosting",
+        "title": job.title,
+        "description": job.description,
+        "datePosted": "2024-03-01",
+        "employmentType": "INTERN",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Nhancio",
+          "sameAs": "https://nhancio.com",
+          "logo": "https://nhancio.com/logos/Nhancio-logo.png"
+        },
+        "jobLocationType": "TELECOMMUTE",
+        "applicantLocationRequirements": {
+          "@type": "Country",
+          "name": "India"
+        }
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-green-50 pt-20">
       <SEO
-        title="Careers - AI & Tech Jobs in Hyderabad | Nhancio"
-        description="Join Nhancio, an AI agency founded by IITians. Explore open roles in AI development, data science, engineering, design, and marketing in Hyderabad, India."
+        title="Careers - AI, Data Science & Engineering Roles | Nhancio"
+        description="Join Nhancio, an AI agency founded by IITians. Explore open roles and high-impact internships in AI engineering, data science, mobile development, and product design."
         path="/careers"
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(careersJsonLd)}
+        </script>
+      </Helmet>
+
       {/* Hero banner with SP1 image */}
       <div className="relative w-full h-64 md:h-80 overflow-hidden">
         <img src="/media/careers/hero-bg.jpg" alt="Careers at Nhancio" className="absolute inset-0 w-full h-full object-cover" />
@@ -279,7 +304,7 @@ const Careers = () => {
               We're always looking for talented interns to join our team. Send us your resume and let's talk!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:hello@nhancio.com" className="bg-purple-600 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center">
+              <a href="mailto:nithindidigam@nhancio.com" className="bg-purple-600 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center">
                 Contact HR
               </a>
             </div>

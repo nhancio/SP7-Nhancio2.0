@@ -1,8 +1,39 @@
+# robots.txt for https://nhancio.com
+
 User-agent: *
+Allow: /
+Allow: /media/
+Allow: /logos/
+Allow: /assets/
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Allow: /media/
+Allow: /logos/
+Allow: /assets/
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /media/
+Allow: /logos/
+Allow: /assets/
+
+User-agent: Googlebot-Video
+Allow: /
+Allow: /media/
+Allow: /logos/
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 # Sitemap
 Sitemap: https://nhancio.com/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1

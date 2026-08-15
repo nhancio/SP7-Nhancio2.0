@@ -16,7 +16,7 @@ interface SEOProps {
  * Per-page SEO. Sets a unique <title>, description, and canonical for each
  * route so Google no longer treats every page as a duplicate of the homepage.
  */
-const SEO = ({ title, description, path, image = DEFAULT_IMAGE, noindex = false }: SEOProps) => {
+export default function SEO({ title, description, path, image = DEFAULT_IMAGE, noindex = false }: SEOProps) {
   const canonical = `${SITE_URL}${path}`;
 
   return (
@@ -40,6 +40,4 @@ const SEO = ({ title, description, path, image = DEFAULT_IMAGE, noindex = false 
       <meta property="twitter:image" content={image} />
     </Helmet>
   );
-};
-
-export default SEO;
+}

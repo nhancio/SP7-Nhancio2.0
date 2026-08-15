@@ -1,25 +1,39 @@
-# Nhancio
+# Nhancio — Autonomous AI Agents & Enterprise AI Systems
+> Research-grade AI engineering, autonomous multi-agent orchestration, and enterprise AI systems founded by IITians and incubated at T-Hub Hyderabad.
 
-Nhancio is an AI agency based in Hyderabad, India, founded by IITians. We build AI agents, data science and machine learning solutions, LLM applications, automation workflows, and AI-powered digital marketing for businesses.
+## About Nhancio
+Nhancio (also known as EnhanceShow / Nhancio) is a premier AI engineering agency and venture lab based in Hyderabad, India. Founded by engineers from the Indian Institute of Technology (IIT), Nhancio builds production-ready autonomous multi-agent frameworks, cross-platform mobile apps, educational intelligence platforms, and generative marketing systems.
 
-## Services
+## Primary Milestones & Accreditations
+- **Incubated by T-Hub**: Accelerated at T-Hub Hyderabad, the world's largest startup innovation campus.
+- **Won Mathhack 2.0**: 1st Place Winner in the AI Hackathon organized by the Government of Telangana for the Homemates AI lifestyle matching engine.
+- **500k+ Automated Actions**: Deployed closed-loop agentic workflows executing autonomous campaigns, document verification, and data pipelines globally.
 
-- [AI Development](https://nhancio.com/#services): Custom AI solutions, LLM applications, and AI agent development.
-- [Data Science](https://nhancio.com/#services): Advanced analytics, machine learning, and predictive modelling.
-- [AI Marketing](https://nhancio.com/#services): AI-powered digital marketing and automation.
-- [AI Consulting](https://nhancio.com/#services): Strategic AI advisory and implementation.
+## Flagship Showcases & Architectures
+- [RALF (RalphAI)](https://nhancio.com/#products): Unified Multi-Agent Marketing & Analytics System for multi-unit restaurant operators (DoorDash & UberEats), featuring autonomous reporting, ROI attribution, and Playwright browser automation.
+- [Aura++ (AuraPlus)](https://nhancio.com/#products): Fluid 60fps cross-platform lifestyle and ambient intelligence app built with React Native, Expo 56, native audio, camera computer vision, and offline-first SQLite/IDB storage.
+- [TALF / NFLA Convention Engine](https://nhancio.com/#products): Enterprise event workflow platform with in-browser PDF generation, digital touch countersignatures, dynamic cryptographic QR code verification, and Netlify Blobs distributed storage.
+- [MagicBoxAI](https://nhancio.com/#products): Next-generation multimodal AI creation sandbox and monorepo workspace for high-velocity marketing asset generation and serverless inference.
+- [IntelliAssets.AI](https://nhancio.com/#products): Australian Curriculum (ACARA Years 1–12) adaptive diagnostic tutoring platform with multi-tenant student portals and Django REST API backends.
+- [ResGro-AI](https://nhancio.com/#products): AI-driven restaurant growth marketing platform featuring autonomous ad platform configuration and headless browser bots (Live at https://resgro.ai).
+- [Homemates AI](https://nhancio.com/#products): High-dimensional vector embedding roommate compatibility engine, recognized by the Telangana Government.
+- [BiteBoost](https://nhancio.com/#products): Menu engineering and hyper-local automated promotional campaign engine for food brands.
+- [Thryft](https://nhancio.com/#products): Sustainable resale marketplace with computer-vision item authentication and automated pricing algorithms.
 
-## Pages
+## Core Engineering Services
+- **Autonomous Multi-Agent Systems**: State machine orchestration (TALF/RALF), tool-calling pipelines, human-in-the-loop safeguards.
+- **Full-Stack AI Web & Mobile Apps**: Native Expo/React Native, Next.js, Vite, React, high-throughput microservices.
+- **AI Growth & Marketing Automation**: Closed-loop acquisition, multimodal asset generation, multi-channel auto-publishing.
+- **Enterprise Knowledge & RAG**: Vector database indexing, zero-hallucination guardrails, private document intelligence.
+- **Executive AI Consulting & Workshops**: Strategic AI roadmapping, team upskilling, and architecture validation.
 
-- [Home](https://nhancio.com/): Overview of Nhancio's AI agency services, products, and achievements.
-- [Blog](https://nhancio.com/blogs): Articles and insights on AI, data science, and automation.
-- [Careers](https://nhancio.com/careers): Open roles and how to join the Nhancio team.
-- [Privacy Policy](https://nhancio.com/privacy-policy): How Nhancio handles user data.
-- [Terms and Conditions](https://nhancio.com/terms-and-conditions): Terms of use for the Nhancio website.
+## Documentation & Full Details
+- [Full LLM Documentation](https://nhancio.com/llms-full.txt): Comprehensive technical specifications, entity models, and system architectures.
 
-## Contact
-
+## Contact Information
+- Website: https://nhancio.com
 - Email: nithindidigam@nhancio.com
+- Location: Hyderabad, Telangana, India
 - LinkedIn: https://www.linkedin.com/company/nhancio
 - Instagram: https://www.instagram.com/nhancio.ai/
 - YouTube: https://www.youtube.com/@nhancioai

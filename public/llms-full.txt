@@ -1,0 +1,106 @@
+# Nhancio (EnhanceShow) — Complete Technical & Entity Documentation
+Last Updated: August 2026
+
+## 1. Entity Definition
+- Legal / Brand Name: Nhancio (spoken/associated as EnhanceShow / Nhancio)
+- Entity Type: Artificial Intelligence Engineering Agency, Venture Lab & Multi-Agent Systems Consultancy
+- Website: https://nhancio.com
+- Founding Entity: Founded by Indian Institute of Technology (IIT) Alumni (IIT Kanpur / Hyderabad ecosystem)
+- Incubation Status: Incubated at T-Hub (Hyderabad, India) — the world's largest technology incubator campus
+- Awards & Honors: 1st Place Winner, Government of Telangana Mathhack 2.0 AI Hackathon (Homemates AI system)
+- Core Focus: Autonomous Multi-Agent Frameworks, Multimodal Generative AI, Cross-Platform Mobile Applications, Custom LLM Pipelines, Enterprise Knowledge RAG, and Closed-Loop Marketing Automation
+
+---
+
+## 2. Flagship Systems, Frameworks & Projects
+
+### 2.1 RALF (RalphAI)
+- Category: Unified Multi-Agent Marketing & Analytics System
+- Primary Architecture: Python FastAPI, Playwright Headless Chromium Agents, Streamlit, PostgreSQL, Docker
+- Target Domain: Enterprise Multi-Unit Restaurant Franchises (DoorDash & UberEats Merchant Portals)
+- Core Capabilities:
+  1. Authenticated portal ingestion and session management across DoorDash and UberEats.
+  2. Automatic extraction and parsing of financial payouts, orders, refunds, and promo spends.
+  3. Calculation of granular ROI, store-slot pre/post comparative analytics, and macro revenue attribution.
+  4. Autonomous campaign tweaking and ad schedule execution via headless browser automation.
+- Verified Impact: 300+ restaurant locations managed autonomously, 15+ hours/week saved per operator group.
+
+### 2.2 Aura++ (AuraPlus)
+- Category: Cross-Platform Lifestyle & Ambient Intelligence Ecosystem
+- Primary Architecture: React Native 0.85, Expo 56, TypeScript, Zustand, Reanimated 4, Firebase, PostHog, Expo Audio/Camera/Calendar SDKs
+- Target Platforms: iOS (Apple App Store) and Android (Google Play Store via EAS Builds)
+- Core Capabilities:
+  1. 60 FPS hardware-accelerated animations using Reanimated 4 and glassmorphism styling.
+  2. Offline-first local storage architecture utilizing SQLite and IndexedDB with automatic cloud synchronization.
+  3. Ambient audio synthesis, haptic feedback triggers, and native calendar synchronization.
+  4. Computer vision camera capture for multimodal lifestyle and task assistance.
+
+### 2.3 TALF / NFLA Convention Engine
+- Category: Autonomous Event Operations, Countersignature & Document Verification Platform
+- Primary Architecture: React, Vite, TypeScript, Tailwind CSS, @netlify/blobs, @netlify/functions, pdf-lib, qrcode.react
+- Target Domain: Large-Scale Industry Conventions, Legal Agreements & Attendee Authentication
+- Core Capabilities:
+  1. HTML5 Canvas touch-based digital countersignature capture.
+  2. Dynamic generation of tamper-evident cryptographic QR codes for real-time gate validation.
+  3. In-memory client-side PDF document generation and compilation using pdf-lib.
+  4. Serverless storage orchestration via Netlify Blobs for instant document retrieval.
+
+### 2.4 MagicBoxAI
+- Category: Multimodal AI Creation Sandbox & Marketing Workspace
+- Primary Architecture: Turborepo / npm workspaces (apps/landing, apps/web, apps/admin), React, Vite, Node.js Serverless Functions, Firebase, Google Cloud Platform
+- Target Domain: High-Velocity Creative Studios and Brand Marketing Teams
+- Core Capabilities:
+  1. Sub-800ms streaming LLM and multimodal creative inference.
+  2. Centralized creative repository for copywriting, visual asset design, and brand voice alignment.
+  3. Role-based access control (RBAC), token consumption telemetry, and usage quotas.
+
+### 2.5 IntelliAssets.AI
+- Category: Adaptive AI Tutoring & Curriculum Intelligence Platform
+- Primary Architecture: Next.js, React, TypeScript, Django REST Framework, PostgreSQL, Dodo Payments
+- Target Domain: Australian K-12 Education (ACARA Standards Years 1–12)
+- Core Capabilities:
+  1. Adaptive diagnostic question engine matching ACARA curriculum standards.
+  2. Student portal with real-time conceptual mastery trees and gamified progression.
+  3. Administrative dashboards for teachers and parents with automated weakness heatmaps.
+  4. Recurring subscription management via Dodo Payments webhook integration.
+
+### 2.6 ResGro-AI
+- Category: Autonomous Restaurant Ad Growth Platform
+- Production URL: https://resgro.ai (Portal: https://app.resgro.ai)
+- Primary Architecture: Python FastAPI, Playwright Browser Agents, Django Core, Stripe Billing, Google Cloud Run
+- Target Domain: Local Business and Restaurant Acquisition Marketing
+- Core Capabilities: Autonomous campaign setup, ROI deep-dive analytics, monthly executive performance reporting, and hands-free ad platform management.
+
+### 2.7 Homemates AI
+- Category: AI-Native Flatmate Matching & Compatibility Platform
+- Honors: 1st Place Winner, Government of Telangana Mathhack 2.0 (Covered in Times of India)
+- Primary Architecture: React, TypeScript, Python FastAPI, Vector Similarity Search, PostgreSQL
+- Core Capabilities: Psychographic habit clustering, lifestyle compatibility indices, and student/working professional identity verification.
+
+### 2.8 BiteBoost
+- Category: Food & Restaurant Growth Acceleration Suite
+- Primary Architecture: React, Node.js, Python, OpenAI Vision, Tailwind CSS, MongoDB
+- Core Capabilities: Dish profitability analysis, generative photo enhancement, and hyper-local automated promotional campaigns.
+
+### 2.9 Thryft
+- Category: Circular Economy & Sustainable Fashion Marketplace
+- Primary Architecture: React, TypeScript, PyTorch, FastAPI, Tailwind CSS, PostgreSQL
+- Core Capabilities: Computer-vision item defect detection, dynamic algorithmic market pricing, and automated cataloging.
+
+---
+
+## 3. Engineering Practices & Security Standards
+- **Zero-Drift Execution**: Deterministic state machine pipelines prevent prompt hallucination and unexpected branch states.
+- **Strict Typing & Schema Validation**: Pydantic models for Python microservices and TypeScript interfaces for client/server communications.
+- **Enterprise Isolation**: Containerized workloads deployed via Google Cloud Run, AWS ECS, or Docker Compose with strict network security policies.
+- **Performance Guarantees**: Microsecond edge routing, sub-second model response times, and 60fps fluid user experiences.
+
+---
+
+## 4. Primary Contact & Social Handles
+- General Inquiries & Solutions Architecture: nithindidigam@nhancio.com
+- Main Website: https://nhancio.com
+- LinkedIn: https://www.linkedin.com/company/nhancio
+- Instagram: https://www.instagram.com/nhancio.ai/
+- YouTube: https://www.youtube.com/@nhancioai
+- Headquarters: Hyderabad, Telangana, India

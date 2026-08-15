@@ -1,0 +1,22 @@
+{
+  "display_name": "Nhancio",
+  "legal_name": "Nhancio",
+  "website": "https://nhancio.com",
+  "email": "",
+  "phone": "",
+  "address_lines": [
+    "Hyderabad, Telangana, India"
+  ],
+  "logo_image": "assets/nhancio-logo.png",
+  "internship_supervisor": {
+    "name": "Didigam Nithin",
+    "title": "CEO"
+  },
+  "signatory": {
+    "name": "Didigam Sathyanarayana",
+    "title": "Director, Nhancio",
+    "email": "",
+    "phone": "",
+    "signature_image": "assets/authorized-signature.png"
+  }
+}

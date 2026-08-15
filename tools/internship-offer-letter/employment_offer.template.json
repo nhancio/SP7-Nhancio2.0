@@ -1,0 +1,33 @@
+{
+  "document_status": "",
+  "reference_number": "",
+  "issue_date": "",
+  "candidate": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "address_lines": []
+  },
+  "employment": {
+    "role": "",
+    "department": "",
+    "joining_date": "",
+    "employment_type": "Full-time",
+    "work_mode": "Remote",
+    "location": "Remote",
+    "working_days": "Monday to Friday",
+    "working_hours": "40 hours per week",
+    "reporting_manager": "Didigam Nithin",
+    "reporting_manager_title": "CEO",
+    "compensation": "",
+    "responsibilities": [],
+    "equipment_and_access": "",
+    "expenses": ""
+  },
+  "terms": {
+    "leave_policy": "",
+    "notice_period": "the notice period stated in your employment terms and applicable law",
+    "background_verification": "",
+    "governing_law": "Telangana, India"
+  }
+}
