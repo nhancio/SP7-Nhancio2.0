@@ -27,3 +27,6 @@ dist-ssr
 
 # OAuth client secrets never belong in git.
 client_secret_*.json
+
+# Videos and marketing content live here; never committed.
+/content/
