@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 
 // Code-split non-critical routes for faster initial load
-const Blogs = lazy(() => import('./pages/Blogs'));
 const Careers = lazy(() => import('./pages/Careers'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
@@ -23,7 +22,6 @@ function App() {
       <Suspense fallback={<PageFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<Blogs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

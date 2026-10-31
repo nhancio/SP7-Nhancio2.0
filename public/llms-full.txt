@@ -35,17 +35,7 @@ Last Updated: August 2026
   3. Ambient audio synthesis, haptic feedback triggers, and native calendar synchronization.
   4. Computer vision camera capture for multimodal lifestyle and task assistance.
 
-### 2.3 NFLA App / Event Automation Engine
-- Category: Autonomous Event Operations, Countersignature & Document Verification Platform
-- Primary Architecture: React, Vite, TypeScript, Tailwind CSS, @netlify/blobs, @netlify/functions, pdf-lib, qrcode.react
-- Target Domain: Large-Scale Industry Conventions, Legal Agreements & Attendee Authentication
-- Core Capabilities:
-  1. HTML5 Canvas touch-based digital countersignature capture.
-  2. Dynamic generation of tamper-evident cryptographic QR codes for real-time gate validation.
-  3. In-memory client-side PDF document generation and compilation using pdf-lib.
-  4. Serverless storage orchestration via Netlify Blobs for instant document retrieval.
-
-### 2.4 MagicBox (AI UGC Factory)
+### 2.3 MagicBox (AI UGC Factory)
 - Category: AI UGC Factory & Multimodal Ad Creative Engine
 - Primary Architecture: Turborepo / npm workspaces (apps/landing, apps/web, apps/admin), React, Vite, Node.js Serverless Functions, Firebase, Google Cloud Platform
 - Target Domain: High-Velocity Creative Studios, Brands & Content Creators
@@ -55,7 +45,7 @@ Last Updated: August 2026
   3. Sub-800ms streaming LLM and multimodal creative inference.
   4. Role-based access control (RBAC), token consumption telemetry, and usage quotas.
 
-### 2.5 IntelliAssets.AI
+### 2.4 IntelliAssets.AI
 - Category: Adaptive AI Tutoring & Curriculum Intelligence Platform
 - Primary Architecture: Next.js, React, TypeScript, Django REST Framework, PostgreSQL, Dodo Payments
 - Target Domain: Australian K-12 Education (ACARA Standards Years 1–12)
@@ -65,25 +55,25 @@ Last Updated: August 2026
   3. Administrative dashboards for teachers and parents with automated weakness heatmaps.
   4. Recurring subscription management via Dodo Payments webhook integration.
 
-### 2.6 ResGro-AI
+### 2.5 ResGro-AI
 - Category: Autonomous Restaurant Ad Growth Platform
 - Production URL: https://resgro.ai (Portal: https://app.resgro.ai)
 - Primary Architecture: Python FastAPI, Playwright Browser Agents, Django Core, Stripe Billing, Google Cloud Run
 - Target Domain: Local Business and Restaurant Acquisition Marketing
 - Core Capabilities: Autonomous campaign setup, ROI deep-dive analytics, monthly executive performance reporting, and hands-free ad platform management.
 
-### 2.7 Homemates AI
+### 2.6 Homemates AI
 - Category: AI-Native Flatmate Matching & Compatibility Platform
 - Honors: 1st Place Winner, Government of Telangana Mathhack 2.0 (Covered in Times of India)
 - Primary Architecture: React, TypeScript, Python FastAPI, Vector Similarity Search, PostgreSQL
 - Core Capabilities: Psychographic habit clustering, lifestyle compatibility indices, and student/working professional identity verification.
 
-### 2.8 BiteBoost
+### 2.7 BiteBoost
 - Category: Food & Restaurant Growth Acceleration Suite
 - Primary Architecture: React, Node.js, Python, OpenAI Vision, Tailwind CSS, MongoDB
 - Core Capabilities: Dish profitability analysis, generative photo enhancement, and hyper-local automated promotional campaigns.
 
-### 2.9 Thryft
+### 2.8 Thryft
 - Category: Circular Economy & Sustainable Fashion Marketplace
 - Primary Architecture: React, TypeScript, PyTorch, FastAPI, Tailwind CSS, PostgreSQL
 - Core Capabilities: Computer-vision item defect detection, dynamic algorithmic market pricing, and automated cataloging.

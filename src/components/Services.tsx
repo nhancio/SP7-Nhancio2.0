@@ -8,18 +8,18 @@ const Services = () => {
       image: "/media/services/s5.png",
       icon: <Bot className="h-8 w-8" />,
       title: "Autonomous Multi-Agent Systems",
-      tagline: "RalphAI & NFLA App Architecture",
-      description: "Custom multi-agent workflows with state machines, tool-use execution, and deterministic handoffs. From autonomous data pipelines to multi-step reasoning agents that run 24/7.",
-      deliverables: ["State Machine Orchestration", "Tool-Calling APIs", "Human-in-the-Loop Safeguards", "Self-Healing Retries"],
+      tagline: "RalphAI & Agent Architecture",
+      description: "Production multi-agent workflows with state machines, tool calling, and 24/7 autonomous execution.",
+      deliverables: ["State Machine Workflows", "Tool-Calling APIs", "Human-in-the-Loop", "Self-Healing Execution"],
       color: "bg-purple-100 text-purple-600"
     },
     {
       image: "/media/services/s1.png",
       icon: <Code className="h-8 w-8" />,
       title: "Full-Stack AI Web & Mobile Apps",
-      tagline: "Expo, React, Next.js & Node.js",
-      description: "We build enterprise-grade web and mobile applications with native AI integration. High-throughput backends, real-time WebSocket syncing, and responsive glassmorphism interfaces.",
-      deliverables: ["Cross-Platform Mobile Apps", "Modern Web Frontends", "Microservices & APIs", "Offline-First Sync"],
+      tagline: "React Native, Expo & Next.js",
+      description: "High-performance web and mobile apps with native AI and fluid 60fps user experiences.",
+      deliverables: ["Cross-Platform Mobile", "Modern Web Frontends", "Scalable APIs", "Offline-First Sync"],
       color: "bg-blue-100 text-blue-600"
     },
     {
@@ -27,8 +27,8 @@ const Services = () => {
       icon: <Megaphone className="h-8 w-8" />,
       title: "AI Growth & Marketing Automation",
       tagline: "Closed-Loop Acquisition",
-      description: "End-to-end autonomous marketing engines. Ingest market signals, generate brand-aligned multimodal creatives via our MagicBox AI UGC Factory, and orchestrate automated outreach campaigns.",
-      deliverables: ["Brand Vector Content Gen", "Multi-Channel Auto-Publishing", "Campaign A/B Optimization", "Lead Qualification"],
+      description: "Autonomous growth engines with multimodal content generation and automated outreach.",
+      deliverables: ["AI Ad Generation", "Multi-Channel Publishing", "Campaign Optimization", "Lead Qualification"],
       color: "bg-pink-100 text-pink-600"
     },
     {
@@ -36,8 +36,8 @@ const Services = () => {
       icon: <UserCircle className="h-8 w-8" />,
       title: "Autonomous SDR & Sales Bots",
       tagline: "24/7 Pipeline Acceleration",
-      description: "AI-powered sales development representatives that research prospects, qualify incoming leads, answer technical queries, and book meetings directly into your calendar.",
-      deliverables: ["Prospect Intelligence", "Hyper-Personalized Outreach", "CRM Auto-Sync", "Calendar Booking"],
+      description: "AI sales agents that research accounts, qualify leads, and book qualified meetings 24/7.",
+      deliverables: ["Account Research", "Personalized Outreach", "CRM Auto-Sync", "Calendar Booking"],
       color: "bg-green-100 text-green-600"
     },
     {
@@ -45,8 +45,8 @@ const Services = () => {
       icon: <Headphones className="h-8 w-8" />,
       title: "Enterprise Knowledge & Support AI",
       tagline: "RAG & Document Intelligence",
-      description: "Domain-specific support bots and retrieval-augmented generation (RAG) agents that resolve customer queries, query private documents, and escalate edge cases seamlessly.",
-      deliverables: ["Vector RAG Search", "Contract & Doc Intelligence", "Ticket Resolution Automation", "Zero Hallucination Guardrails"],
+      description: "Domain-specific RAG agents that query private data and resolve tickets with zero drift.",
+      deliverables: ["Vector RAG Search", "Document Intelligence", "Ticket Resolution", "Zero-Drift Guardrails"],
       color: "bg-amber-100 text-amber-600"
     },
     {
@@ -54,8 +54,8 @@ const Services = () => {
       icon: <GraduationCap className="h-8 w-8" />,
       title: "Enterprise AI Consulting & Workshops",
       tagline: "IITian Research & Training",
-      description: "Strategic AI roadmapping, architecture reviews, and hands-on workshops for engineering teams and students. Learn GenAI, LLM fine-tuning, and production agent orchestration.",
-      deliverables: ["Architecture Blueprints", "Team Upskilling Sprints", "Security & Data Governance", "Production Launch Roadmaps"],
+      description: "Strategic roadmaps, architecture audits, and engineering sprints for production AI.",
+      deliverables: ["Architecture Audits", "Team Upskilling", "Security Guardrails", "Production Roadmaps"],
       color: "bg-teal-100 text-teal-600"
     }
   ];
@@ -79,8 +79,8 @@ const Services = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
             AI-Agentic Engineering Services
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
-            From autonomous agent orchestration and multimodal platforms to custom enterprise LLM pipelines—engineered with research-grade rigor.
+          <p className="text-base sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Production-grade autonomous agents, mobile apps, and custom LLM systems engineered by IITians.
           </p>
         </div>
 

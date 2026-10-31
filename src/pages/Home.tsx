@@ -6,8 +6,8 @@ import Products from '../components/Products';
 
 // Lazy-load below-the-fold sections to reduce initial main-thread JavaScript execution
 const Achievements = lazy(() => import('../components/Achievements'));
-const Clients = lazy(() => import('../components/Clients'));
 const About = lazy(() => import('../components/About'));
+const Clients = lazy(() => import('../components/Clients'));
 const FAQ = lazy(() => import('../components/FAQ'));
 const Contact = lazy(() => import('../components/Contact'));
 
@@ -20,7 +20,7 @@ const Home = () => {
     <>
       <SEO
         title="Nhancio - Autonomous AI Agents, Multi-Agent Systems & Scalable AI Engineering"
-        description="Founded by IITians and incubated at T-Hub, Nhancio builds production-ready autonomous agent systems (RalphAI, NFLA App), multimodal apps (Aura+, MagicBox AI UGC Factory), and scalable enterprise AI platforms."
+        description="IITian-founded, T-Hub-incubated AI agency building production autonomous agents, AI mobile apps, and enterprise platforms, serving clients worldwide."
         path="/"
       />
       <Hero />

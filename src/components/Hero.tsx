@@ -3,16 +3,16 @@ import { ArrowRight, Bot, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const heroHeadlines = [
-  "RalphAI & NFLA App: Autonomous Multi-Agent Frameworks Engineered by IITians",
-  "From Reasoning to Execution — Enterprise Multi-Agent Systems & Tool-Use",
-  "Aura+, MagicBox AI UGC Factory & IntelliAsset: Scalable AI Products Built for Real-World Impact",
+  "Multi-Agent AI Systems Engineered by IITians",
+  "Autonomous AI Agents Built for Enterprise Scale",
+  "Production AI Products for Real-World Impact",
 ];
 
 const keyStats = [
-  { value: "8+", label: "Flagship AI Systems", sub: "RalphAI, NFLA App, Aura+, MagicBox..." },
-  { value: "500k+", label: "Automated Actions", sub: "Closed-loop execution" },
-  { value: "99.4%", label: "Task Convergence", sub: "Resilient state machines" },
-  { value: "Govt & T-Hub", label: "Recognized & Incubated", sub: "Mathhack 2.0 Winners" },
+  { value: "8+", label: "Flagship Systems", sub: "Production AI" },
+  { value: "500k+", label: "Automated Actions", sub: "Autonomous execution" },
+  { value: "99.4%", label: "Convergence Rate", sub: "Deterministic accuracy" },
+  { value: "Govt & T-Hub", label: "T-Hub Incubated", sub: "Mathhack 2.0 Winners" },
 ];
 
 const Hero = () => {
@@ -69,7 +69,7 @@ const Hero = () => {
     <section id="home" className="relative bg-gradient-to-br from-babyblue via-blush to-mint pt-16 overflow-hidden">
       {/* SEO-optimized heading structure */}
       <header className="sr-only">
-        <h1>Nhancio - Elite AI Agency | Autonomous Agents (RalphAI, NFLA App), Multi-Agent Systems & AI Products</h1>
+        <h1>Nhancio - Elite AI Agency | Autonomous Agents (RalphAI), Multi-Agent Systems & AI Products</h1>
       </header>
       
       {/* Hero with video background */}
@@ -99,11 +99,11 @@ const Hero = () => {
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60 z-10" aria-hidden="true" />
           
-          {/* Badge & Rotating headlines */}
+            {/* Badge & Rotating headlines */}
           <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center px-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-medium mb-6 animate-fadeInUp">
               <Sparkles className="w-4 h-4 text-amber-300" />
-              <span>Founded by IITians • Leading AI Agency & Venture Lab</span>
+              <span>Founded by IITians • T-Hub Incubated</span>
             </div>
 
             {/* Non-overlapping Rotating Headline via AnimatePresence mode="wait" */}
@@ -124,8 +124,8 @@ const Hero = () => {
               </AnimatePresence>
             </div>
 
-            <p className="text-gray-200 text-sm sm:text-lg max-w-3xl mx-auto mt-4 line-clamp-2 sm:line-clamp-none drop-shadow-md">
-              We design, build, and deploy production-grade autonomous agent frameworks, multi-agent reasoning loops, and scalable multimodal AI applications.
+            <p className="text-gray-200 text-sm sm:text-lg max-w-2xl mx-auto mt-4 line-clamp-2 sm:line-clamp-none drop-shadow-md">
+              We build and deploy production-grade autonomous agents and scalable AI systems.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center mt-8">
@@ -134,7 +134,7 @@ const Hero = () => {
                 onClick={() => handleHeroButtonClick('products')}
                 aria-label="Explore AI Project Showcases"
               >
-                <span>Explore Showcase Projects</span>
+                <span>Explore Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <button
@@ -142,7 +142,7 @@ const Hero = () => {
                 onClick={() => handleHeroButtonClick('contact')}
                 aria-label="Start Your AI Project"
               >
-                <span>Schedule Consultation</span>
+                <span>Book Consultation</span>
               </button>
             </div>
           </div>
@@ -192,13 +192,13 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-4">
             <Bot className="w-3.5 h-3.5" />
-            <span>Autonomous Intelligence & Multi-Agent Engineering</span>
+            <span>Autonomous Intelligence & Engineering</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            Autonomy-First Architecture for High-Growth Startups & Enterprises
+            Autonomy-First Architecture for Modern Enterprises
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-            Nhancio is an elite AI-agentic engineering firm founded by IITians. We specialize in building resilient multi-agent systems, deterministic state machines, LLM reasoning pipelines, and end-to-end multimodal platforms. From our event automation engine <strong>NFLA App</strong> and restaurant marketing system <strong>RalphAI</strong> to consumer ecosystems like <strong>Aura+</strong> and our <strong>MagicBox AI UGC Factory</strong>, we turn research-grade AI into defensible business value.
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Founded by IITians, Nhancio builds resilient multi-agent frameworks, mobile AI apps, and enterprise platforms that deliver real ROI.
           </p>
         </div>
       </div>

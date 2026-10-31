@@ -4,7 +4,7 @@ This folder is the reusable source of truth for Nhancio internship offer letters
 
 ## One-time information to confirm
 
-Review `company_profile.json` before issuing a real letter. In particular, confirm the company's legal name, complete business address, signatory's legal name and title, contact details, and whether any registration number must appear on the letterhead.
+Review `company_profile.json` before issuing a real letter. In particular, confirm the company's legal name, location, signatory's legal name and title, and contact details.
 
 ## Information needed for each intern
 
@@ -12,13 +12,12 @@ Copy `offer.template.json` to a new JSON file and fill in:
 
 - candidate name and, where used, email, phone, and postal address;
 - role, department, start date, and end date;
-- issue date and internal reference number;
+- issue date;
 - work mode (use `Remote`), work location, working days, and expected hours;
-- compensation or an explicit statement that the internship is unpaid;
 - the reporting line is fixed in `company_profile.json` as Didigam Nithin (CEO);
 - responsibilities and expected deliverables;
 - leave, notice, equipment, approved-expense, and completion-certificate terms;
-- offer response deadline and governing-law location.
+- governing-law location.
 
 Dates must use `YYYY-MM-DD` format. The generator will refuse to create a letter when a required business term is missing or when the dates are inconsistent.
 
@@ -51,7 +50,7 @@ Use `--output /path/to/file.docx` to choose the output path. Otherwise, the lett
 
 `sample_offer.json` and its generated Word document are a visual QA example only. The sample is labelled `SAMPLE - NOT FOR ISSUE` so it cannot be confused with a real offer.
 
-The generator uses A4 paper, a compact two-page layout, the approved Nhancio logo, the saved Didigam Sathyanarayana signature, and a branded header with the Nhancio website. Candidate acceptance/signature lines are intentionally not included.
+The generator uses A4 paper, a two-page layout, the approved Nhancio logo, the saved Didigam Sathyanarayana signature, and a centered header without the website. It omits compensation, reference, and candidate acceptance fields.
 
 For a full-time employment offer, use `employment_offer.template.json` with `generate_employment_offer_letter.py`. The employment version keeps the same reference-PDF visual system, replaces internship language with employment terms, includes annual compensation and leave policy, and writes an A4 PDF after DOCX rendering.
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { 
   Bot, 
   ExternalLink, 
@@ -17,8 +17,12 @@ import {
   BookOpen,
   Utensils,
   ShoppingBag,
-  FileCheck,
-  Search
+  Search,
+  ChevronLeft,
+  ChevronRight,
+  MoveRight,
+  Play,
+  Pause
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -50,7 +54,7 @@ const projects: ProjectShowcase[] = [
   {
     id: "ralf",
     name: "RalphAI",
-    tagline: "Restaurant Multi-Agent Marketing & Analytics System",
+    tagline: "Multi-Agent Restaurant Ad Automation",
     category: "frameworks",
     categoryLabel: "Autonomous Agents",
     badge: "Enterprise Production",
@@ -58,35 +62,36 @@ const projects: ProjectShowcase[] = [
     logoSrc: "/logos/todc.png",
     fallbackIcon: <TrendingUp className="w-6 h-6" />,
     iconBg: "bg-emerald-50 text-emerald-600",
-    summary: "Autonomous multi-agent intelligence and reporting platform for multi-unit restaurant operators across DoorDash and UberEats, featuring closed-loop ad campaign execution and browser automation.",
-    keyMetric: { value: "300+", label: "Restaurant Locations Automated" },
+    summary: "Autonomous multi-agent platform automating DoorDash and UberEats ad spend for 300+ restaurant locations.",
+    keyMetric: { value: "300+", label: "Locations Automated" },
     features: [
-      "DoorDash & UberEats Financial & Ad Sync",
-      "Playwright Headless Browser Automation",
-      "Macro Revenue Attribution & Forecasting",
-      "Subprocess Sandbox & Automated Audits"
+      "Delivery Ad Sync",
+      "Browser Automation",
+      "Revenue Attribution",
+      "Automated Audits"
     ],
     techStack: ["Python", "FastAPI", "Playwright", "Chrome DevTools", "Streamlit", "PostgreSQL", "Docker"],
     deepDive: {
-      problem: "Enterprise restaurant operators manage dozens of delivery accounts with fragmented portals, manual campaign tweaking, and hours of weekly reporting overhead.",
-      solution: "RalphAI deploys autonomous browser-automation worker agents that authenticate, extract granular ad performance data, compute ROI metrics, and automatically optimize promotional spend.",
+      problem: "Multi-unit restaurants lose hours manually adjusting delivery platform ads.",
+      solution: "Autonomous browser agents ingest data, calculate ROI, and optimize ad spend.",
       architecture: [
-        "FastAPI orchestration backend with asynchronous worker queues",
-        "Headless Chromium agents via Playwright for authenticated portal ingestion",
-        "Deterministic data transformations computing store-slot pre/post metrics",
-        "Multi-tenant report generation exporting to CSV, JSON, and interactive dashboards"
+        "FastAPI orchestration with async worker queues",
+        "Headless Playwright agents for portal ingestion",
+        "Deterministic metric pipeline computing store ROI",
+        "Multi-tenant reporting engine and telemetry"
       ],
       impact: [
-        "Eliminated 15+ hours/week of manual marketing report compilation",
-        "100% automated DoorDash/UberEats promotional campaign updates",
-        "Real-time ROI calculation across hundreds of store locations"
-      ]
+        "Saved 15+ hours/week on manual reports",
+        "100% automated delivery ad management",
+        "Real-time ROI across 300+ locations"
+      ],
+      liveUrl: "https://todc.in"
     }
   },
   {
     id: "aura-plus",
     name: "Aura+",
-    tagline: "Cross-Platform Lifestyle & Ambient Intelligence Ecosystem",
+    tagline: "Cross-Platform Ambient Intelligence App",
     category: "multimodal",
     categoryLabel: "Mobile & Consumer AI",
     badge: "Expo 56 & Native SDK",
@@ -94,141 +99,109 @@ const projects: ProjectShowcase[] = [
     logoSrc: "/logos/auraplus-logo.png",
     fallbackIcon: <Smartphone className="w-6 h-6" />,
     iconBg: "bg-purple-50 text-purple-600",
-    summary: "Next-generation iOS & Android application engineered with React Native and Expo 56, combining native audio synthesis, calendar synchronization, camera computer vision, and ambient intelligence.",
-    keyMetric: { value: "60 FPS", label: "Fluid Reanimated UX" },
+    summary: "Cross-platform mobile app built on Expo 56 featuring native audio synthesis and offline sync.",
+    keyMetric: { value: "60 FPS", label: "Fluid Native UX" },
     features: [
-      "Offline-First SQLite & IDB Sync Engine",
-      "Expo Native Audio & Haptic Feedback",
-      "Computer Vision Camera Integration",
-      "PostHog Product Analytics & Observability"
+      "Offline SQLite Sync",
+      "Native Audio & Haptics",
+      "Vision Integration",
+      "Product Observability"
     ],
     techStack: ["React Native 0.85", "Expo 56", "TypeScript", "Zustand", "Reanimated 4", "Firebase", "PostHog"],
     deepDive: {
-      problem: "Mobile lifestyle and productivity tools are typically bloated, cloud-dependent with high latency, and lack deep native device integration.",
-      solution: "Aura+ leverages an offline-first architecture with Zustand state management, hardware acceleration via Reanimated 4, and native Expo hardware modules for zero-latency interactions.",
+      problem: "Lifestyle mobile apps are often cloud-dependent, slow, and laggy.",
+      solution: "Offline-first React Native architecture with Reanimated 4 and native modules.",
       architecture: [
-        "Expo Router file-based mobile navigation architecture",
-        "Modular native device services: expo-audio, expo-calendar, expo-camera",
-        "Local indexed storage fallback with cloud sync",
-        "EAS CI/CD pipeline building native AAB and IPA release packages"
+        "Expo Router file-based navigation",
+        "Modular native audio and camera services",
+        "Offline SQLite with background cloud sync",
+        "Automated EAS CI/CD for iOS and Android"
       ],
       impact: [
-        "Sub-16ms frame render times across modern iOS and Android devices",
-        "Zero-latency offline interactions with automatic cloud synchronization",
-        "Production grade telemetry and crash-free session rates"
-      ]
-    }
-  },
-  {
-    id: "nfla-talf",
-    name: "NFLA App / Event Automation Engine",
-    tagline: "Autonomous Event Operations & Digital Verification",
-    category: "frameworks",
-    categoryLabel: "Autonomous Frameworks",
-    badge: "Netlify Blobs Powered",
-    badgeColor: "bg-blue-100 text-blue-700 border-blue-200",
-    fallbackIcon: <FileCheck className="w-6 h-6" />,
-    iconBg: "bg-blue-50 text-blue-600",
-    summary: "Enterprise event workflow and convention engine featuring real-time digital countersignatures, dynamic cryptographic QR verification, PDF generation, and Netlify Blobs storage.",
-    keyMetric: { value: "100%", label: "Real-time Verification" },
-    features: [
-      "Dynamic Cryptographic QR Code Verification",
-      "Touch Canvas Digital Countersignatures",
-      "Client-Side PDF Document Compilation",
-      "Serverless Netlify Blobs Document Store"
-    ],
-    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "@netlify/blobs", "@netlify/functions", "pdf-lib"],
-    deepDive: {
-      problem: "Large-scale conventions and events struggle with sluggish physical paperwork, forgeable badges, slow countersignature processes, and disjointed attendee check-ins.",
-      solution: "The NFLA App / Event Automation Engine delivers an integrated, serverless web application that instantly signs legal agreements, compiles tamper-proof PDFs in browser memory, and stores signed assets in Netlify Blobs.",
-      architecture: [
-        "React + Vite responsive client optimized for low-bandwidth mobile networks",
-        "In-memory PDF synthesis via pdf-lib and html5 signature canvas",
-        "Netlify Functions serverless API layer orchestrating email and QR lookups",
-        "Distributed key-value object storage powered by @netlify/blobs"
+        "Consistent 60 FPS on iOS and Android",
+        "Zero-latency offline interactions",
+        "Production-grade crash-free session rates"
       ],
-      impact: [
-        "Eliminated 100% of paper registration overhead at partner conventions",
-        "Instant sub-second badge scan and authentication at check-in gates",
-        "Zero-infrastructure serverless deployment with infinite auto-scaling"
-      ]
+      liveUrl: "https://auraplus.app"
     }
   },
   {
     id: "magicbox",
     name: "MagicBox",
-    tagline: "Automated User-Generated Content Engine & Multimodal AI Ad Creatives",
+    tagline: "AI UGC Factory & Multimodal Ad Engine",
     category: "multimodal",
     categoryLabel: "AI UGC Factory",
-    badge: "AI UGC Factory",
+    badge: "100+ Signups • AI UGC Factory",
     badgeColor: "bg-pink-100 text-pink-700 border-pink-200",
     logoSrc: "/logos/magicbox-logo.png",
     fallbackIcon: <Sparkles className="w-6 h-6" />,
     iconBg: "bg-pink-50 text-pink-600",
-    summary: "AI UGC Factory & Automated User-Generated Content Engine for multimodal AI ad creative generation, producing high-converting video and asset production for brands and creators.",
-    keyMetric: { value: "10x", label: "UGC Creation Velocity" },
+    summary: "AI UGC factory creating high-converting video scripts, hooks, and branded ads for 100+ creators.",
+    keyMetric: { value: "100+", label: "Creators & Brands" },
     features: [
-      "Multimodal AI Ad Creative & Video Generation",
-      "Automated UGC Scripting & Storyboarding",
-      "Brand Voice & Visual Asset Harmonization",
-      "High-Converting Multi-Platform Export Engine"
+      "AI Video Generation",
+      "Automated UGC Scripts",
+      "Brand Voice Presets",
+      "Multi-Platform Export"
     ],
     techStack: ["React", "Vite", "TypeScript", "Node.js Functions", "Firebase", "Tailwind CSS", "GCP"],
     deepDive: {
-      problem: "Brands and creators struggle with the prohibitive time, cost, and friction of scripting, shooting, editing, and producing high-converting User-Generated Content (UGC) and multimodal ad creatives at scale.",
-      solution: "MagicBox acts as an AI UGC Factory—an automated end-to-end engine for multimodal AI ad creative generation, synthesizing viral scripts, AI video avatars, product hooks, and brand assets in seconds.",
+      problem: "Creating high-converting UGC video ads manually is slow and expensive.",
+      solution: "Multimodal engine that generates viral scripts, hooks, and video assets in seconds.",
       architecture: [
-        "Turborepo monorepo connecting UGC Studio, Creative Asset Engine, and Campaign Telemetry",
-        "Multimodal generative pipelines orchestrating LLMs, voice synthesis, and video generation APIs",
-        "Serverless inference functions streaming high-converting video and image ad assets",
-        "Real-time asset library with cloud storage, brand vector presets, and export workflows"
+        "Turborepo monorepo connecting Studio and Engine",
+        "Multimodal LLM, voice, and video pipelines",
+        "Serverless inference functions streaming assets",
+        "Cloud asset library with instant export"
       ],
       impact: [
-        "10x reduction in UGC and video ad creative production turnaround times",
-        "Over 60% lower cost per creative asset compared to traditional studio production",
-        "High-converting multi-variant ad testing across TikTok, Instagram Reels, and YouTube Shorts"
-      ]
+        "100+ creators and brands onboarded",
+        "10x faster ad creative turnaround",
+        "60%+ reduction in production costs"
+      ],
+      liveUrl: "https://magicbox.nhancio.com"
     }
   },
   {
     id: "intelliassets",
     name: "IntelliAssets.AI",
-    tagline: "Adaptive AI Tutoring & Curriculum Platform for Australian Schools",
+    tagline: "Adaptive AI Tutoring Platform",
     category: "enterprise",
     categoryLabel: "EdTech & Enterprise",
     badge: "ACARA Aligned (Years 1-12)",
     badgeColor: "bg-indigo-100 text-indigo-700 border-indigo-200",
     fallbackIcon: <BookOpen className="w-6 h-6" />,
     iconBg: "bg-indigo-50 text-indigo-600",
-    summary: "Full-scale educational intelligence platform tailored to Australian Curriculum standards (Years 1–12), integrating student learning portals, educator analytics dashboards, and Django REST APIs.",
-    keyMetric: { value: "Years 1–12", label: "National Curriculum Coverage" },
+    summary: "Adaptive AI tutoring and diagnostic platform aligned with Australian Curriculum standards for Years 1–12.",
+    keyMetric: { value: "Years 1–12", label: "Curriculum Aligned" },
     features: [
-      "ACARA-Aligned Adaptive Question Engine",
-      "Multi-Workspace Ecosystem (Student, Admin, API)",
-      "Automated Student Progress & Skill Heatmaps",
-      "Integrated Dodo Payments & Subscription Engine"
+      "ACARA-Aligned Questions",
+      "Multi-Role Portals",
+      "Skill Diagnostic Heatmaps",
+      "Subscription Engine"
     ],
     techStack: ["Next.js", "React", "TypeScript", "Django REST Framework", "PostgreSQL", "Dodo Payments"],
     deepDive: {
-      problem: "Traditional tutoring platforms lack real-time curriculum alignment, personalized diagnostic feedback, and multi-tenant tooling for school administrators.",
-      solution: "IntelliAssets.AI matches every student question against strict Australian curriculum learning goals, utilizing AI to diagnose specific conceptual misunderstandings and generate custom remediation exercises.",
+      problem: "Traditional tutoring lacks real-time curriculum alignment and diagnostic insights.",
+      solution: "AI engine that maps student work to curriculum standards and generates adaptive exercises.",
       architecture: [
-        "Monorepo architecture separating Student Portal, Admin Dashboard, and Landing",
-        "Django REST Framework backend handling student records and test submissions",
-        "PostgreSQL relational database with curriculum topic graphs and progression trees",
-        "Webhook-driven billing integration supporting recurring family and institutional plans"
+        "Next.js portals for students and teachers",
+        "Django REST backend for records and tests",
+        "PostgreSQL curriculum topic graphs",
+        "Webhook-driven Dodo Payments billing"
       ],
       impact: [
-        "Adopted across multiple school districts for continuous diagnostic evaluation",
-        "42% improvement in student retention of core mathematical and literacy concepts",
-        "Automated reporting for educators saving 5+ hours per assessment cycle"
-      ]
+        "Adopted across Australian school districts",
+        "42% improvement in concept retention",
+        "Saved teachers 5+ hours per assessment"
+      ],
+      liveUrl: "https://intelliassets.ai"
     }
   },
   {
     id: "resgro",
     name: "ResGro-AI",
-    tagline: "Autonomous Restaurant Growth & Ad Automation",
+    tagline: "Autonomous Restaurant Growth Engine",
     category: "growth",
     categoryLabel: "Growth Automation",
     badge: "Live at resgro.ai",
@@ -236,28 +209,28 @@ const projects: ProjectShowcase[] = [
     logoSrc: "/logos/resgro.png",
     fallbackIcon: <Utensils className="w-6 h-6" />,
     iconBg: "bg-amber-50 text-amber-600",
-    summary: "AI-driven growth marketing platform for restaurants providing automated campaign setup, monthly reporting, deep-dive analytics, and browser-automation agents deployed on Google Cloud Run.",
-    keyMetric: { value: "100%", label: "Hands-Free Ad Launches" },
+    summary: "AI marketing engine automating restaurant campaign launches, attribution, and browser execution.",
+    keyMetric: { value: "100%", label: "Hands-Free Campaigns" },
     features: [
-      "Automated Multi-Platform Ad Setup & Review",
-      "Deep-Dive Revenue Attribution Engine",
-      "Headless Browser Autonomous Execution",
-      "Stripe Customer Portal & Subscription Sync"
+      "Automated Ad Launches",
+      "Revenue Attribution",
+      "Browser Bot Execution",
+      "Stripe Subscription Sync"
     ],
     techStack: ["Python FastAPI", "Playwright", "React", "Vite", "Django", "Cloud Run", "Stripe"],
     deepDive: {
-      problem: "Restaurant owners waste thousands on unoptimized local ads without understanding platform analytics or having time to configure daily promo schedules.",
-      solution: "ResGro-AI automates the entire ad lifecycle: analyzing local demographic traffic, recommending promotional offers, and executing campaigns via autonomous browser bots.",
+      problem: "Restaurant owners waste ad budgets without proper campaign management or tracking.",
+      solution: "Automates the full ad lifecycle using local analytics and headless browser bots.",
       architecture: [
-        "Python FastAPI agents running Playwright for unattended browser actions",
-        "Django core managing user subscriptions, Stripe webhooks, and billing",
-        "Containerized microservices deployed on Google Cloud Run with autoscaling",
-        "Vite React customer portal with real-time campaign telemetry"
+        "FastAPI agents with Playwright automation",
+        "Django backend managing Stripe billing",
+        "Containerized microservices on Cloud Run",
+        "React customer analytics dashboard"
       ],
       impact: [
-        "Average 2.8x Return on Ad Spend (ROAS) for enrolled restaurants",
-        "Zero manual intervention required for weekly ad creative updates",
-        "Live across nationwide restaurant groups"
+        "2.8x average ROAS for restaurants",
+        "100% automated weekly ad launches",
+        "Deployed across nationwide groups"
       ],
       liveUrl: "https://resgro.ai"
     }
@@ -265,36 +238,36 @@ const projects: ProjectShowcase[] = [
   {
     id: "homemates",
     name: "Homemates AI",
-    tagline: "AI-Native Flatmate Matching & Compatibility Engine",
+    tagline: "AI Flatmate Compatibility Engine",
     category: "multimodal",
     categoryLabel: "Consumer AI",
-    badge: "Won Mathhack 2.0 (Govt of Telangana)",
+    badge: "Won Mathhack 2.0 • 100+ Community",
     badgeColor: "bg-yellow-100 text-yellow-800 border-yellow-300",
     logoSrc: "/logos/homemates-logo.jpg",
     fallbackIcon: <Bot className="w-6 h-6" />,
     iconBg: "bg-yellow-50 text-yellow-600",
-    summary: "Award-winning roommate discovery platform using lifestyle vector embeddings, psychographic preference clustering, and verified student/professional identity verification.",
-    keyMetric: { value: "1st Place", label: "Govt AI Hackathon Winner" },
+    summary: "AI flatmate matching platform using lifestyle vector embeddings and habit scoring (Won Mathhack 2.0).",
+    keyMetric: { value: "100+", label: "Active Community" },
     features: [
-      "High-Dimensional Lifestyle Embedding Matching",
-      "Verified Student & Professional Profiles",
-      "Conflict Prediction & Habit Alignment Index",
-      "Interactive Natural Language Preference Quiz"
+      "Lifestyle Vector Matching",
+      "Verified Profiles",
+      "Habit Alignment Scoring",
+      "Conversational Intake"
     ],
     techStack: ["React", "TypeScript", "Python", "FastAPI", "Vector Search", "PostgreSQL"],
     deepDive: {
-      problem: "Finding compatible roommates is riddled with mismatched habits, unverified profiles, safety concerns, and high lease abandonment rates.",
-      solution: "Homemates uses multidimensional preference vectors to calculate true compatibility indices, matching verified roommates based on sleep schedules, cleanliness habits, and social preferences.",
+      problem: "Finding roommates often results in mismatched habits and lease disputes.",
+      solution: "Vector embeddings that score lifestyle compatibility across sleep, cleanliness, and work habits.",
       architecture: [
-        "Vector-based recommendation engine clustering roommate profiles",
-        "FastAPI backend with asynchronous identity verification pipelines",
-        "Responsive web client with conversational onboarding flow",
-        "Encrypted messaging channels between verified candidates"
+        "Vector recommendation engine for user clustering",
+        "FastAPI backend with identity verification",
+        "Conversational onboarding web app",
+        "Encrypted in-app messaging channels"
       ],
       impact: [
-        "Awarded 1st Prize by Government of Telangana at Mathhack 2.0",
-        "Over 92% successful roommate match satisfaction score",
-        "Featured in national press (Times of India)"
+        "1st Place at Telangana Mathhack 2.0",
+        "100+ verified active members",
+        "92% match satisfaction score; TOI featured"
       ],
       liveUrl: "https://timesofindia.indiatimes.com/city/hyderabad/ai-hackathon-flatmate-finder-to-hair-care-help/articleshow/113139008.cms"
     }
@@ -302,80 +275,82 @@ const projects: ProjectShowcase[] = [
   {
     id: "biteboost",
     name: "BiteBoost",
-    tagline: "AI Food & Restaurant Growth Acceleration Platform",
+    tagline: "AI Food Growth & Marketing Platform",
     category: "growth",
     categoryLabel: "Growth Automation",
     badge: "High Growth",
     badgeColor: "bg-orange-100 text-orange-700 border-orange-200",
     fallbackIcon: <Zap className="w-6 h-6" />,
     iconBg: "bg-orange-50 text-orange-600",
-    summary: "Intelligent restaurant marketing platform that transforms static food photos into viral marketing campaigns, dynamic menu optimizations, and customer re-engagement flows.",
-    keyMetric: { value: "3.4x", label: "Order Velocity Increase" },
+    summary: "Growth platform turning food imagery into viral campaigns, menu optimizations, and WhatsApp flows.",
+    keyMetric: { value: "3.4x", label: "Order Velocity Growth" },
     features: [
-      "Automated Menu Item Profitability Analysis",
-      "Generative Food Photography Enhancement",
-      "Hyper-Local Social Media Auto-Posting",
-      "SMS / WhatsApp Customer Re-Engagement"
+      "Menu Profit Analysis",
+      "Food Photo Enhancement",
+      "Social Media Auto-Post",
+      "WhatsApp Re-Engagement"
     ],
     techStack: ["React", "Node.js", "Python", "OpenAI Vision", "Tailwind CSS", "MongoDB"],
     deepDive: {
-      problem: "Independent eateries lose significant margin on aggregator commissions without direct customer marketing channels.",
-      solution: "BiteBoost analyzes sales tickets to identify highest-margin dishes, optimizes menu listings with generative photography, and launches hyper-local re-engagement campaigns.",
+      problem: "Independent restaurants lose margin to delivery apps without direct marketing channels.",
+      solution: "Identifies high-margin dishes, enhances photos, and runs automated messaging campaigns.",
       architecture: [
-        "POS data ingestion pipeline calculating dish-level contribution margins",
-        "Computer vision image enhancement pipeline",
-        "Multi-channel campaign scheduler integrating WhatsApp Business API",
+        "POS pipeline calculating dish margins",
+        "Computer vision food enhancement pipeline",
+        "WhatsApp Business API campaign scheduler",
         "Interactive merchant analytics dashboard"
       ],
       impact: [
-        "Boosted direct online orders by 45% for partner restaurants",
-        "Automated creation of 200+ monthly localized social media assets",
-        "Reduced reliance on third-party marketplace promotions"
-      ]
+        "45% increase in direct online orders",
+        "200+ monthly social assets generated",
+        "Lowered third-party ad dependency"
+      ],
+      liveUrl: "https://biteboost.nhancio.com"
     }
   },
   {
     id: "thryft",
     name: "Thryft",
-    tagline: "Sustainable AI-Powered Circular Economy & Resale Marketplace",
+    tagline: "AI Circular Economy Marketplace",
     category: "enterprise",
     categoryLabel: "Enterprise & Retail",
     badge: "Circular Economy",
     badgeColor: "bg-teal-100 text-teal-700 border-teal-200",
     fallbackIcon: <ShoppingBag className="w-6 h-6" />,
     iconBg: "bg-teal-50 text-teal-600",
-    summary: "Sustainable circular economy platform utilizing computer vision for instant item authentication, automated condition grading, and dynamic fair-market pricing algorithms.",
-    keyMetric: { value: "<5 sec", label: "AI Item Grading Time" },
+    summary: "Resale marketplace using computer vision for instant item authentication, grading, and dynamic pricing.",
+    keyMetric: { value: "<5s", label: "AI Grading Speed" },
     features: [
-      "Computer Vision Defect & Wear Detection",
-      "Algorithmic Dynamic Fair-Market Pricing",
-      "Automated One-Click Listing Creation",
-      "Carbon Offset & Environmental Impact Tracker"
+      "Vision Wear Detection",
+      "Dynamic Fair Pricing",
+      "One-Click Cataloging",
+      "Carbon Savings Tracker"
     ],
     techStack: ["React", "TypeScript", "Python PyTorch", "Tailwind CSS", "FastAPI", "PostgreSQL"],
     deepDive: {
-      problem: "Second-hand resale marketplaces suffer from high friction in manual cataloging, subjective condition grading, and pricing uncertainty.",
-      solution: "Thryft lets sellers snap a photo of any item to instantly detect brand, model, condition grade, and optimal resale price using deep learning vision models.",
+      problem: "Second-hand resale suffers from slow cataloging, subjective grading, and unfair pricing.",
+      solution: "Computer vision models that identify item brand, wear condition, and fair resale price.",
       architecture: [
-        "PyTorch visual feature extractor classifying garment types and wear",
-        "Real-time pricing engine querying historical marketplace transactions",
-        "Streamlined React seller flow with one-click cataloging",
-        "Real-time carbon footprint savings calculation per trade"
+        "PyTorch visual model classifying wear",
+        "Real-time pricing engine from market data",
+        "One-click seller cataloging flow",
+        "Real-time carbon offset tracker"
       ],
       impact: [
-        "Reduced average listing creation time from 7 minutes to 15 seconds",
-        "Achieved 96% price accuracy compared to final transaction values",
-        "Promoted circular fashion consumption across university campuses"
-      ]
+        "Listing time cut from 7 mins to 15 secs",
+        "96% pricing accuracy vs sales",
+        "Promoted sustainable fashion across campuses"
+      ],
+      liveUrl: "https://thryft.nhancio.com"
     }
   }
 ];
 
 const categories = [
   { id: 'all', label: 'All Showcases' },
-  { id: 'frameworks', label: 'Autonomous Frameworks (RalphAI & NFLA App)' },
-  { id: 'multimodal', label: 'Multimodal & Mobile AI (Aura+ & MagicBox)' },
-  { id: 'enterprise', label: 'Enterprise & EdTech (IntelliAssets)' },
+  { id: 'frameworks', label: 'Autonomous Frameworks (RalphAI)' },
+  { id: 'multimodal', label: 'Multimodal & Mobile AI (Aura+, MagicBox, Homemates)' },
+  { id: 'enterprise', label: 'Enterprise & EdTech (IntelliAssets & Thryft)' },
   { id: 'growth', label: 'Growth & Automation (ResGro & BiteBoost)' }
 ];
 
@@ -383,6 +358,30 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeModalProject, setActiveModalProject] = useState<ProjectShowcase | null>(null);
+
+  // Carousel & Scroll state
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Auto-scroll & User Controls state
+  const [isAutoPlayActive, setIsAutoPlayActive] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isTabVisible, setIsTabVisible] = useState(!document.hidden);
+  const [resetTimerKey, setResetTimerKey] = useState(0);
+
+  // Mouse Drag state
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftPos, setScrollLeftPos] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const resetAutoScrollTimer = useCallback(() => {
+    setResetTimerKey(k => k + 1);
+  }, []);
 
   const filteredProjects = projects.filter(project => {
     const matchesCategory = selectedCategory === 'all' || project.category === selectedCategory;
@@ -393,6 +392,134 @@ const Products = () => {
     return matchesCategory && matchesSearch;
   });
 
+  const updateScrollState = useCallback(() => {
+    if (!scrollContainerRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    const maxScroll = scrollWidth - clientWidth;
+    setScrollProgress(maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0);
+  }, []);
+
+  const advanceCarousel = useCallback(() => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    const maxScroll = scrollWidth - clientWidth;
+    
+    if (maxScroll <= 0) return;
+
+    // When reaching the end (or near end), loop smoothly back to start
+    if (scrollLeft >= maxScroll - 25) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      const scrollAmount = Math.max(340, container.clientWidth * 0.75);
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }, []);
+
+  // Listen for browser tab visibility to avoid hidden timer stacking
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsTabVisible(!document.hidden);
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
+  // Auto-scroll loop with intelligent pause triggers
+  useEffect(() => {
+    const shouldAutoScroll =
+      isAutoPlayActive &&
+      !isHovered &&
+      !isMouseDown &&
+      !isDragging &&
+      !isTouching &&
+      !activeModalProject &&
+      !isSearchFocused &&
+      isTabVisible &&
+      filteredProjects.length > 1;
+
+    if (!shouldAutoScroll) return;
+
+    const interval = setInterval(() => {
+      advanceCarousel();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [
+    isAutoPlayActive,
+    isHovered,
+    isMouseDown,
+    isDragging,
+    isTouching,
+    activeModalProject,
+    isSearchFocused,
+    isTabVisible,
+    filteredProjects.length,
+    advanceCarousel,
+    resetTimerKey
+  ]);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+    const timer = setTimeout(updateScrollState, 150);
+    resetAutoScrollTimer();
+    return () => clearTimeout(timer);
+  }, [selectedCategory, searchQuery, updateScrollState, resetAutoScrollTimer]);
+
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState);
+    return () => {
+      el.removeEventListener('scroll', updateScrollState);
+      window.removeEventListener('resize', updateScrollState);
+    };
+  }, [updateScrollState, filteredProjects.length]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollAmount = Math.max(340, container.clientWidth * 0.75);
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+    resetAutoScrollTimer();
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsMouseDown(true);
+    setIsDragging(false);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeftPos(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseUpOrLeave = () => {
+    setIsMouseDown(false);
+    setTimeout(() => setIsDragging(false), 50);
+    resetAutoScrollTimer();
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isMouseDown || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.3;
+    if (Math.abs(walk) > 5) {
+      setIsDragging(true);
+    }
+    scrollContainerRef.current.scrollLeft = scrollLeftPos - walk;
+  };
+
   return (
     <section id="products" className="py-24 bg-gradient-to-b from-gray-50 via-white to-purple-50/40 relative overflow-hidden">
       {/* Ambient background glows */}
@@ -402,7 +529,7 @@ const Products = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-3">
             <Cpu className="w-3.5 h-3.5" />
             <span>Engineered by Nhancio</span>
@@ -410,13 +537,13 @@ const Products = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
             Showcase of Major AI Projects & Frameworks
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
-            Explore our flagship multi-agent architectures, mobile ecosystems, enterprise platforms, and award-winning products built for production scale.
+          <p className="text-base sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Explore our flagship multi-agent architectures, mobile ecosystems, and award-winning AI products.
           </p>
         </div>
 
         {/* Filter Controls & Search */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
           {/* Category Tabs */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 w-full md:w-auto">
             {categories.map(cat => (
@@ -441,13 +568,15 @@ const Products = () => {
               type="text"
               placeholder="Search projects or stack..."
               value={searchQuery}
+              onFocus={() => setIsSearchFocused(true)}
+              onBlur={() => setIsSearchFocused(false)}
               onChange={e => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-4 py-2 text-xs sm:text-sm bg-white border border-gray-200 rounded-xl shadow-2xs focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs cursor-pointer"
               >
                 Clear
               </button>
@@ -455,143 +584,278 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.35, delay: idx * 0.05 }}
-              className="bg-white/90 backdrop-blur-md rounded-3xl p-7 border border-white/60 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative"
-              style={{
-                boxShadow: '0 10px 30px -5px rgba(0,0,0,0.05), inset 0 2px 4px rgba(255,255,255,0.9)',
+        {/* Carousel Header & Controls Bar */}
+        <div className="flex items-center justify-between mb-4 px-1">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs sm:text-sm font-semibold text-gray-700">
+              Showing <span className="text-purple-600 font-bold">{filteredProjects.length}</span> {filteredProjects.length === 1 ? 'Showcase' : 'Showcases'}
+            </span>
+            <span className="hidden sm:inline-block text-xs text-gray-400 font-medium">
+              • Swipe or drag horizontally to explore
+            </span>
+            {isAutoPlayActive && !isHovered && !isMouseDown && !isTouching && !activeModalProject && !isSearchFocused && filteredProjects.length > 1 && (
+              <span className="hidden md:inline-flex items-center gap-1.5 text-[11px] text-purple-700 font-medium bg-purple-50/90 px-2.5 py-0.5 rounded-full border border-purple-200/60 shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse" />
+                Auto-scroll active
+              </span>
+            )}
+          </div>
+
+          {/* Carousel Left / Right and Play / Pause Controls */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                setIsAutoPlayActive(prev => !prev);
+                resetAutoScrollTimer();
               }}
+              aria-label={isAutoPlayActive ? "Pause auto-scroll" : "Start auto-scroll"}
+              title={isAutoPlayActive ? "Pause automatic scrolling" : "Resume automatic scrolling"}
+              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border transition-all cursor-pointer ${
+                isAutoPlayActive
+                  ? 'bg-purple-50 text-purple-600 border-purple-200 hover:bg-purple-100 hover:border-purple-300 shadow-2xs'
+                  : 'bg-white text-gray-500 border-gray-200 hover:bg-purple-600 hover:text-white hover:border-purple-600 shadow-2xs'
+              }`}
             >
-              <div>
-                {/* Card Top: Logo / Icon & Badge */}
-                <div className="flex items-start justify-between gap-3 mb-5">
-                  <div className="flex items-center gap-3">
-                    {project.logoSrc ? (
-                      <img
-                        src={project.logoSrc}
-                        alt={`${project.name} logo`}
-                        width="48"
-                        height="48"
-                        loading="lazy"
-                        decoding="async"
-                        className="w-12 h-12 object-contain rounded-2xl bg-gray-50 border border-gray-100 p-1 shadow-2xs"
-                        onError={(e) => {
-                          (e.target as HTMLElement).style.display = 'none';
-                        }}
-                      />
-                    ) : (
-                      <div className={`w-12 h-12 rounded-2xl ${project.iconBg} flex items-center justify-center shadow-xs`}>
-                        {project.fallbackIcon}
-                      </div>
-                    )}
-                    <div>
-                      <span className="text-[11px] font-bold text-purple-600 uppercase tracking-wider block">
-                        {project.categoryLabel}
-                      </span>
-                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
-                        {project.name}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Badge & Tagline */}
-                <div className="mb-3">
-                  <span className={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${project.badgeColor} mb-2`}>
-                    {project.badge}
-                  </span>
-                  <p className="text-xs font-semibold text-gray-700">
-                    {project.tagline}
-                  </p>
-                </div>
-
-                {/* Summary */}
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-5 line-clamp-3">
-                  {project.summary}
-                </p>
-
-                {/* Key Metric Strip */}
-                <div className="bg-gradient-to-r from-purple-50 to-blue-50/50 rounded-2xl p-3 mb-5 border border-purple-100/50 flex items-center justify-between">
-                  <div>
-                    <span className="text-xs text-gray-500 font-medium block">Key Impact</span>
-                    <span className="text-xs text-gray-700 font-bold">{project.keyMetric.label}</span>
-                  </div>
-                  <span className="text-xl font-extrabold text-purple-700">
-                    {project.keyMetric.value}
-                  </span>
-                </div>
-
-                {/* Feature Bullets */}
-                <div className="space-y-2 mb-6">
-                  {project.features.slice(0, 3).map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-2 text-xs text-gray-700">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 shrink-0" />
-                      <span className="truncate">{feat}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Bottom: Tech Stack Pills & Actions */}
-              <div>
-                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-gray-100 mb-4">
-                  {project.techStack.slice(0, 4).map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2 py-0.5 rounded-md bg-gray-100 text-gray-600 text-[10px] font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.techStack.length > 4 && (
-                    <span className="px-2 py-0.5 rounded-md bg-gray-100 text-gray-500 text-[10px] font-medium">
-                      +{project.techStack.length - 4}
-                    </span>
-                  )}
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setActiveModalProject(project)}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-all shadow-sm shadow-purple-500/20 cursor-pointer"
-                  >
-                    <span>View Architecture</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-
-                  {project.deepDive.liveUrl && (
-                    <a
-                      href={project.deepDive.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 rounded-xl border border-gray-200 hover:bg-gray-50 text-gray-600 transition-colors"
-                      title="Open Live Site"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              {isAutoPlayActive ? (
+                <Pause className="w-4 h-4" />
+              ) : (
+                <Play className="w-4 h-4 ml-0.5" />
+              )}
+            </button>
+            <button
+              onClick={() => scroll('left')}
+              disabled={!canScrollLeft}
+              aria-label="Scroll left"
+              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border transition-all cursor-pointer ${
+                canScrollLeft
+                  ? 'bg-white text-gray-700 border-gray-200 hover:bg-purple-600 hover:text-white hover:border-purple-600 shadow-sm'
+                  : 'bg-gray-100 text-gray-300 border-gray-100 cursor-not-allowed opacity-50'
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              disabled={!canScrollRight}
+              aria-label="Scroll right"
+              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border transition-all cursor-pointer ${
+                canScrollRight
+                  ? 'bg-white text-gray-700 border-gray-200 hover:bg-purple-600 hover:text-white hover:border-purple-600 shadow-sm'
+                  : 'bg-gray-100 text-gray-300 border-gray-100 cursor-not-allowed opacity-50'
+              }`}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        {filteredProjects.length === 0 && (
+        {/* Horizontal Carousel Track */}
+        {filteredProjects.length > 0 ? (
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => {
+              setIsHovered(false);
+              handleMouseUpOrLeave();
+            }}
+          >
+            <div
+              ref={scrollContainerRef}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUpOrLeave}
+              onMouseMove={handleMouseMove}
+              onTouchStart={() => setIsTouching(true)}
+              onTouchEnd={() => {
+                setIsTouching(false);
+                resetAutoScrollTimer();
+              }}
+              onTouchCancel={() => {
+                setIsTouching(false);
+                resetAutoScrollTimer();
+              }}
+              className={`flex gap-6 overflow-x-auto snap-x snap-mandatory py-4 px-1 sm:px-2 scroll-smooth select-none ${
+                isMouseDown ? 'cursor-grabbing' : 'cursor-grab'
+              } [scrollbar-width:thin] [scrollbar-color:rgb(216,180,254)_transparent] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-gray-100/70 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-purple-200 hover:[&::-webkit-scrollbar-thumb]:bg-purple-300 [&::-webkit-scrollbar-thumb]:rounded-full`}
+            >
+              {filteredProjects.map((project, idx) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, delay: idx * 0.04 }}
+                  className="w-[85vw] sm:w-[380px] md:w-[400px] shrink-0 snap-start flex flex-col justify-between bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-7 border border-white/80 shadow-lg hover:shadow-2xl transition-all duration-300 relative group hover:-translate-y-1"
+                  style={{
+                    boxShadow: '0 10px 30px -5px rgba(0,0,0,0.05), inset 0 2px 4px rgba(255,255,255,0.9)',
+                  }}
+                >
+                  <div>
+                    {/* Card Top: Logo / Icon & Header */}
+                    <div className="flex items-start justify-between gap-3 mb-4">
+                      <div className="flex items-center gap-3">
+                        {project.logoSrc ? (
+                          <img
+                            src={project.logoSrc}
+                            alt={`${project.name} logo`}
+                            width="48"
+                            height="48"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-12 h-12 object-contain rounded-2xl bg-gray-50 border border-gray-100 p-1 shadow-2xs shrink-0"
+                            onError={(e) => {
+                              (e.target as HTMLElement).style.display = 'none';
+                            }}
+                          />
+                        ) : (
+                          <div className={`w-12 h-12 rounded-2xl ${project.iconBg} flex items-center justify-center shadow-xs shrink-0`}>
+                            {project.fallbackIcon}
+                          </div>
+                        )}
+                        <div>
+                          <span className="text-[11px] font-bold text-purple-600 uppercase tracking-wider block">
+                            {project.categoryLabel}
+                          </span>
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                            {project.name}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Badge & Tagline */}
+                    <div className="mb-3">
+                      <span className={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${project.badgeColor} mb-2`}>
+                        {project.badge}
+                      </span>
+                      <p className="text-xs font-semibold text-gray-700 line-clamp-1">
+                        {project.tagline}
+                      </p>
+                    </div>
+
+                    {/* Summary */}
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3 min-h-[3.75rem]">
+                      {project.summary}
+                    </p>
+
+                    {/* Key Metric Strip */}
+                    <div className="bg-gradient-to-r from-purple-50 to-blue-50/50 rounded-2xl p-3 mb-4 border border-purple-100/50 flex items-center justify-between">
+                      <div>
+                        <span className="text-[11px] text-gray-500 font-medium block">Key Impact</span>
+                        <span className="text-xs text-gray-800 font-bold">{project.keyMetric.label}</span>
+                      </div>
+                      <span className="text-xl font-extrabold text-purple-700">
+                        {project.keyMetric.value}
+                      </span>
+                    </div>
+
+                    {/* Feature Bullets */}
+                    <div className="space-y-1.5 mb-5">
+                      {project.features.slice(0, 3).map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-center gap-2 text-xs text-gray-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                          <span className="truncate">{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom: Tech Stack Pills & Actions */}
+                  <div>
+                    <div className="flex flex-wrap gap-1.5 pt-3.5 border-t border-gray-100 mb-4">
+                      {project.techStack.slice(0, 4).map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2 py-0.5 rounded-md bg-gray-100 text-gray-600 text-[10px] font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.techStack.length > 4 && (
+                        <span className="px-2 py-0.5 rounded-md bg-gray-100 text-gray-500 text-[10px] font-medium">
+                          +{project.techStack.length - 4}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2">
+                      <button
+                        onClick={(e) => {
+                          if (isDragging) {
+                            e.preventDefault();
+                            return;
+                          }
+                          setActiveModalProject(project);
+                        }}
+                        className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold transition-all shadow-sm shadow-purple-500/20 cursor-pointer text-center"
+                      >
+                        <span>View Architecture</span>
+                        <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+                      </button>
+
+                      {project.deepDive.liveUrl ? (
+                        <a
+                          href={project.deepDive.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => {
+                            if (isDragging) {
+                              e.preventDefault();
+                            }
+                          }}
+                          className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 hover:border-purple-300 text-xs font-bold transition-all text-center group/live shadow-2xs cursor-pointer"
+                          title={`Visit live link for ${project.name}`}
+                        >
+                          <span>Live Link</span>
+                          <ExternalLink className="w-3.5 h-3.5 shrink-0 group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5 transition-transform" />
+                        </a>
+                      ) : (
+                        <button
+                          onClick={(e) => {
+                            if (isDragging) {
+                              e.preventDefault();
+                              return;
+                            }
+                            setActiveModalProject(project);
+                          }}
+                          className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200 text-xs font-bold transition-all text-center cursor-pointer"
+                        >
+                          <span>Live Demo</span>
+                          <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Visual Scroll Track Progress Bar */}
+            <div className="flex flex-col items-center justify-center mt-6 gap-2">
+              <div className="w-48 sm:w-64 h-1.5 bg-gray-200/80 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full transition-all duration-150"
+                  style={{ width: `${Math.max(15, scrollProgress)}%` }}
+                />
+              </div>
+              <div className="flex items-center gap-1.5 text-[11px] text-gray-500 font-medium">
+                <span>
+                  {isAutoPlayActive 
+                    ? (isHovered ? 'Paused on hover • Move cursor away to resume' : 'Auto-advancing through frameworks • Drag or hover to pause')
+                    : 'Auto-scroll paused • Click Play to resume or drag track'}
+                </span>
+                <MoveRight className="w-3.5 h-3.5 text-purple-600 animate-pulse" />
+              </div>
+            </div>
+          </div>
+        ) : (
           <div className="text-center py-16 bg-white/60 rounded-3xl border border-dashed border-gray-300">
             <Bot className="w-12 h-12 text-gray-400 mx-auto mb-3" />
             <h3 className="text-lg font-bold text-gray-800">No projects match your filter</h3>
             <p className="text-sm text-gray-500 mt-1">Try resetting the category filter or search query.</p>
             <button
               onClick={() => { setSelectedCategory('all'); setSearchQuery(''); }}
-              className="mt-4 px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-semibold"
+              className="mt-4 px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-semibold cursor-pointer hover:bg-purple-700 transition-colors"
             >
               Reset Filters
             </button>
@@ -609,7 +873,7 @@ const Products = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActiveModalProject(null)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
             />
 
             {/* Modal Box */}

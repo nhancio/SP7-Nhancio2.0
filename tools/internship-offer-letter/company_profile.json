@@ -1,13 +1,13 @@
 {
   "display_name": "Nhancio",
-  "legal_name": "Nhancio",
+  "legal_name": "Nhancio Technologies Private Limited",
   "website": "https://nhancio.com",
-  "email": "",
-  "phone": "",
+  "email": "hello@nhancio.com",
+  "phone": "7095 2 88 950",
   "address_lines": [
-    "Hyderabad, Telangana, India"
+    "Hyderabad"
   ],
-  "logo_image": "assets/nhancio-logo.png",
+  "logo_image": "assets/nhancio-logo-transparent.png",
   "internship_supervisor": {
     "name": "Didigam Nithin",
     "title": "CEO"
@@ -15,8 +15,8 @@
   "signatory": {
     "name": "Didigam Sathyanarayana",
     "title": "Director, Nhancio",
-    "email": "",
-    "phone": "",
+    "email": "hello@nhancio.com",
+    "phone": "7095 2 88 950",
     "signature_image": "assets/authorized-signature.png"
   }
 }

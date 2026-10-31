@@ -17,28 +17,28 @@ const About = () => {
       icon: <GraduationCap className="w-7 h-7" />,
       title: "IITian Research & Rigor",
       tagline: "Academic Foundations",
-      description: "Founded by engineers from IIT Kanpur. We architect autonomous multi-agent systems with formal state-machine proofs, closed-loop feedback, and deterministic reliability.",
+      description: "Founded by IIT Kanpur engineers, building deterministic multi-agent systems with formal state-machine reliability.",
       color: "bg-purple-100 text-purple-600 border-purple-200"
     },
     {
       icon: <Users className="w-7 h-7" />,
       title: "Specialized Agentic Squads",
       tagline: "Full-Stack AI Specialists",
-      description: "Dedicated squads across agent orchestration (RalphAI & NFLA App), multimodal mobile ecosystems (Aura+), AI UGC generation (MagicBox), and enterprise platforms.",
+      description: "Dedicated engineering squads across agent orchestration (RalphAI), mobile AI (Aura+), and video generation (MagicBox).",
       color: "bg-blue-100 text-blue-600 border-blue-200"
     },
     {
       icon: <Zap className="w-7 h-7" />,
       title: "Production SLAs & Zero Drift",
       tagline: "Enterprise Guardrails",
-      description: "We never ship brittle prompt wrappers. We deliver containerized, auto-scaling microservices with structured schema validation, deterministic evaluation, and latency guarantees.",
+      description: "Containerized microservices with strict schema validation, automated evals, and enterprise SLAs.",
       color: "bg-emerald-100 text-emerald-600 border-emerald-200"
     },
     {
       icon: <Globe className="w-7 h-7" />,
       title: "Global Enterprise Trust",
       tagline: "Deployed Worldwide",
-      description: "Incubated at T-Hub Hyderabad and trusted by fast-growing startups and enterprises across India, Australia, US, and Europe for mission-critical automation workflows.",
+      description: "Incubated at T-Hub Hyderabad and trusted by clients across the US, Europe, Australia, and India.",
       color: "bg-orange-100 text-orange-600 border-orange-200"
     }
   ];
@@ -59,8 +59,8 @@ const About = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
             About Nhancio
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
-            From research breakthroughs at IIT Kanpur to production-grade autonomous agent systems and multimodal platforms powering global enterprises.
+          <p className="text-base sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            From IIT Kanpur research to production autonomous AI systems powering global enterprises.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ const About = () => {
                 <h3 className="text-lg font-bold text-gray-800">Our Mission</h3>
               </div>
               <p className="text-sm text-gray-600 leading-relaxed">
-                To engineer deterministic, high-throughput autonomous agent systems that automate complex business operations and unlock enterprise velocity.
+                To engineer deterministic autonomous agent systems that automate complex workflows and accelerate enterprise velocity.
               </p>
             </motion.div>
 
@@ -146,7 +146,7 @@ const About = () => {
                 <h3 className="text-lg font-bold text-gray-800">Our Vision</h3>
               </div>
               <p className="text-sm text-gray-600 leading-relaxed">
-                To be the global benchmark for agentic AI engineering, transforming modern organizations into intelligent, self-orchestrating ecosystems.
+                To be the global benchmark for agentic AI engineering, powering organizations with self-orchestrating intelligence.
               </p>
             </motion.div>
 
@@ -165,7 +165,7 @@ const About = () => {
                 <h3 className="text-lg font-bold text-gray-800">Our Core Values</h3>
               </div>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Research rigor, production reliability, and measurable client ROI. We measure success by real business outcomes, never vanity metrics.
+                Research rigor, zero-drift reliability, and measurable business ROI on every deployed system.
               </p>
             </motion.div>
           </div>
@@ -214,7 +214,7 @@ const About = () => {
 
                 <div className="flex items-center gap-2 mb-3 text-xs font-bold text-purple-700 uppercase tracking-wider">
                   <Building2 className="w-4 h-4" />
-                  <span>The Journey from Research to Production</span>
+                  <span>Research to Production</span>
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
@@ -223,13 +223,10 @@ const About = () => {
 
                 <div className="space-y-3.5 text-sm sm:text-base text-gray-600 leading-relaxed">
                   <p>
-                    Founded in 2024 by IIT Kanpur alumni, Nhancio emerged from a clear mission: to bridge the gap between academic AI research and zero-drift enterprise software engineering.
+                    Founded in 2024 by IIT Kanpur alumni and incubated at <strong className="text-gray-900 font-semibold">T-Hub Hyderabad</strong>, Nhancio bridges academic AI research with enterprise software engineering.
                   </p>
                   <p>
-                    Incubated at <strong className="text-gray-900 font-semibold">T-Hub Hyderabad</strong>—India's premier technology innovation ecosystem—our engineering team architects closed-loop multi-agent systems, multimodal mobile apps, and autonomous marketing engines.
-                  </p>
-                  <p>
-                    Today, our flagship platforms like <strong className="text-purple-700 font-semibold">RalphAI</strong>, <strong className="text-purple-700 font-semibold">NFLA App</strong>, <strong className="text-purple-700 font-semibold">Aura+</strong>, and <strong className="text-purple-700 font-semibold">MagicBox AI UGC Factory</strong> power operations across North America, Europe, Australia, and India.
+                    Today, flagship platforms like <strong className="text-purple-700 font-semibold">RalphAI</strong>, <strong className="text-purple-700 font-semibold">Aura+</strong>, <strong className="text-purple-700 font-semibold">MagicBox</strong>, and <strong className="text-purple-700 font-semibold">IntelliAssets</strong> power operations across North America, Europe, Australia, and India.
                   </p>
                 </div>
               </div>
@@ -243,7 +240,7 @@ const About = () => {
                   href="#contact" 
                   className="text-purple-600 hover:text-purple-700 underline font-bold"
                 >
-                  Schedule an Architecture Consultation &rarr;
+                  Schedule Consultation &rarr;
                 </a>
               </div>
             </motion.div>

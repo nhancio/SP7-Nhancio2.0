@@ -7,12 +7,11 @@ const Footer = () => {
   const quickLinks = [
     { name: 'AI Services', href: '/#services' },
     { name: 'Showcase Projects', href: '/#products' },
-    { name: 'Achievements', href: '/#achievements' },
+    { name: 'Achievements & Grants', href: '/#achievements' },
     { name: 'About Us', href: '/#about' },
     { name: 'FAQ', href: '/#faq' },
     { name: 'Contact', href: '/#contact' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Blog', href: '/blogs' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms and Conditions', href: '/terms-and-conditions' }
   ];
@@ -20,7 +19,7 @@ const Footer = () => {
   const featuredProjects = [
     { name: 'RalphAI — Restaurant Ad Automation', href: '/#products' },
     { name: 'Aura+ — Cross-Platform Ambient Mobile App', href: '/#products' },
-    { name: 'NFLA App / Event Automation Engine — Countersignature Platform', href: '/#products' },
+    { name: 'Homemates AI — Flatmate Matching & Compatibility Engine', href: '/#products' },
     { name: 'MagicBox — AI UGC Factory & Video Ad Creative Engine', href: '/#products' },
     { name: 'IntelliAssets.AI — ACARA AI Tutoring', href: '/#products' },
     { name: 'ResGro-AI — Autonomous Growth Engine', href: 'https://resgro.ai', external: true }
@@ -47,7 +46,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Founded by IITians and incubated at T-Hub Hyderabad. Engineering research-grade autonomous agent systems, multimodal mobile apps, and scalable enterprise AI.
+              Founded by IITians and incubated at T-Hub. Engineering autonomous agents, mobile AI apps, and enterprise platforms.
             </p>
 
             <div className="pt-2 text-xs text-gray-400 space-y-1.5">

@@ -100,7 +100,6 @@ def validate(profile: dict[str, Any], offer: dict[str, Any]) -> None:
         "internship_supervisor.title",
     ]
     offer_fields = [
-        "reference_number",
         "issue_date",
         "candidate.name",
         "internship.role",
@@ -112,7 +111,6 @@ def validate(profile: dict[str, Any], offer: dict[str, Any]) -> None:
         "internship.working_days",
         "internship.working_hours",
         "internship.reporting_manager",
-        "internship.compensation",
         "internship.responsibilities",
         "internship.equipment_and_access",
         "internship.expenses",
@@ -121,21 +119,17 @@ def validate(profile: dict[str, Any], offer: dict[str, Any]) -> None:
         "terms.leave_policy",
         "terms.background_verification",
         "terms.governing_law",
-        "acceptance_deadline",
     ]
     for field in profile_fields:
         required(profile, field)
     for field in offer_fields:
         required(offer, field)
 
-    issue = parse_iso_date(offer["issue_date"], "issue_date")
+    parse_iso_date(offer["issue_date"], "issue_date")
     start = parse_iso_date(offer["internship"]["start_date"], "internship.start_date")
     end = parse_iso_date(offer["internship"]["end_date"], "internship.end_date")
-    accept_by = parse_iso_date(offer["acceptance_deadline"], "acceptance_deadline")
     if end < start:
         raise OfferValidationError("internship.end_date cannot be before internship.start_date")
-    if accept_by < issue:
-        raise OfferValidationError("acceptance_deadline cannot be before issue_date")
 
     responsibilities = offer["internship"]["responsibilities"]
     if not isinstance(responsibilities, list) or not all(
@@ -321,6 +315,8 @@ def configure_page_and_furniture(
     profile: dict[str, Any],
     document_label: str = "Internship Offer Letter",
 ) -> None:
+    full_address = " ".join(profile["address_lines"])
+    phone = re.sub(r"\D", "", profile["phone"])
     section = document.sections[0]
     section.page_width = Inches(PAGE_WIDTH_DXA / 1440)
     section.page_height = Inches(PAGE_HEIGHT_DXA / 1440)
@@ -333,49 +329,71 @@ def configure_page_and_furniture(
 
     header = section.header
     p_logo = header.paragraphs[0]
+    p_logo.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_logo.paragraph_format.space_before = Pt(0)
     p_logo.paragraph_format.space_after = Pt(0)
-    p_logo.paragraph_format.line_spacing = 0.1
-    logo_run = p_logo.add_run(" ")
-    set_run_font(logo_run, size=1, color=WHITE)
-    header_table = header.add_table(rows=1, cols=2, width=Inches(CONTENT_WIDTH_DXA / 1440))
-    set_table_geometry(header_table, [1900, CONTENT_WIDTH_DXA - 1900], indent_dxa=0)
-    logo_cell, brand_cell = header_table.rows[0].cells
-    for cell in header_table.rows[0].cells:
-        set_cell_border(
-            cell,
-            top={"val": "nil"}, bottom={"val": "nil"},
-            start={"val": "nil"}, end={"val": "nil"},
-        )
-    logo_p = logo_cell.paragraphs[0]
-    logo_p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    logo_p.paragraph_format.space_after = Pt(0)
-    logo_run = logo_p.add_run()
-    shape = logo_run.add_picture(str(BASE_DIR / profile["logo_image"]), width=Inches(0.46))
+    shape = p_logo.add_run().add_picture(str(BASE_DIR / profile["logo_image"]), width=Inches(0.47))
     add_picture_alt(shape, "Nhancio logo", "Nhancio brand logo")
-    brand_p = brand_cell.paragraphs[0]
+    brand_p = header.add_paragraph()
+    brand_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     brand_p.paragraph_format.space_after = Pt(0)
     brand = brand_p.add_run(profile["display_name"].upper())
-    set_run_font(brand, size=11.5, color=PURPLE, bold=True)
-    brand_p.add_run("  ✦  ")
-    site = brand_p.add_run(profile["website"].replace("https://", ""))
-    set_run_font(site, size=9, color=MUTED)
-    details = brand_cell.add_paragraph()
+    set_run_font(brand, size=13, color=PURPLE, bold=True)
+    details = header.add_paragraph()
     details.paragraph_format.space_before = Pt(0)
+    details.alignment = WD_ALIGN_PARAGRAPH.CENTER
     details.paragraph_format.space_after = Pt(0)
-    detail_run = details.add_run("✦  Incubated at T-HUB, Hyd   ✦  AI Deployment Services")
-    set_run_font(detail_run, size=8, color=MUTED)
+    detail_run = details.add_run(
+        f"☎  {phone}   ✉  {profile['email']}"
+    )
+    set_run_font(detail_run, size=9.5, color=INK)
+    location = header.add_paragraph()
+    location.paragraph_format.space_before = Pt(0)
+    location.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    location.paragraph_format.space_after = Pt(4)
+    location_run = location.add_run(
+        f"⌂  {full_address}   ✦  Incubated at T-HUB   ✦  AI Deployment Services"
+    )
+    set_run_font(location_run, size=8.5, color=MUTED)
+    border = OxmlElement("w:pBdr")
+    bottom = OxmlElement("w:bottom")
+    for key, value in (("val", "single"), ("sz", "8"), ("space", "4"), ("color", "5B2DCB")):
+        bottom.set(qn(f"w:{key}"), value)
+    border.append(bottom)
+    location._p.get_or_add_pPr().append(border)
 
     footer = section.footer
     p_footer = footer.paragraphs[0]
     p_footer.paragraph_format.space_before = Pt(0)
     p_footer.paragraph_format.space_after = Pt(0)
-    p_footer.paragraph_format.tab_stops.add_tab_stop(Inches(6.1))
-    left = p_footer.add_run(f"{profile['display_name']} | Confidential | {document_label}")
-    set_run_font(left, size=8.5, color=MUTED)
-    page_label = p_footer.add_run("\tPage ")
-    set_run_font(page_label, size=8.5, color=MUTED)
-    add_page_field(p_footer)
+    p_footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    contact = p_footer.add_run(
+        f"{profile['website'].replace('https://', '')}  |  {phone}  |  {profile['email']}"
+    )
+    set_run_font(contact, size=9.5, color=PURPLE, bold=True)
+    footer_address = footer.add_paragraph()
+    footer_address.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    footer_address.paragraph_format.space_before = Pt(0)
+    footer_address.paragraph_format.space_after = Pt(0)
+    set_run_font(footer_address.add_run(full_address), size=8.5, color=MUTED)
+    p_footer_meta = footer.add_paragraph()
+    p_footer_meta.paragraph_format.space_before = Pt(0)
+    p_footer_meta.paragraph_format.space_after = Pt(0)
+    footer_ppr = p_footer_meta._p.get_or_add_pPr()
+    footer_borders = OxmlElement("w:pBdr")
+    footer_top = OxmlElement("w:top")
+    footer_top.set(qn("w:val"), "single")
+    footer_top.set(qn("w:sz"), "6")
+    footer_top.set(qn("w:space"), "2")
+    footer_top.set(qn("w:color"), "D9D2F5")
+    footer_borders.append(footer_top)
+    footer_ppr.append(footer_borders)
+    p_footer_meta.paragraph_format.tab_stops.add_tab_stop(Inches(6.1))
+    left = p_footer_meta.add_run(f"{profile['display_name']} | {document_label}")
+    set_run_font(left, size=9, color=MUTED)
+    page_label = p_footer_meta.add_run("\tPage ")
+    set_run_font(page_label, size=9, color=MUTED)
+    add_page_field(p_footer_meta)
 
 
 def next_numbering_id(numbering, tag: str) -> int:
@@ -480,11 +498,6 @@ def add_key_terms_table(document: Document, profile: dict[str, Any], offer: dict
             ("Work arrangement", arrangement),
         ("Working schedule", f"{internship['working_days']} | {internship['working_hours']}"),
         ("Reporting to", manager),
-        ("Compensation", internship["compensation"]),
-        (
-            "Accept by",
-            display_date(offer["acceptance_deadline"], "acceptance_deadline"),
-        ),
     ]
     table = document.add_table(rows=len(rows), cols=2)
     set_table_geometry(table, [3000, CONTENT_WIDTH_DXA - 3000])
@@ -569,11 +582,6 @@ def build_document(profile: dict[str, Any], offer: dict[str, Any]) -> Document:
     meta.paragraph_format.space_after = Pt(1)
     r = meta.add_run(display_date(offer["issue_date"], "issue_date"))
     set_run_font(r, size=10.5, color=INK)
-    ref = document.add_paragraph()
-    ref.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    ref.paragraph_format.space_after = Pt(5)
-    r = ref.add_run(f"Reference: {offer['reference_number']}")
-    set_run_font(r, size=9.5, color=MUTED)
 
     candidate = offer["candidate"]
     add_label_value_paragraph(document, "To", candidate["name"])
@@ -629,9 +637,8 @@ def build_document(profile: dict[str, Any], offer: dict[str, Any]) -> Document:
 
     add_term(
         document,
-        "4. Compensation, taxes, and expenses",
-        f"The compensation for this internship is: {offer['internship']['compensation']}. You are responsible for providing accurate payment and tax information and for personal tax obligations that apply to you. "
-        f"{offer['internship']['expenses']}",
+        "4. Expenses",
+        offer["internship"]["expenses"],
     )
 
     add_term(
@@ -639,6 +646,12 @@ def build_document(profile: dict[str, Any], offer: dict[str, Any]) -> Document:
         "5. Supervision and performance",
         "You will report to Didigam Nithin (CEO). Nhancio may set milestones, request status updates, review work quality, and provide feedback. Continued participation and any completion documentation depend on satisfactory performance, attendance, professional conduct, and fulfillment of handover obligations.",
     )
+
+    document.add_page_break()
+    spacer = document.add_paragraph()
+    spacer.paragraph_format.keep_with_next = True
+    spacer.paragraph_format.space_after = Pt(9)
+    spacer.add_run(" ")
 
     add_term(
         document,
@@ -674,7 +687,7 @@ def build_document(profile: dict[str, Any], offer: dict[str, Any]) -> Document:
     add_term(
         document,
         "11. Ending the internship",
-        f"Either you or Nhancio may end the internship by giving {offer['terms']['notice_period']} written notice, unless a shorter period is mutually agreed. Nhancio may end the internship immediately for serious misconduct, material breach of confidentiality or security, falsification, unlawful conduct, repeated non-performance, policy violations, loss of eligibility, or conduct that reasonably creates material risk to Nhancio, its clients, or users. On termination, compensation, if any, will be handled according to the stated terms and applicable law for the eligible period completed.",
+        f"Either you or Nhancio may end the internship by giving {offer['terms']['notice_period']} written notice, unless a shorter period is mutually agreed. Nhancio may end the internship immediately for serious misconduct, material breach of confidentiality or security, falsification, unlawful conduct, repeated non-performance, policy violations, loss of eligibility, or conduct that reasonably creates material risk to Nhancio, its clients, or users.",
     )
 
     add_term(
@@ -689,20 +702,18 @@ def build_document(profile: dict[str, Any], offer: dict[str, Any]) -> Document:
         f"This letter and any policies expressly incorporated into it record the understanding for the internship and replace prior discussions about the same engagement. Any amendment must be in writing and approved by an authorized Nhancio representative. If a provision is unenforceable, the remaining provisions continue to apply to the extent permitted by law. This letter is governed by the laws applicable in {offer['terms']['governing_law']}, and the competent courts there will have jurisdiction, subject to any mandatory law that applies.",
     )
 
-    acceptance_heading = document.add_paragraph("Authorization", style="Heading 1")
-    acceptance_heading.paragraph_format.keep_with_next = True
-    p = document.add_paragraph("We look forward to the learning, contribution, and professional growth this internship can provide.")
-    p.paragraph_format.space_after = Pt(4)
-
     signatory = profile["signatory"]
     auth = document.add_paragraph()
+    auth.paragraph_format.space_before = Pt(8)
     auth.paragraph_format.space_after = Pt(2)
+    auth.paragraph_format.keep_with_next = True
     r = auth.add_run(f"For and on behalf of {profile['legal_name']}")
     set_run_font(r, size=11, color=DARK_PURPLE, bold=True)
 
     sig_p = document.add_paragraph()
     sig_p.paragraph_format.space_before = Pt(0)
     sig_p.paragraph_format.space_after = Pt(2)
+    sig_p.paragraph_format.keep_with_next = True
     shape = sig_p.add_run().add_picture(
         str(BASE_DIR / signatory["signature_image"]), width=Inches(1.25)
     )
@@ -710,11 +721,12 @@ def build_document(profile: dict[str, Any], offer: dict[str, Any]) -> Document:
 
     p = document.add_paragraph()
     p.paragraph_format.space_after = Pt(1)
+    p.paragraph_format.keep_with_next = True
     r = p.add_run(signatory["name"])
     set_run_font(r, size=11, color=INK, bold=True)
     add_label_value_paragraph(document, "Title", signatory["title"])
     if signatory.get("phone"):
-        add_label_value_paragraph(document, "Phone", signatory["phone"])
+        add_label_value_paragraph(document, "Phone", re.sub(r"\D", "", signatory["phone"]))
 
     return document
 
@@ -726,8 +738,6 @@ def apply_overrides(offer: dict[str, Any], args: argparse.Namespace) -> None:
         "start_date": ("internship", "start_date"),
         "end_date": ("internship", "end_date"),
         "issue_date": ("issue_date",),
-        "accept_by": ("acceptance_deadline",),
-        "reference": ("reference_number",),
     }
     for arg_name, path in mapping.items():
         value = getattr(args, arg_name)
@@ -749,8 +759,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--start-date", dest="start_date", help="Override start date (YYYY-MM-DD)")
     parser.add_argument("--end-date", dest="end_date", help="Override end date (YYYY-MM-DD)")
     parser.add_argument("--issue-date", dest="issue_date", help="Override issue date (YYYY-MM-DD)")
-    parser.add_argument("--accept-by", dest="accept_by", help="Override acceptance deadline (YYYY-MM-DD)")
-    parser.add_argument("--reference", help="Override reference number")
     return parser.parse_args()
 
 

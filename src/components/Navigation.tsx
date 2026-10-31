@@ -15,7 +15,6 @@ const navItems = [
   { id: 'about', label: 'About Us' },
   { id: 'faq', label: 'FAQ' },
   { id: 'careers', label: 'Careers', isPage: true },
-  { id: 'blogs', label: 'Blog', isPage: true },
   { id: 'contact', label: 'Contact' }
 ];
 
@@ -27,10 +26,6 @@ const Navigation = () => {
 
   useEffect(() => {
     // Set active section based on current route
-    if (location.pathname === '/blogs') {
-      setActiveSection('blogs');
-      return;
-    }
     if (location.pathname === '/careers') {
       setActiveSection('careers');
       return;

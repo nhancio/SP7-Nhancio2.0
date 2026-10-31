@@ -28,8 +28,8 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
             Get in Touch
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
-            Ready to architect production-ready autonomous agents, multimodal mobile apps, or enterprise AI platforms? Let's connect.
+          <p className="text-base sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Ready to build production autonomous agents, mobile apps, or enterprise AI? Let's connect.
           </p>
         </div>
 
@@ -65,21 +65,21 @@ const Contact = () => {
                 </h3>
 
                 <p className="text-sm text-purple-200/90 leading-relaxed mb-6">
-                  Schedule a direct 1-on-1 strategy call with our founding engineers. We'll review your technical requirements and outline an agentic roadmap.
+                  Schedule a direct 1-on-1 strategy call with our founding engineers to map out your agent architecture.
                 </p>
 
                 <div className="space-y-3 mb-8 text-xs sm:text-sm text-purple-100">
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Deep technical use-case & feasibility analysis</span>
+                    <span>Technical feasibility & scope analysis</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Agent architecture & ROI projection</span>
+                    <span>Agent architecture & ROI roadmap</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Direct engineering leadership (IIT Kanpur alumni)</span>
+                    <span>Direct access to IIT Kanpur founders</span>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const Contact = () => {
                   Direct Contact & Location
                 </h3>
                 <p className="text-xs sm:text-sm text-gray-500 mb-6">
-                  Reach out directly via phone, WhatsApp, email, or visit us at T-Hub Hyderabad.
+                  Connect via phone, WhatsApp, email, or visit our office at T-Hub Hyderabad.
                 </p>
 
                 <div className="space-y-4">

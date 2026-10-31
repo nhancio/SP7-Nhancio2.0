@@ -11,33 +11,33 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     category: "Architecture & Frameworks",
-    question: "What makes Nhancio's autonomous agent frameworks (RalphAI & NFLA App) unique?",
-    answer: "Unlike simple prompt wrapper scripts, Nhancio architectures are built on deterministic state machines, closed-loop feedback loops, and resilient tool-calling pipelines. RalphAI delivers multi-tenant restaurant marketing orchestration with headless browser automation (Playwright), while the NFLA App / Event Automation Engine provides event operations, dynamic QR verification, and serverless blob synchronization with sub-second response times."
+    question: "What makes Nhancio's autonomous agent frameworks (like RalphAI) unique?",
+    answer: "Unlike brittle prompt wrappers, we build deterministic state machines with closed-loop feedback and tool calling. RalphAI uses headless browser bots to execute workflows with sub-second latency and verified attribution."
   },
   {
     category: "Engineering & Team",
     question: "Who designs and builds Nhancio's AI systems?",
-    answer: "Nhancio was founded by IITians with deep backgrounds in computer science, machine learning, and systems engineering. Our squads combine academic research rigor with full-stack production best practices across Python, FastAPI, React Native / Expo, Node.js, and cloud containerization."
+    answer: "Nhancio was founded by IIT Kanpur engineers with deep machine learning and systems backgrounds. Our squads build production stacks across Python, FastAPI, React Native/Expo, and cloud infrastructure."
   },
   {
     category: "Security & Production SLAs",
     question: "How does Nhancio ensure enterprise data security and zero hallucination?",
-    answer: "We implement strict schema validation (Pydantic / TypeScript), deterministic guardrails, zero-trust container sandboxes, and private VPC deployments. For RAG and LLM applications, we benchmark against ground-truth evaluation sets and incorporate human-in-the-loop escalation paths for sensitive workflows."
+    answer: "We enforce strict schema validation, deterministic guardrails, container sandboxes, and private VPC hosting. Sensitive workflows include human-in-the-loop approvals and continuous evaluation benchmarks."
   },
   {
     category: "Services & Engagement",
     question: "What types of AI projects does Nhancio take on?",
-    answer: "We specialize in autonomous multi-agent systems, cross-platform mobile apps (like Aura+ on Expo 56), educational and enterprise platforms (like IntelliAssets.AI), generative marketing suites (like MagicBox AI UGC Factory), and automated growth engines (like ResGro-AI and BiteBoost). We offer end-to-end development, architecture advisory, and specialized engineering sprints."
+    answer: "We build autonomous multi-agent systems, cross-platform mobile apps (Aura+), EdTech platforms (IntelliAssets), and multimodal engines (MagicBox). We provide end-to-end development, architecture advisory, and targeted engineering sprints."
   },
   {
     category: "Timeline & Delivery",
     question: "How fast can an autonomous agent or custom AI solution be deployed?",
-    answer: "Depending on scope, proof-of-concept prototypes and specialized agents can be delivered in 2 to 3 weeks, while comprehensive enterprise multi-agent platforms with full security compliance, CI/CD, and custom integrations typically launch in 6 to 10 weeks."
+    answer: "Working prototypes and specialized agents deploy in 2 to 3 weeks. Full enterprise multi-agent platforms with security compliance and integrations launch in 6 to 10 weeks."
   },
   {
     category: "Recognition & Incubation",
     question: "What industry milestones has Nhancio achieved?",
-    answer: "Nhancio is incubated at T-Hub Hyderabad (the world's largest innovation campus) and won 1st Place at Mathhack 2.0 organized by the Government of Telangana for our autonomous matching algorithms in Homemates AI, with coverage in leading national media like The Times of India."
+    answer: "Nhancio is incubated at T-Hub Hyderabad and won 1st Place at Telangana Government's Mathhack 2.0 for Homemates AI, with coverage in The Times of India."
   }
 ];
 
@@ -61,8 +61,8 @@ export default function FAQ() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
             Answers on AI Agents & Engineering
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
-            Everything you need to know about our autonomous agent frameworks, technology stacks, security guarantees, and engagement model.
+          <p className="text-base sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Clear answers on our agent frameworks, stacks, security guarantees, and delivery timelines.
           </p>
         </div>
 

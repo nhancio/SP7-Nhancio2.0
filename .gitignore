@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .env
 .venv
+
+# OAuth client secrets never belong in git.
+client_secret_*.json

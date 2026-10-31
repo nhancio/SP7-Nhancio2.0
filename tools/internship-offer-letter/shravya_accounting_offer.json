@@ -1,0 +1,40 @@
+{
+  "document_status": "",
+  "issue_date": "2026-09-29",
+  "candidate": {
+    "name": "Jilla Shravya",
+    "email": "",
+    "phone": "",
+    "address_lines": []
+  },
+  "internship": {
+    "role": "Budgeting Associate",
+    "department": "Finance and Accounts",
+    "start_date": "2026-10-01",
+    "end_date": "2026-10-30",
+    "work_mode": "Remote",
+    "location": "Remote",
+    "working_days": "Monday to Friday",
+    "working_hours": "40 hours per week, with timing agreed with Didigam Nithin (CEO)",
+    "reporting_manager": "Didigam Nithin",
+    "reporting_manager_title": "CEO",
+    "responsibilities": [
+      "Maintain organized invoices, receipts, expense records, and supporting documents for budgeting work.",
+      "Update expense and budget-tracking sheets, checking entries against available source documents.",
+      "Assist with bookkeeping, routine reconciliations, and identification of missing or inconsistent records.",
+      "Prepare expense summaries and supporting information for internal budget and finance reports.",
+      "Track payable and receivable item status and coordinate follow-ups under supervision.",
+      "Protect company, client, and user information and follow all security, privacy, and responsible-AI requirements.",
+      "Participate in reviews and hand over finance records and task status at the end of the internship."
+    ],
+    "equipment_and_access": "Nhancio may provide accounts, spreadsheets, repositories, finance records, or equipment needed for approved work. All access remains company property and must be returned or disabled at the end of the internship.",
+    "expenses": "Only expenses approved in writing before they are incurred will be eligible for reimbursement against valid receipts.",
+    "completion_documents": "Subject to satisfactory performance, completion of assigned work, return of company property, and compliance with this letter, Nhancio may issue an internship completion certificate. Any recommendation letter remains discretionary."
+  },
+  "terms": {
+    "notice_period": "7 calendar days",
+    "leave_policy": "Planned leave requires prior written approval from the reporting manager. Emergencies should be communicated as soon as reasonably possible. Leave during the short internship period may affect completion documentation.",
+    "background_verification": "This offer is subject to the accuracy of the information and documents provided by the intern and any reasonable identity, education, or background checks requested by Nhancio.",
+    "governing_law": "Telangana, India"
+  }
+}
